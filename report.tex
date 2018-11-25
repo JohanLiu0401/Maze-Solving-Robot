@@ -1,0 +1,99 @@
+% 前所未有简单地，开始你的 LaTeX 之旅
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% [页面选项]
+%
+% 字号选项:    11pt是字号，比较适合电子印刷品和纸质印刷品
+% 字体选项:    不填写 - 默认为 Modern (别忘了连逗号一起删了)
+%			  times - Times New Roman
+%			  sans - Sans Serif 字体（黑体）
+% oneside:    代表单面，一般单侧用于电子印刷品
+% 		      可以改成 twoside，一般用于双面纸质印刷
+% openright:  双面打印的情况下，纸质印刷品要求新的一章从奇数页开始
+% hardcopy:   打印机打印选项，带有此选项将去除logo颜色以及代码颜色，更适合黑白印刷
+%			  使用彩色或者电子版请去除此选项
+%			  也可以改为 editing ，颜色讲和 sublime3 的 Mariana 颜色主题一致，减小写作时的文本对比度
+%		          让你以最舒适的方式书写
+% heading:    页面带有页眉
+\documentclass[11pt,times,oneside,openright,hardcopy]{eeereport}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% [封面选项]
+%
+% title:    文章主标题，不可以省略
+% subtitle: 副标题，可以省略，但不可以删除
+% covercontent: 封面信息，可以在其内部添加或者删除 \converline 来添加或者删除一行
+%    coverline{项目}{项目内容}，可以自由添加各种内容
+%
+\title{Specification and Design Report}
+\subtitle{}
+\covercontent{
+	\coverline{Author}{Zhiyong Liu}
+	% \coverline{Partner}{Your Partner}
+	\coverline{Module}{CSE305}
+	\coverline{Supervisor}{Dr. Jieming Ma}
+	\coverline{Date}{$25^{th}$~/~Nov~/~2018}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 页面设定
+% 如果在前面设定了需要页面，请去掉下面三个的注释，然后分别进行定义，如果不定义，
+% LaTeX 会自动使用章节名称来进行页面定义
+%\lhead{} 
+%\chead{} 
+%\rhead{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+% set line spacing to 1.5B
+\baselineskip = 17pt
+\pagenumbering{Alph}
+\begin{titlepage}
+\input{xjtlu_cover}
+\newpage
+\thispagestyle{empty}
+\end{titlepage}
+
+\frontmatter
+
+% \tableofcontents
+% \addcontentsline{toc}{chapter}{Contents}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 摘要部分 Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \chapter{Abstract}
+
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras congue massa a ex luctus, in consectetur velit venenatis. Praesent porta dolor augue, at eleifend purus accumsan a. Vestibulum ullamcorper massa eget lobortis volutpat. Vestibulum at luctus lectus, vitae tristique ligula. Pellentesque ultrices viverra tellus, ut hendrerit urna varius ac. Sed nulla tortor, dignissim in justo nec, ullamcorper ultricies magna. In finibus, nisi eu lobortis ultricies, neque elit tempus purus, sit amet condimentum lorem ligula id magna. Integer a magna at augue euismod rhoncus mattis sit amet velit. Morbi eget leo a dolor porttitor commodo non non velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed quam feugiat, sollicitudin sapien id, semper est. In consectetur est eu sapien scelerisque, et sagittis sapien finibus. Nullam facilisis molestie ligula sed pharetra. Fusce nec sagittis arcu. Sed eu leo vel metus volutpat tincidunt. Suspendisse vehicula in elit eu pretium.
+
+% Nulla sagittis urna venenatis ex lacinia molestie. Etiam tempus enim tortor, sed sollicitudin nisi tempus sit amet. Cras at metus massa. Sed consequat risus metus, ut placerat nisi gravida a. Donec quis justo eget risus maximus malesuada. Donec id urna sed eros porttitor ornare vitae non dolor. Donec mollis, leo sit amet aliquet posuere, velit lacus luctus ante, vel hendrerit eros mauris a ligula. Donec tincidunt dolor non enim malesuada, in molestie enim ornare. Aliquam gravida orci mauris, non scelerisque ante finibus in. Curabitur dictum dapibus mauris nec volutpat. Curabitur congue urna faucibus, feugiat lorem et, faucibus ante. Sed convallis erat ac nunc rhoncus, at fermentum velit efficitur. Nullam dolor metus, feugiat id consectetur vel, sagittis non nunc. Aliquam rutrum placerat ante eget blandit.
+
+% \textbf{Key Words:} \LaTeX{}, consectetur, rutrum.
+
+\mainmatter
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 正文部分 Main Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Summary of Proposal}\label{cpt:sop}
+
+\section{Project Description}
+Now more and more people are supposed to learn knowledge about programming. However, learning programming can sometimes become boring that cause learners give up halfway.
+Therefore, this project develops a maze game for those who wish to learn programming knowledge. Users can learn programming knowledge by playing games at the same time.
+
+In this project, there is a robot which is based on Raspberry Pi. This robot is as an explorer in the maze. It needs to find a path from the start position to the end position. 
+\section{Statement of Deliverables}
+
+\section{Conduct of Project and Plan}
+
+
+
+
+
+\end{document}
+
