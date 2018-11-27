@@ -83,10 +83,19 @@
 \chapter{Summary of Proposal}\label{cpt:sop}
 
 \section{Project Description}
-Now more and more people are supposed to learn knowledge about programming. However, learning programming can sometimes become boring that cause learners give up halfway.
-Therefore, this project develops a maze game for those who wish to learn programming knowledge. Users can learn programming knowledge by playing games at the same time.
+Now more and more people are supposed to learn knowledge about programming. However, learning programming can sometimes become boring that causes learners give up halfway.
+This project develops a maze game for those people who wish to learn programming knowledge. Users can learn programming knowledge by playing games at the same time.
 
-In this project, there is a robot which is based on Raspberry Pi. This robot is as an explorer in the maze. It needs to find a path from the start position to the end position. 
+In this project, there is a robot which is based on Raspberry Pi. This robot is to be an explorer in the maze and needs to find a path from the start position to the end position.
+To run out of the maze, robot is supposed to have an algorithm to execute. This project aims to design a maze solving algorithm and achieves the algorithm on the robot.
+In addition to this, the code programmed in this project also alows the users to design their own algorithm and execute it on robot. Users modify the codes according to algorithm designed and test it in the real maze, which achieves the aim of programming education.
+
+Many algorithms such as wall follower, Pledge algorithm \cite{Klein:2011hi}, and Trémaux's algorithm \cite{Anonymous:2007ch}, were invented specially to deal with the maze solving problem, and each of them have their own strengths and weaknesses.
+Besides, a maze can be viewed as a tree or graph, some algorithms used in graph theory also have the ability to solve the maze solving algorithm. One of them is Depth-first search algorithm, it is used to traverse the tree or graph data structure. Therefore, through the Depth-first algorithm, the maze can be traversed by the robot and the path from orgin to destination eventually can be found.
+
+This project are supposed to develop a maze solving algorithm based on Depth-first search algorithm and work accurately on the robot in the real maze.
+
+
 \section{Statement of Deliverables}
 
 \section{Conduct of Project and Plan}
@@ -94,6 +103,10 @@ In this project, there is a robot which is based on Raspberry Pi. This robot is 
 
 
 
+% 参考文献列表，请打开 reference.bib 文件添加 bibtex 格式的参考文献
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
+\addcontentsline{toc}{chapter}{Bibliography}
 
 \end{document}
 
