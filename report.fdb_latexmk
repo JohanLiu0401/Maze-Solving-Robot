@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex report"] 1543310967 "report.aux" "report.bbl" "report" 1543311310
+["bibtex report"] 1543496383 "report.aux" "report.bbl" "report" 1543496541
   "./IEEEtran.bst" 1543137456 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "reference.bib" 1543310796 590 d7a60ad632a580b4b0cd0443bcf4612a ""
-  "report.aux" 1543311129 689 561a17e6066791d93da593545d5c9c2a ""
+  "reference.bib" 1543496045 591 a18d6c6fb146b082882e4cb136aaa151 ""
+  "report.aux" 1543496541 1176 e23a6826a1d50ce1b583320867232aab ""
   (generated)
-  "report.bbl"
   "report.blg"
-["pdflatex"] 1543311128 "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" "report.pdf" "report" 1543311310
-  "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" 1543311310 6717 7cec8ef31daf5681917dc24bfe50c2d5 ""
+  "report.bbl"
+["pdflatex"] 1543496540 "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" "report.pdf" "report" 1543496541
+  "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" 1543496540 8484 02a5a19401962d745ff1768b9a354d3d ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1480098689 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -135,11 +135,11 @@
   "eeereport.cls" 1543137456 4597 bb0c6fc5f7bbc2c83fe02aa4b4c0dfe2 ""
   "fig/xjtlu_logo_bw.pdf" 1543137456 61223 fa9c8a5f1723cd4edb37cb757eb424bf ""
   "psfig.sty" 1543137456 28879 b7138842aa065aeab12c31a9acaf7ee8 ""
-  "report.aux" 1543311129 689 561a17e6066791d93da593545d5c9c2a ""
-  "report.bbl" 1543310967 1229 9896df17a8286a3c332454723c9a91a7 "bibtex report"
-  "report.tex" 1543311310 6717 7cec8ef31daf5681917dc24bfe50c2d5 ""
+  "report.aux" 1543496541 1176 e23a6826a1d50ce1b583320867232aab ""
+  "report.bbl" 1543496384 1229 9896df17a8286a3c332454723c9a91a7 "bibtex report"
+  "report.tex" 1543496540 8484 02a5a19401962d745ff1768b9a354d3d ""
   "xjtlu_cover.tex" 1543137456 785 6a3b80ee86051ef585ff24bc5d7ca30e ""
   (generated)
-  "report.aux"
   "report.log"
+  "report.aux"
   "report.pdf"
