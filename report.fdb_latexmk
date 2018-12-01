@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex report"] 1543496383 "report.aux" "report.bbl" "report" 1543496541
+["bibtex report"] 1543671731 "report.aux" "report.bbl" "report" 1543675946
   "./IEEEtran.bst" 1543137456 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "reference.bib" 1543496045 591 a18d6c6fb146b082882e4cb136aaa151 ""
-  "report.aux" 1543496541 1176 e23a6826a1d50ce1b583320867232aab ""
+  "reference.bib" 1543653792 1280 a6adf08499d1d9bdf1b7b2d2dd51ebe9 ""
+  "report.aux" 1543675946 1729 b831b810dd47be83028092831bc2137d ""
   (generated)
-  "report.blg"
   "report.bbl"
-["pdflatex"] 1543496540 "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" "report.pdf" "report" 1543496541
-  "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" 1543496540 8484 02a5a19401962d745ff1768b9a354d3d ""
+  "report.blg"
+["pdflatex"] 1543675945 "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" "report.pdf" "report" 1543675946
+  "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" 1543675945 11757 ba4c948e6d7a2965486862bbe86f0c4c ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1480098689 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -133,13 +133,14 @@
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1541220181 4220280 2ca78db656a1547629bd5179183b1269 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "eeereport.cls" 1543137456 4597 bb0c6fc5f7bbc2c83fe02aa4b4c0dfe2 ""
+  "fig/fig1.pdf" 1543671586 22749 2357869f9d1a9db9777a5bc81306a0f2 ""
   "fig/xjtlu_logo_bw.pdf" 1543137456 61223 fa9c8a5f1723cd4edb37cb757eb424bf ""
   "psfig.sty" 1543137456 28879 b7138842aa065aeab12c31a9acaf7ee8 ""
-  "report.aux" 1543496541 1176 e23a6826a1d50ce1b583320867232aab ""
-  "report.bbl" 1543496384 1229 9896df17a8286a3c332454723c9a91a7 "bibtex report"
-  "report.tex" 1543496540 8484 02a5a19401962d745ff1768b9a354d3d ""
+  "report.aux" 1543675946 1729 b831b810dd47be83028092831bc2137d ""
+  "report.bbl" 1543671731 1746 79265dde2b853addfe91cf9179daee17 "bibtex report"
+  "report.tex" 1543675945 11757 ba4c948e6d7a2965486862bbe86f0c4c ""
   "xjtlu_cover.tex" 1543137456 785 6a3b80ee86051ef585ff24bc5d7ca30e ""
   (generated)
+  "report.pdf"
   "report.log"
   "report.aux"
-  "report.pdf"

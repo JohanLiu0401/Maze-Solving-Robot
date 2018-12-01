@@ -114,11 +114,37 @@ Besides, since this is a game-based learning project, the feedbacks of users wil
 
 
 \section{Conduct of Project and Plan}
+\subsection{Background}
+As computer and mobile technologies advance, a amount of games for educational purposes have been used among learners of different levels \cite{Proulx:2018fr}. This form of learning is called game-based learning (GBL). It has become the best solution for soft skills learning when traditional learning are homiletic, expensive and difficult to implement.
+Game-based learning aims to balance subjects with gameplay and players' ability to retain and apply subjects to the real world \cite{Ifenthaler:2012tn}. Children prefers to cost much time on playing, and learns steps of digital games. In this way, they can play and learn at the same time.
+
+Games have been used in education for a long time. In the middle ages, noblemen learned stategies of war by using ancient chess game. Until now, a wide range of game-based learning applications are used, such as exploring ancient history with video games, teaching empathy with video games.
+
+% \subsection{Design method} 后面写
+
+\subsection{Implementation}
+This project contains three major components, which are maze robot, algorithm, and maze environment.
+The maze robot is built based on raspberry pi, which can be controlled by software. The maze robot is equiped with multiple types of sensors, such as optical sensors, range sensors and so on. With the sensors, maze robot has the ability to achieve wall detection. The robot manufacturer provides the API of robot action, which can be used to realize actions of robot, such as moving, making a turn.
+The algorithm refers to the maze solving algorithm, which has been mentioned in project description. This algorithm is based on Depth-first search and considers the details in actual maze. The algorithm can be modified and improved by the users. Moreover, users are able to design their own maze solving algorithm to replace the pre-configured algorithm, which achieves the aim of game-based learning.
+The third component are maze environment, it contains multiple types and cases. In this project, the mazes are made of actual planks. The robot configured with the maze solving algorithm will be tested in these maze environments.
+\subsection{Plan}
+The schedule of this project is based on the aim of project, which has been described in project description. The Gantt chat is shown as Fig. 1.1. In the whole process of this project, only one member participate in, which is the author of this report.
+The first milestone is to design an algorithm which can guide the robot to out of maze. The first stage takes five weeks and the designed maze solving algorithm is stated in chapter 2 in detail. 
+The second milestone is to implement the basic actions of robot. The robot actions contain basic movement, making a turn, and wall detection. At this stage, the major work relates to programming with the API of robot, the actions programming modules will be output when the second milestone is achieved.
+The third milestone contains two tasks, algorithm implememnt and configuration in robot. In this stage, the designed algorithm in milestone 1 tends to be implemented in python. Once it has been implememnted, it will be configured in actual robot for later stage of tests.
+
+\figpdf{Gantt chart}{fig1}{14cm}
+\subsection{Risk assessment}
+
+
+
 \chapter{Design}\label{cpt:des}
 \section{Design of System}
 \section{Design of evaluation}
 
 \chapter{Review against Plan}
+
+
 
 
 % 参考文献列表，请打开 reference.bib 文件添加 bibtex 格式的参考文献

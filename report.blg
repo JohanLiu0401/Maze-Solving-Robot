@@ -14,45 +14,45 @@ Database file #1: reference.bib
 Warning--empty author in Anonymous:2007ch
 
 Done.
-You've used 2 entries,
+You've used 4 entries,
             4087 wiz_defined-function locations,
-            836 strings with 7544 characters,
-and the built_in function-call counts, 1669 in all, are:
-= -- 127
-> -- 24
-< -- 17
-+ -- 15
-- -- 2
-* -- 93
-:= -- 248
-add.period$ -- 5
-call.type$ -- 2
-change.case$ -- 2
-chr.to.int$ -- 42
-cite$ -- 3
-duplicate$ -- 113
-empty$ -- 134
-format.name$ -- 3
-if$ -- 373
+            850 strings with 7992 characters,
+and the built_in function-call counts, 2940 in all, are:
+= -- 227
+> -- 56
+< -- 25
++ -- 31
+- -- 8
+* -- 155
+:= -- 443
+add.period$ -- 9
+call.type$ -- 4
+change.case$ -- 3
+chr.to.int$ -- 60
+cite$ -- 5
+duplicate$ -- 207
+empty$ -- 245
+format.name$ -- 11
+if$ -- 669
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 15
-newline$ -- 29
-num.names$ -- 1
-pop$ -- 38
+int.to.str$ -- 4
+missing$ -- 33
+newline$ -- 35
+num.names$ -- 3
+pop$ -- 82
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 122
+skip$ -- 218
 stack$ -- 0
-substring$ -- 100
-swap$ -- 93
-text.length$ -- 3
+substring$ -- 143
+swap$ -- 168
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 2
+type$ -- 4
 warning$ -- 1
-while$ -- 9
-width$ -- 3
-write$ -- 40
+while$ -- 15
+width$ -- 5
+write$ -- 58
 (There was 1 warning)
