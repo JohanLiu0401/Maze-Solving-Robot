@@ -88,27 +88,27 @@ This project develops a maze game for those people who wish to learn programming
 
 In this project, there is a robot which is based on Raspberry Pi. This robot is to be an explorer in the maze and needs to find a path from the start position to the end position.
 To run out of the maze, robot is supposed to have an algorithm to execute. This project aims to design a maze solving algorithm and achieves the algorithm on the robot.
-In addition to this, the code programmed in this project also alows the users to design their own algorithm and execute it on robot. Users modify the codes according to algorithm designed and test it in the real maze, which achieves the aim of programming education.
+In addition to this, the code programmed in this project also allows the users to design their own algorithm and execute it on robot. Users modify the codes according to algorithm designed and test it in the real maze, which achieves the aim of programming education.
 
 Many algorithms such as wall follower, Pledge algorithm \cite{Klein:2011hi}, and Trémaux's algorithm \cite{Anonymous:2007ch}, were invented specially to deal with the maze solving problem, and each of them have their own strengths and weaknesses.
-Besides, a maze can be viewed as a tree or graph, some algorithms used in graph theory also have the ability to solve the maze solving algorithm. One of them is Depth-first search algorithm, it is used to traverse the tree or graph data structure. Therefore, through the Depth-first algorithm, the maze can be traversed by the robot and the path from orgin to destination eventually can be found.
+Besides, a maze can be viewed as a tree or graph, some algorithms used in graph theory also have the ability to solve the maze solving algorithm. One of them is Depth-first search algorithm, it is used to traverse the tree or graph data structure. Therefore, through the Depth-first algorithm, the maze can be traversed by the robot and the path from origin to destination eventually can be found.
 
 This project are supposed to develop a maze solving algorithm based on Depth-first search algorithm and work accurately on the robot in the real maze.
 
 \section{Statement of Deliverables}
 % \subsection{Anticipated Documentation}
-The Deliverable upon completion of the project is a software. The softeware is written in pyhton and has multiple functionalities. In the first place, it is responsiable for guiding the robot out of the maze.
-The software is intended to be configured in the robot in advandance. When the robot moves in the maze, software will give the next step command for robot to execute according to maze solving algorithm.
+The Deliverable upon completion of the project is a software. The software is written in python and has multiple functionalities. In the first place, it is responsible for guiding the robot out of the maze.
+The software is intended to be configured in the robot in advance. When the robot moves in the maze, software will give the next step command for robot to execute according to maze solving algorithm.
 Furthermore, the software allows users to modify pre-configured algorithm and design their own maze solving algorithm. The pre-configured algorithm refers to the algorithm based on the Depth-first search algorithm designed in this project.
 After users have learned the pre-configured algorithm, they can improve the default algorithm and run the new algorithm in the robot.
 
 To evaluate the project, the first thing to do is to test if the designed algorithm is able to work accurately in maze solving problem. More specifically, the robot pre-configured with the software will be tested in multiple different mazes.
 In all tests, the number of getting out of the maze will be recorded. By calculating the success probability, the project will be measured if it can solve the maze problem.
-Besides, since this is a game-based learning project, the feedbacks of users will be collected. The feedbacks contains multiple aspects:
+Besides, since this is a game-based learning project, the feedbacks of users will be collected. The feedbacks contain multiple aspects:
 \lists{number}{
 	\item Whether users think the game is interesting.
 	\item Whether they think they can learn programming effectively through this game.
-	\item Whether they are satisified with the project.
+	\item Whether they are satisfied with the project.
 	\item What other aspects they think for this project to improve.
 }
 
@@ -118,26 +118,42 @@ Besides, since this is a game-based learning project, the feedbacks of users wil
 As computer and mobile technologies advance, a amount of games for educational purposes have been used among learners of different levels \cite{Proulx:2018fr}. This form of learning is called game-based learning (GBL). It has become the best solution for soft skills learning when traditional learning are homiletic, expensive and difficult to implement.
 Game-based learning aims to balance subjects with gameplay and players' ability to retain and apply subjects to the real world \cite{Ifenthaler:2012tn}. Children prefers to cost much time on playing, and learns steps of digital games. In this way, they can play and learn at the same time.
 
-Games have been used in education for a long time. In the middle ages, noblemen learned stategies of war by using ancient chess game. Until now, a wide range of game-based learning applications are used, such as exploring ancient history with video games, teaching empathy with video games.
+Games have been used in education for a long time. In the middle ages, noblemen learned strategies of war by using ancient chess game. Until now, a wide range of game-based learning applications are used, such as exploring ancient history with video games, teaching empathy with video games.
 
 % \subsection{Design method} 后面写
 
 \subsection{Implementation}
 This project contains three major components, which are maze robot, algorithm, and maze environment.
-The maze robot is built based on raspberry pi, which can be controlled by software. The maze robot is equiped with multiple types of sensors, such as optical sensors, range sensors and so on. With the sensors, maze robot has the ability to achieve wall detection. The robot manufacturer provides the API of robot action, which can be used to realize actions of robot, such as moving, making a turn.
+The maze robot is built based on raspberry pi, which can be controlled by software. The maze robot is equipped with multiple types of sensors, such as optical sensors, range sensors and so on. With the sensors, maze robot has the ability to achieve wall detection. The robot manufacturer provides the API of robot action, which can be used to realize actions of robot, such as moving, making a turn.
 The algorithm refers to the maze solving algorithm, which has been mentioned in project description. This algorithm is based on Depth-first search and considers the details in actual maze. The algorithm can be modified and improved by the users. Moreover, users are able to design their own maze solving algorithm to replace the pre-configured algorithm, which achieves the aim of game-based learning.
 The third component are maze environment, it contains multiple types and cases. In this project, the mazes are made of actual planks. The robot configured with the maze solving algorithm will be tested in these maze environments.
-\subsection{Plan}
+
+\subsection{Project Plan}
 The schedule of this project is based on the aim of project, which has been described in project description. The Gantt chat is shown as Fig. 1.1. In the whole process of this project, only one member participate in, which is the author of this report.
 The first milestone is to design an algorithm which can guide the robot to out of maze. The first stage takes five weeks and the designed maze solving algorithm is stated in chapter 2 in detail. 
 The second milestone is to implement the basic actions of robot. The robot actions contain basic movement, making a turn, and wall detection. At this stage, the major work relates to programming with the API of robot, the actions programming modules will be output when the second milestone is achieved.
-The third milestone contains two tasks, algorithm implememnt and configuration in robot. In this stage, the designed algorithm in milestone 1 tends to be implemented in python. Once it has been implememnted, the realted code will be configured in actual robot for later stage of tests. 
-Then, to achieve the milestone of test, the robot configured with releated algorithm code will be testd in actual maze environments. Tests are intended to carried out in different mazes for multiple times. The success rate of goal achieving will be counted.
+The third milestone contains two tasks, algorithm implementation and configuration in robot. In this stage, the designed algorithm in milestone 1 tends to be implemented in python. Once it has been implemented, the related code will be configured in actual robot for later stage of tests. 
+Then, to achieve the milestone of test, the robot configured with related algorithm code will be tested in actual maze environments. Tests are intended to carry out in different mazes for multiple times. The success rate of goal achieving will be counted.
 The last milestone are feedback collection and documentation. At this stage, multiple users try out the delivered product and feedbacks will be collected. In the end, the documentation of this project is supposed to be completed.
 \figpdf{Gantt chart}{fig1}{14cm}
+
 \subsection{Risk assessment}
+The major possible risks to meet and aversion measures are shown in Table 1.1.
 
-
+\begin{table}[h]
+\label{tab:tab1}
+\centering
+\caption{ Title Of Table }
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{ | m{2cm} | m{3cm} | c | c | m{3cm} |} 
+\hline Risk & Description & Probability & Severity & Actions to Minimize Risk \\ 
+\hline Robot break down & The hardware of robot breaks down in the process of project development. & Moderate & Catastrophic & During the development of project, developer takes care of project equipment. Besides, developer can prepare a spare robot if development funds are adequate. \\ 
+\hline Schedule risk & Due to assignments in other courses, the project fails to run as schedule expected. & Likely & Major & Try to finish ahead of time, and balance well with other courses. \\ 
+\hline Technologies applied failure & The knowledge of controlling robot needs large amount of learning, developer fails to learn in time. & Likely & Major & Developer specially arranges time for learning new techniques. \\ 
+\hline 
+\end{tabular} 
+\end{table}
 
 \chapter{Design}\label{cpt:des}
 \section{Design of System}
