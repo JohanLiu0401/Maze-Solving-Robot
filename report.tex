@@ -18,6 +18,7 @@
 \documentclass[11pt,times,oneside,openright,hardcopy]{eeereport}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % [封面选项]
 %
@@ -36,7 +37,6 @@
 	\coverline{Date}{$25^{th}$~/~Nov~/~2018}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 页面设定
@@ -115,10 +115,21 @@ Besides, since this is a game-based learning project, the feedbacks of users wil
 
 \section{Conduct of Project and Plan}
 \subsection{Background}
-As computer and mobile technologies advance, a amount of games for educational purposes have been used among learners of different levels \cite{Proulx:2018fr}. This form of learning is called game-based learning (GBL). It has become the best solution for soft skills learning when traditional learning are homiletic, expensive and difficult to implement.
-Game-based learning aims to balance subjects with gameplay and players' ability to retain and apply subjects to the real world \cite{Ifenthaler:2012tn}. Children prefers to cost much time on playing, and learns steps of digital games. In this way, they can play and learn at the same time.
+As computer and mobile technologies advance, a amount of games for educational purposes have been used among learners of different levels \cite{Proulx:2018fr}. 
+This form of learning is called game-based learning (GBL). It has become the best solution for soft skills learning when traditional learning are homiletic, expensive and difficult to implement.
+Game-based learning aims to balance subjects with gameplay and players' ability to retain and apply subjects to the real world \cite{Ifenthaler:2012tn}. 
+Children prefers to cost much time on playing, and learns steps of digital games. In this way, they can play and learn at the same time.
 
-Games have been used in education for a long time. In the middle ages, noblemen learned strategies of war by using ancient chess game. Until now, a wide range of game-based learning applications are used, such as exploring ancient history with video games, teaching empathy with video games.
+Games have been used in education for a long time. In the middle ages, noblemen learned strategies of war by using ancient chess game. 
+During the Civil War, volunteers from Rhode Island played American Kriegsspiel, which had originally been created in 1812 for training Prussian officers-of-war.
+In order to train for Prussian officers-of-war, American Kriegsspiel was invented in 1812 \cite{Fenn:2014dm}.
+Until now, a wide range of game-based learning applications are used, such as exploring ancient history with video games,
+teaching empathy with video games \cite{Prensky:2007wt}.
+
+The development of sophisticated digital gameing technologies in recent years has generated an \$8.1B industry around for educational purposes \cite{An:2018uv}. 
+A lot of research on how game-based learning can enhance teaching are carried out. For instance, in order to encourage pupils to read frequently and
+improve their reading skills effectively, the reasearchers contains a game-like exercise in a prototype using Multimedia Fusion Developer 2.
+The game-like exercise is that foam volcano character spewes bubbles includes letters and words \cite{AdrirScott:2013ui}. Then, children must read them loudly to open up.
 
 % \subsection{Design method} 后面写
 
@@ -135,9 +146,10 @@ The second milestone is to implement the basic actions of robot. The robot actio
 The third milestone contains two tasks, algorithm implementation and configuration in robot. In this stage, the designed algorithm in milestone 1 tends to be implemented in python. Once it has been implemented, the related code will be configured in actual robot for later stage of tests. 
 Then, to achieve the milestone of test, the robot configured with related algorithm code will be tested in actual maze environments. Tests are intended to carry out in different mazes for multiple times. The success rate of goal achieving will be counted.
 The last milestone are feedback collection and documentation. At this stage, multiple users try out the delivered product and feedbacks will be collected. In the end, the documentation of this project is supposed to be completed.
-\figpdf{Gantt chart}{fig1}{14cm}
 
-\subsection{Risk assessment}
+\figpdf{Gantt chart of project}{fig1}{14cm}
+
+\subsection{Risk Assessment}
 The major possible risks to meet and aversion measures are shown in Table 1.1.
 
 \begin{table}[h]
@@ -156,12 +168,65 @@ The major possible risks to meet and aversion measures are shown in Table 1.1.
 \end{table}
 
 \chapter{Design}\label{cpt:des}
-\section{Design of System}
-\section{Design of evaluation}
+\section{Design methodology}
+This development of this project is about to adopt incremental model. The product will be designed, implemented and tested incrementally, until the project is completed. The product consists of multiple components, each of which is designed and built separately.
+The increments refered to a series of releases, and each increment will provides more functionalities to users \cite{Bell:2016vq}. After the first increment, a version which can be used by the users is delivered. Then, the plan for next increment is developed based on user feedback.
+This process will continues until the complete product is delivered.
+%这里要插入图片
+
+\section{Data Structure}
+The MSA use stack to store the current path of robot. Stack is chosen because its property of First-In Last-Out (FILO). The first element put in the stack will be the last element to be pop. After the robot reaches the destination, the position list poped by the stack is exactly the path from start position to end position. 
+Besides, tree structure is also can used in this project for addtional path drawing functionality. While robot is moving in the maze, the position of robot can be recorded in tree structure as nodes. Once the algorithm execute completely, all paths in the maze have been recorded in tree structure.
+
+
+\section{Algorithm Design}
+The designed maze solving algorithm MSA in this project use the recursive models. In each recursive step, it will detect if the destination has been reached. If not, MSA will choose the next available position to move. 
+The search for available direction is carried out in the order of left, positive, right and back. If it exists available exploration direction, the robot will move to the next point in that available direction and regard this position as new start position.
+In this process, MSA will guide robot explore as deep as it can until the current path of exploration is not available. MSA will explore another path from last crosswise. The whole process is repeated until the robot reaches the destination. 
+
+The pseudocode and flow chart of MSA is shown as Fig. 2.1 and Fig. 2.2:
+
+\figpdf{Pseudocode of MSA}{fig2}{14cm} 
+
+\figpdf{Flow chart of MSA}{fig3}{12cm}
+
+\section{Evaluation Design}
+
+\subsection{Test}
+In the test stage, The first task is to perform functional testing from low level to high level. 
+First, the each unit in this project is intended to be tested. Developer will first validate the correctness of each unit and check if the codes are in a canonical format. 
+Then, the functionality of each module will be test. For instance, the action module of robot will be test interms of moving, making a turn.
+The third stage is intergration test. The functionality of several modules that depend on each other will be tested.
+Finally, the function of the entire project is supposed to test. The robot configured with designed maze solving algorithm (MSA) should operate in the actual maze.
+The tests will be repeated multiple times in different maze environment. In each type of maze, tester continues to test and record the time and the solution path.
+In the end, the succeess rate of experiments will be recorded.
+
+In addition, according to project specification, this project allows users to modify the pre-configured algorithm and design their own algorithm. To test this requirement, some programming enthusiasts are intended to be invited to use this product.
+They modify the program code and try other algorithms, then the feedbacks which mentioned in project specification are collected.
+
+To evaluate the project, the first is to evaluate if this project satisfies the project specification.
+The aims proposed in the project specification:
+\lists{number}{
+	\item Design a maze solving algorithm and work accurately in robot.
+	\item The delivered product allows users design their own algorithms and implement in robot.
+}
+
+\subsection{Design a maze solving algorithm and work accurately in robot}
+In the previous test stage, tester carry out a lot of experiments and the results have been recorded. The evaluation of the designed algorithm MSA will be based on its success rate, which is calculated as:
+\figpdf{Succeess rate equation}{equ1}{12cm}
+
+\subsection{The delivered product allows users design their own algorithms and implement in robot}
+To validate this aim, the feedbacks from the users which have been collected in previous test stage will be considered:
+\lists{number}{
+\item is it user-friendly to modify the program code?
+\item Whether they are satisfied with programmable functionality.
+}
 
 \chapter{Review against Plan}
+Generally, the process of this project follows the plan Fig.3.1. The work progresses to the point indicated by the red line in the Gantt chart. The first milestone Algorithm Design has been completed and status has been updated. 
+Besides, the Implementation of Robot Basic Actions is under way. The remaining work shown in Gantt chart will be completed in following semester.
 
-
+\figpdf{Flow chart}{fig4}{14cm}
 
 
 % 参考文献列表，请打开 reference.bib 文件添加 bibtex 格式的参考文献

@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex report"] 1543688743 "report.aux" "report.bbl" "report" 1543689848
+["bibtex report"] 1544103102 "report.aux" "report.bbl" "report" 1544103260
   "./IEEEtran.bst" 1543137456 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "reference.bib" 1543653792 1280 a6adf08499d1d9bdf1b7b2d2dd51ebe9 ""
-  "report.aux" 1543689848 1863 f3c225140be0605443b85719ce612f32 ""
+  "reference.bib" 1544103058 2572 4ce24ab0619547fb395980304b22fa03 ""
+  "report.aux" 1544103260 3152 ab50a4f4d04b7933eea9f322172a0c29 ""
   (generated)
   "report.bbl"
   "report.blg"
-["pdflatex"] 1543689848 "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" "report.pdf" "report" 1543689848
-  "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" 1543689848 13361 addecbd9af52d76a9671df1ca36041db ""
+["pdflatex"] 1544103259 "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" "report.pdf" "report" 1544103260
+  "/Users/zhiyongliu/Desktop/Final-Year-Project/report.tex" 1544103259 19229 4c5f1a44f0b157aaa626337968e12c38 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1480098689 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -133,14 +133,18 @@
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1541220181 4220280 2ca78db656a1547629bd5179183b1269 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "eeereport.cls" 1543137456 4597 bb0c6fc5f7bbc2c83fe02aa4b4c0dfe2 ""
+  "fig/equ1.pdf" 1543753483 24816 1803849d9be7493180343b30ed890900 ""
   "fig/fig1.pdf" 1543671586 22749 2357869f9d1a9db9777a5bc81306a0f2 ""
+  "fig/fig2.pdf" 1543740553 118762 ceace7b06e66dfdca8b5155ead07cef1 ""
+  "fig/fig3.pdf" 1543741151 23907 e975d82eac6933f62d16e47a7dd68315 ""
+  "fig/fig4.pdf" 1543757526 121050 cbfa5e2835e5f09aab3129fc15f8124d ""
   "fig/xjtlu_logo_bw.pdf" 1543137456 61223 fa9c8a5f1723cd4edb37cb757eb424bf ""
   "psfig.sty" 1543137456 28879 b7138842aa065aeab12c31a9acaf7ee8 ""
-  "report.aux" 1543689848 1863 f3c225140be0605443b85719ce612f32 ""
-  "report.bbl" 1543688743 1746 79265dde2b853addfe91cf9179daee17 "bibtex report"
-  "report.tex" 1543689848 13361 addecbd9af52d76a9671df1ca36041db ""
+  "report.aux" 1544103260 3152 ab50a4f4d04b7933eea9f322172a0c29 ""
+  "report.bbl" 1544103102 2624 86cfd31cdf0a96ccb7b153a4395a651e "bibtex report"
+  "report.tex" 1544103259 19229 4c5f1a44f0b157aaa626337968e12c38 ""
   "xjtlu_cover.tex" 1543137456 785 6a3b80ee86051ef585ff24bc5d7ca30e ""
   (generated)
-  "report.log"
   "report.aux"
+  "report.log"
   "report.pdf"
