@@ -30,6 +30,7 @@
 \title{Specification and Design Report}
 \subtitle{}
 \covercontent{
+	\coverline{Title}{Maze solving game for robot based on Raspberry Pi}
 	\coverline{Author}{Zhiyong Liu}
 	% \coverline{Partner}{Your Partner}
 	\coverline{Module}{CSE305}
@@ -114,7 +115,7 @@ Besides, since this is a game-based learning project, the feedbacks of users wil
 
 
 \section{Conduct of Project and Plan}
-\subsection{Background}
+\subsection{Background and Related Work}
 As computer and mobile technologies advance, a amount of games for educational purposes have been used among learners of different levels \cite{Proulx:2018fr}. 
 This form of learning is called game-based learning (GBL). It has become the best solution for soft skills learning when traditional learning are homiletic, expensive and difficult to implement.
 Game-based learning aims to balance subjects with gameplay and players' ability to retain and apply subjects to the real world \cite{Ifenthaler:2012tn}. 
@@ -171,11 +172,12 @@ The major possible risks to meet and aversion measures are shown in Table 1.1.
 \section{Design methodology}
 This development of this project is about to adopt incremental model. The product will be designed, implemented and tested incrementally, until the project is completed. The product consists of multiple components, each of which is designed and built separately.
 The increments refered to a series of releases, and each increment will provides more functionalities to users \cite{Bell:2016vq}. After the first increment, a version which can be used by the users is delivered. Then, the plan for next increment is developed based on user feedback.
-This process will continues until the complete product is delivered.
+This process will continues until the complete product is delivered. The general process of increment model is shown in Fig. 2.1.
+\figpdf{Increment model}{fig5}{14cm}
 %这里要插入图片
 
 \section{Data Structure}
-The MSA use stack to store the current path of robot. Stack is chosen because its property of First-In Last-Out (FILO). The first element put in the stack will be the last element to be pop. After the robot reaches the destination, the position list poped by the stack is exactly the path from start position to end position. 
+The MSA uses stack to store the current path of robot. Stack is chosen because its property of First-In Last-Out (FILO). The first element put in the stack will be the last element to be pop. After the robot reaches the destination, the position list poped by the stack is exactly the path from start position to end position. 
 Besides, tree structure is also can used in this project for addtional path drawing functionality. While robot is moving in the maze, the position of robot can be recorded in tree structure as nodes. Once the algorithm execute completely, all paths in the maze have been recorded in tree structure.
 
 
@@ -184,22 +186,23 @@ The designed maze solving algorithm MSA in this project use the recursive models
 The search for available direction is carried out in the order of left, positive, right and back. If it exists available exploration direction, the robot will move to the next point in that available direction and regard this position as new start position.
 In this process, MSA will guide robot explore as deep as it can until the current path of exploration is not available. MSA will explore another path from last crosswise. The whole process is repeated until the robot reaches the destination. 
 
-The pseudocode and flow chart of MSA is shown as Fig. 2.1 and Fig. 2.2:
+The pseudocode and flow chart of MSA is shown as Fig. 2.1 and Fig. 2.2 accordingly:
 
-\figpdf{Pseudocode of MSA}{fig2}{14cm} 
+\figpdf{Pseudocode of MSA}{fig2}{15cm} 
 
-\figpdf{Flow chart of MSA}{fig3}{12cm}
+\figpdf{Flow chart of MSA}{fig3}{16cm}
+
 
 \section{Evaluation Design}
 
 \subsection{Test}
-In the test stage, The first task is to perform functional testing from low level to high level. 
-First, the each unit in this project is intended to be tested. Developer will first validate the correctness of each unit and check if the codes are in a canonical format. 
+In the test stage, The primary task is to perform functional testing from low level to high level. 
+First, the each unit in this project is intended to be tested. Developer will first validate the correctness of each unit and check whether the codes are in a canonical format. 
 Then, the functionality of each module will be test. For instance, the action module of robot will be test interms of moving, making a turn.
-The third stage is intergration test. The functionality of several modules that depend on each other will be tested.
-Finally, the function of the entire project is supposed to test. The robot configured with designed maze solving algorithm (MSA) should operate in the actual maze.
-The tests will be repeated multiple times in different maze environment. In each type of maze, tester continues to test and record the time and the solution path.
-In the end, the succeess rate of experiments will be recorded.
+The third stage is intergration testing. The functionality of several modules that depend on each other will be tested.
+Finally, the function of the entire project is supposed to test. The robot configured with designed maze solving algorithm (MSA) should operate accurately in the actual maze in this stage.
+The tests will be repeated multiple times in different maze environment. In each type of maze, tester continues to test, and record the time and the solution path.
+In the end, the succeess rate of experiments will be recorded and used to evaluated.
 
 In addition, according to project specification, this project allows users to modify the pre-configured algorithm and design their own algorithm. To test this requirement, some programming enthusiasts are intended to be invited to use this product.
 They modify the program code and try other algorithms, then the feedbacks which mentioned in project specification are collected.
@@ -212,7 +215,8 @@ The aims proposed in the project specification:
 }
 
 \subsection{Design a maze solving algorithm and work accurately in robot}
-In the previous test stage, tester carry out a lot of experiments and the results have been recorded. The evaluation of the designed algorithm MSA will be based on its success rate, which is calculated as:
+In the previous test stage, tester carried out a lot of experiments and the results have been recorded. 
+The evaluation of the designed algorithm MSA will be based on its success rate, which is calculated as:
 \figpdf{Succeess rate equation}{equ1}{12cm}
 
 \subsection{The delivered product allows users design their own algorithms and implement in robot}
