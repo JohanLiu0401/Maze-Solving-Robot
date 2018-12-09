@@ -232,6 +232,9 @@ INPUT ./fig/fig2.pdf
 INPUT fig/fig3.pdf
 INPUT ./fig/fig3.pdf
 INPUT ./fig/fig3.pdf
+INPUT fig/fig6.pdf
+INPUT ./fig/fig6.pdf
+INPUT ./fig/fig6.pdf
 INPUT fig/equ1.pdf
 INPUT ./fig/equ1.pdf
 INPUT ./fig/equ1.pdf

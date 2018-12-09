@@ -91,8 +91,8 @@ In this project, there is a robot which is based on Raspberry Pi. This robot is 
 To run out of the maze, robot is supposed to have an algorithm to execute. This project aims to design a maze solving algorithm and achieves the algorithm on the robot.
 In addition to this, the code programmed in this project also allows the users to design their own algorithm and execute it on robot. Users modify the codes according to algorithm designed and test it in the real maze, which achieves the aim of programming education.
 
-Many algorithms such as wall follower, Pledge algorithm \cite{Klein:2011hi}, and Trémaux's algorithm \cite{Anonymous:2007ch}, were invented specially to deal with the maze solving problem, and each of them have their own strengths and weaknesses.
-Besides, a maze can be viewed as a tree or graph, some algorithms used in graph theory also have the ability to solve the maze solving algorithm. One of them is Depth-first search algorithm, it is used to traverse the tree or graph data structure. Therefore, through the Depth-first algorithm, the maze can be traversed by the robot and the path from origin to destination eventually can be found.
+Many algorithms such as wall follower \cite{BullenIV:2009vv}, Pledge algorithm \cite{Klein:2011hi}, and Trémaux's algorithm \cite{Anonymous:2007ch}, were invented specially to deal with the maze solving problem, and each of them have their own strengths and weaknesses.
+Besides, a maze can be viewed as a tree or graph, some algorithms used in graph theory also have the ability to solve the maze solving algorithm. One of them is Depth-first search algorithm \cite{Braendeland:2015wf}, it is used to traverse the tree or graph data structure. Therefore, through the Depth-first algorithm, the maze can be traversed by the robot and the path from origin to destination eventually can be found.
 
 This project are supposed to develop a maze solving algorithm based on Depth-first search algorithm and work accurately on the robot in the real maze.
 
@@ -127,10 +127,10 @@ In order to train for Prussian officers-of-war, American Kriegsspiel was invente
 Until now, a wide range of game-based learning applications are used, such as exploring ancient history with video games,
 teaching empathy with video games \cite{Prensky:2007wt}.
 
-The development of sophisticated digital gameing technologies in recent years has generated an \$8.1B industry around for educational purposes \cite{An:2018uv}. 
+The development of sophisticated digital game technologies in recent years has generated an \$8.1B industry around for educational purposes \cite{An:2018uv}. 
 A lot of research on how game-based learning can enhance teaching are carried out. For instance, in order to encourage pupils to read frequently and
 improve their reading skills effectively, the reasearchers contains a game-like exercise in a prototype using Multimedia Fusion Developer 2.
-The game-like exercise is that foam volcano character spewes bubbles includes letters and words \cite{AdrirScott:2013ui}. Then, children must read them loudly to open up.
+The game-like exercise is that foam volcano character spews bubbles includes letters and words \cite{AdrirScott:2013ui}. Then, children must read them loudly to open up.
 
 % \subsection{Design method} 后面写
 
@@ -171,18 +171,18 @@ The major possible risks to meet and aversion measures are shown in Table 1.1.
 \chapter{Design}\label{cpt:des}
 \section{Design methodology}
 This development of this project is about to adopt incremental model. The product will be designed, implemented and tested incrementally, until the project is completed. The product consists of multiple components, each of which is designed and built separately.
-The increments refered to a series of releases, and each increment will provides more functionalities to users \cite{Bell:2016vq}. After the first increment, a version which can be used by the users is delivered. Then, the plan for next increment is developed based on user feedback.
+The increments refer to a series of releases, and each increment will provides more functionalities to users \cite{Bell:2016vq}. After the first increment, a version which can be used by the users is delivered. Then, the plan for next increment is developed based on user feedback.
 This process will continues until the complete product is delivered. The general process of increment model is shown in Fig. 2.1.
 \figpdf{Increment model}{fig5}{14cm}
 %这里要插入图片
 
 \section{Data Structure}
-The MSA uses stack to store the current path of robot. Stack is chosen because its property of First-In Last-Out (FILO). The first element put in the stack will be the last element to be pop. After the robot reaches the destination, the position list poped by the stack is exactly the path from start position to end position. 
-Besides, tree structure is also can used in this project for addtional path drawing functionality. While robot is moving in the maze, the position of robot can be recorded in tree structure as nodes. Once the algorithm execute completely, all paths in the maze have been recorded in tree structure.
+The MSA uses stack to store the current path of robot and record the positions of crosses. Stack is chosen because its property of First-In Last-Out (FILO) \cite{Roser:2015ez}. The first element put in the stack will be the last element to be pop. After the robot reaches the destination, the position list popped by the stack is exactly the path from start position to end position. 
+Besides, tree structure is also can used in this project for additional path drawing functionality. While robot is moving in the maze, the position of robot can be recorded in tree structure as nodes. Once the algorithm execute completely, all paths in the maze have been recorded in tree structure.
 
 
 \section{Algorithm Design}
-The designed maze solving algorithm MSA in this project use the recursive models. In each recursive step, it will detect if the destination has been reached. If not, MSA will choose the next available position to move. 
+The designed maze solving algorithm (MSA) in this project use the recursive models \cite{Khoussainov:1995vx}. In each recursive step, it will detect if the destination has been reached. If not, MSA will choose the next available position to move. 
 The search for available direction is carried out in the order of left, positive, right and back. If it exists available exploration direction, the robot will move to the next point in that available direction and regard this position as new start position.
 In this process, MSA will guide robot explore as deep as it can until the current path of exploration is not available. MSA will explore another path from last crosswise. The whole process is repeated until the robot reaches the destination. 
 
@@ -192,22 +192,36 @@ The pseudocode and flow chart of MSA is shown as Fig. 2.1 and Fig. 2.2 according
 
 \figpdf{Flow chart of MSA}{fig3}{16cm}
 
+There is one most important part in this algorithm. This algorithm uses a stack to store crosses while robot is traversing the maze.
+The cross refers to the position which has more than one direction available to move. When robot moves to a new position,
+the robot configured with this algorithm will first test whether this position is a cross. In this three directions: left hand, positive and right hand,
+if there is one more direction for robot to move, this position will be regarded as a cross. Then this position will be checked whether it has existed in the stack cross.
+If this position has not existed in the stack cross, this position will be regarded as a new cross and pushed into the stack cross. This recorded that the robot has reached position once.
+However, if this position has existed in the stack cross, it means that robot has reached this position once in the previous time. 
+Then, the stack current\_path will be popped to the last occurrence of this position. This is because the path from the last time robot got to this position to this time is invalid
+and it will not regarded as one part of the final path from start to end.
+
+\figpdf{Use MSA in a simple maze}{fig6}{12cm}
+
+In the Fig. 2.4, the MSA is used to obtain the path from start to end. The red circle with the number denotes the cross when robot is traversing the maze.
+Due to reach the same position for multiple times, the path denoted by purple line has been popped from the stack current\_path. The purple part is not regard as the part of the final path.
+Therefore, the blue path denotes the final path from start to end.
 
 \section{Evaluation Design}
 
 \subsection{Test}
-In the test stage, The primary task is to perform functional testing from low level to high level. 
+In the test stage, The primary task is to perform functional testing from low level to high level \cite{Reiman:2009ub}. 
 First, the each unit in this project is intended to be tested. Developer will first validate the correctness of each unit and check whether the codes are in a canonical format. 
-Then, the functionality of each module will be test. For instance, the action module of robot will be test interms of moving, making a turn.
-The third stage is intergration testing. The functionality of several modules that depend on each other will be tested.
+Then, the functionality of each module will be test. For instance, the action module of robot will be test in terms of moving, making a turn.
+The third stage is integration testing \cite{Kandl:2014ug}. The functionality of several modules that depend on each other will be tested.
 Finally, the function of the entire project is supposed to test. The robot configured with designed maze solving algorithm (MSA) should operate accurately in the actual maze in this stage.
 The tests will be repeated multiple times in different maze environment. In each type of maze, tester continues to test, and record the time and the solution path.
-In the end, the succeess rate of experiments will be recorded and used to evaluated.
+In the end, the success rate of experiments will be recorded and used to evaluated.
 
 In addition, according to project specification, this project allows users to modify the pre-configured algorithm and design their own algorithm. To test this requirement, some programming enthusiasts are intended to be invited to use this product.
 They modify the program code and try other algorithms, then the feedbacks which mentioned in project specification are collected.
 
-To evaluate the project, the first is to evaluate if this project satisfies the project specification.
+To evaluate the project, the first step is to evaluate if this project satisfies the project specification.
 The aims proposed in the project specification:
 \lists{number}{
 	\item Design a maze solving algorithm and work accurately in robot.
@@ -216,8 +230,8 @@ The aims proposed in the project specification:
 
 \subsection{Design a maze solving algorithm and work accurately in robot}
 In the previous test stage, tester carried out a lot of experiments and the results have been recorded. 
-The evaluation of the designed algorithm MSA will be based on its success rate, which is calculated as:
-\figpdf{Succeess rate equation}{equ1}{12cm}
+The evaluation of the designed algorithm MSA will be based on its success rate, which is calculated as shown in Fig. 2.4:
+\figpdf{Success rate equation}{equ1}{12cm}
 
 \subsection{The delivered product allows users design their own algorithms and implement in robot}
 To validate this aim, the feedbacks from the users which have been collected in previous test stage will be considered:
