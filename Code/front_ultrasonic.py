@@ -39,10 +39,12 @@ def get_front_distance():
 ###################################################
 
 
+
+# 迷宫宽度 32 cm, 小车宽度24cm
 def detect_obstacle():
     dis_send = int(get_front_distance())
     # dis_send = str("%.2f"%dis_send)
-    if dis_send < 300:
+    if dis_send < 10:
         print('Distance: %d cm' % dis_send)
         return True
     else:

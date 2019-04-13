@@ -114,7 +114,7 @@ def get_front_distance():
 def detect_front():
     dis_send = int(get_front_distance())
     # dis_send = str("%.2f"%dis_send)
-    if dis_send < 300:
+    if dis_send < 10:
         print('Obstacle detected on the front: %d cm' % dis_send)
         return True
     else:
@@ -152,7 +152,7 @@ def get_left_distance():
 def detect_left():
     dis_send = int(get_left_distance())
     # dis_send = str("%.2f"%dis_send)
-    if dis_send < 300:
+    if dis_send < 10:
         print('Distance: %d cm' % dis_send)
         return True
     else:
@@ -191,7 +191,7 @@ def get_right_distance():
 def detect_right():
     dis_send = int(get_right_distance())
     # dis_send = str("%.2f"%dis_send)
-    if dis_send < 300:
+    if dis_send < 10:
         print('Distance: %d cm' % dis_send)
         return True
     else:
@@ -220,6 +220,18 @@ def detect_end():
         return False
 
 
+
+
+
+"""电子罗盘模块代码"""
+
+
+# 判断小车方向
+def judge_direction():
+    direction = None
+    return direction
+
+
 # '''
 # 循环检测
 # '''
@@ -238,4 +250,6 @@ def detect_end():
 # print("calculate distance")
 # dis = int(Get_Distence())
 # print ("distance", dis)
+
+
 

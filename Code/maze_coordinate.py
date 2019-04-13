@@ -4,6 +4,7 @@ import sensor as rf
 current_path = 0
 cross = 0
 
+
 class Stack:
     """
     stack
@@ -52,52 +53,72 @@ class Robot:
 
     def __init__(self, x, y):
         self.position = Position(x, y)
-    #
-    # def go_straight(self):
-    #     print("坐标上移")
-    #     self.position.y+1
-    #
-    # def move_down(self):
-    #     print("坐标下移")
-    #     self.position.y-1
-    #
-    # def move_right(self):
-    #     print("坐标右移")
-    #     self.position.x+1
-    #
-    # def move_left(self):
-    #     print("坐标左移")
-    #     self.position.x-1
 
+    def is_not_used(self):
+        pass
+
+    def detect_left(self):
+        self.is_not_used()
+        if rf.detect_left():
+            return True
+        else:
+            return False
+
+    def detect_front(self):
+        self.is_not_used()
+        if rf.detect_front():
+            return True
+        else:
+            return False
+
+    def detect_right(self):
+        self.is_not_used()
+        if rf.detect_right():
+            return True
+        else:
+            return False
 
     def move_forward(self):
-        print("前进")
+        self.is_not_used()
+        print("Move forward")
+        self.calculate_coordinate()
         rf.motor_forward()
-        calculate_coordinate()
 
     def turn_left(self):
-        print("左转")
+        self.is_not_used()
+        print("Turn left")
         rf.motor_turnLeft()
 
     def turn_right(self):
-        print("右转")
+        self.is_not_used()
+        print("Turn Right")
         rf.motor_turnRight()
 
     def retreat(self):
-        print("向后转")
+        self.is_not_used()
+        print("Turn around")
         rf.motor_turnRight()
         rf.motor_turnRight()
 
-    def detect(self):
-        print("探测是否有障碍")
+    def is_not_used(self):
+        pass
+
+    def calculate_coordinate(self):
+        # 对当前方向进行检测，计算坐标的改变
+        direction = rf.judge_direction()
+        if direction == "x_plus":
+            self.position.x += 1
+        elif direction == "x_minus":
+            self.position.x -= 1
+        elif direction == "y_plus":
+            self.position.y += 1
+        elif direction == "y_minus":
+            self.position.y -= 1
+        else:
+            print ("Wrong direction information!")
 
 
-def calculate_coordinate():
-    # 对当前方向进行检测，计算坐标的改变
-    return
-
-
-def cross_check(position):
+def check_cross():
     """检查当前位置是否为路口"""
     counter = 0
 
@@ -131,23 +152,35 @@ def repeat_check(position):
     return arrived
 
 
-def move_available_direction():
+def perform_cross_action():
     global robot
-    available = False
 
     if rf.detect_left():
         robot.turn_left()
         robot.move_forward()
-        available = True
     elif rf.detect_front():
         robot.move_forward()
-        available = True
     elif rf.detect_right():
         robot.turn_right()
         robot.move_forward()
-        available = True
 
-    return available
+
+def perform_not_cross_action():
+    global robot
+
+    if rf.detect_left():
+        robot.turn_left()
+        robot.move_forward()
+    elif rf.detect_front():
+        robot.move_forward()
+    elif rf.detect_right():
+        robot.turn_right()
+        robot.move_forward()
+    else:
+        # 如果没有可移动的方向，倒头前进
+        robot.turn_right()
+        robot.turn_right()
+        robot.move_forward()
 
 
 def perform_action(position):
@@ -155,59 +188,62 @@ def perform_action(position):
 
     # 如果为路口，执行对应动作
     if position in cross:
-        move_available_direction()
+        perform_cross_action()
     else:      # 如果不为路口，寻找可行的地方
-        if move_available_direction():
-            return
-        else:
-            # 如果没有可移动的方向，倒头
-            robot.turn_right()
-            robot.turn_right()
+        perform_not_cross_action()
 
 
-def go_maze(start, end):
+def test_end():
+    """
+    Algorithm function:
+    Detect if the current position is destination
+    """
+    if rf.detect_end():
+        return True
+    else:
+        return False
+
+
+def go_maze(start):
     # 将当前位置入栈
     current_path.push(start)
 
     # 从已记录路径返回当前位置
     current_position = current_path.peek()
 
-    if current_position.is_equal(end):      # 检查当前位置是否为终点
+    if test_end():      # 检查当前位置是否为终点
         print("Reach the end")
         return
     else:
-        # 检查当前位置是否为路口
-        if cross_check(current_position):
-
-            # 检查是否曾经到达过该路口
+        # 检查当前位置是否为路口(这里通过传感器检测)
+        if check_cross():
+            # 如果是路口，检查是否曾经到达过该路口
             if repeat_check(current_position):
-
-                # 出栈到上一次该路口出现的地方
+                # 如果到达过该路口，出栈到上一次该路口出现的地方
                 pop_cross(current_path, current_position)
             else:
-                # 将该路口记录
+                # 如果没有到达过该路口，将该路口记录进cross栈
                 cross.push(current_position)
 
-        next_position = perform_action(current_position)
-        go_maze(next_position, end)
+        perform_action(current_position)
+        next_position = Position(robot.position.x, robot.position.y)
+        go_maze(next_position)
 
 
 robot = Robot()
 current_path = Stack()
 cross = Stack()
 start = Position(0, 0)
-end = Position(5, 5)
-# go_maze(start, end)
+go_maze(start)
 
-current_path.push(start)
-current_path.push(end)
-pop_cross(current_path, start)
+# current_path.push(start)
+# pop_cross(current_path, start)
 # print(current_path.size(), current_path.is_empty())
-print(current_path.peek().print_position())
+# print(current_path.peek().print_position())
 # print(current_path.pop().print_position())
 # print(current_path.peek().print_position())
 # print(current_path.pop().print_position())
-print(current_path.size(), current_path.is_empty())
+# print(current_path.size(), current_path.is_empty())
 
 
 

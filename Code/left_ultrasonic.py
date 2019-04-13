@@ -37,7 +37,7 @@ def get_left_distance():
 def detect_left():
     dis_send = int(get_left_distance())
     # dis_send = str("%.2f"%dis_send)
-    if dis_send < 300:
+    if dis_send < 10:
         print('Distance: %d cm' % dis_send)
         return True
     else:

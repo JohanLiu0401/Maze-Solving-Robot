@@ -21,12 +21,17 @@ GPIO.setup(IR_R, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(IR_L, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
+# 代码测试成功
+
 def detect_end():
     if (GPIO.input(IR_L) == True) & (GPIO.input(IR_R) == True):     # 两侧都检测到黑色区域
+        print ("black")
         return True
     else:
+        print ("not black")
         return False
 
 
 while True:
     detect_end()
+

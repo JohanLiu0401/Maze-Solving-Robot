@@ -39,7 +39,16 @@ yMag = data[4] * 256 + data[5]
 if yMag > 32767 :
 	yMag -= 65536
 
+
+# 判断小车方向
+def judge_direction():
+	direction = None
+
+	return direction
+
+
 # Output data to screen
 print "Magnetic field in X-Axis : %d" %xMag
 print "Magnetic field in Y-Axis : %d" %yMag
 print "Magnetic field in Z-Axis : %d" %zMag
+

@@ -12,7 +12,7 @@ GPIO.setwarnings(False)
 
 RIGHT_ECHO = 8  # 超声波接收脚位
 RIGHT_TRIG = 11  # 超声波发射脚位
-#
+
 
 ##########超声波模块管脚类型设置#########
 GPIO.setup(RIGHT_TRIG, GPIO.OUT, initial=GPIO.LOW)  # 超声波模块发射端管脚设置trig
@@ -37,7 +37,7 @@ def get_right_distance():
 def detect_right():
     dis_send = int(get_right_distance())
     # dis_send = str("%.2f"%dis_send)
-    if dis_send < 300:
+    if dis_send < 10:
         print('Distance: %d cm' % dis_send)
         return True
     else:
