@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10043ecc-11cb-46a6-aead-b42b3d34fda7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/maze_coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/maze_coordinate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/sensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/sensor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/FYP-Report.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.bbl" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.bbl" afterDir="false" />
@@ -66,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Code/maze_coordinate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+            <state relative-caret-position="215">
+              <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
               <folding>
                 <marker date="1556448669834" expanded="true" signature="95:96" ph="..." />
                 <marker date="1556448669834" expanded="true" signature="1491:1496" ph="..." />
@@ -373,8 +370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/maze_coordinate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+        <state relative-caret-position="215">
+          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
           <folding>
             <marker date="1556448669834" expanded="true" signature="95:96" ph="..." />
             <marker date="1556448669834" expanded="true" signature="1491:1496" ph="..." />
