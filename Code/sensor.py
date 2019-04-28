@@ -238,14 +238,10 @@ def judge_direction():
 # while True:
 #     Send_Distance()
 
-# Motor_Forward()
-# time.sleep(0.5)
-# Motor_Backward()
-# time.sleep(0.5)
-# Motor_TurnLeft()
-# time.sleep(0.5)
-# Motor_TurnRight()
-# timeout.sleep(0.5)
+while True:
+    motor_forward()
+    time.sleep(0.5)
+
 
 # print("calculate distance")
 # dis = int(Get_Distence())

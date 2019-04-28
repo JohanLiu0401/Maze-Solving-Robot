@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10043ecc-11cb-46a6-aead-b42b3d34fda7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/compass.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/compass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/front_ultrasonic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/front_ultrasonic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/infrared.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/infrared.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/left_ultrasonic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/left_ultrasonic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/maze_coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/maze_coordinate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/right_ultrasonic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/right_ultrasonic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/sensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/sensor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/source.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/FYP-Report.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.bbl" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.bbl" afterDir="false" />
@@ -21,45 +15,6 @@
       <change beforePath="$PROJECT_DIR$/Dissertation/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/FYP-Report.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/FYP-Report.synctex.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/FYP-Report.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/IEEEtran.bst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/IEEEtran.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/code/c_test.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/eeereport.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/equ1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/fig1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/fig2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/fig3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/fig4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/fig5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/fig6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/xjtlu_logo_blue.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/xjtlu_logo_bw.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/fig/xjtlu_logo_white.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/material/Gantt Chart.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/material/Risk Assessment.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/material/fig3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/material/pseudocode" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/nomencl.sty" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/psfig.sty" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/reference.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.aux" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.bbl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.blg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.fdb_latexmk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.fls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.sublime-project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.sublime-workspace" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.synctex.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/report.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/spconf.sty" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/xjtlu_cover.tex" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,50 +23,75 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Final_Year_Project$maze_coordinate.coverage" NAME="maze_coordinate Coverage Results" MODIFIED="1556448172236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Code" />
     <SUITE FILE_PATH="coverage/Final_Year_Project$Final_Year_Project.coverage" NAME="Final Year Project Coverage Results" MODIFIED="1554990433639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-59385781">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="10" />
+          <entry key="py" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="10" />
+          <entry key="Python" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="754" />
+          <entry key="py" value="2716" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="754" />
+          <entry key="Python" value="2716" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Code/maze_coordinate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+              <folding>
+                <marker date="1556448669834" expanded="true" signature="95:96" ph="..." />
+                <marker date="1556448669834" expanded="true" signature="1491:1496" ph="..." />
+                <marker date="1556448669834" expanded="true" signature="1520:1830" ph="..." />
+                <marker date="1556448669834" expanded="true" signature="4697:4939" ph="..." />
+                <marker date="1556448669834" expanded="true" signature="4970:5331" ph="..." />
+                <marker date="1556448669834" expanded="true" signature="6421:6430" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>cross_check</find>
+      <find>jud</find>
+      <find>start</find>
     </findStrings>
     <replaceStrings>
       <replace>check_cross</replace>
+      <replace>direction</replace>
+      <replace>position</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -127,6 +107,8 @@
         <option value="$PROJECT_DIR$/Code/right_ultrasonic.py" />
         <option value="$PROJECT_DIR$/Code/compass.py" />
         <option value="$PROJECT_DIR$/Code/sensor.py" />
+        <option value="$PROJECT_DIR$/Code/maze_coordinate-free.py" />
+        <option value="$PROJECT_DIR$/Code/venv/lib/python2.7/site-packages/pip/_internal/commands/list.py" />
         <option value="$PROJECT_DIR$/Code/maze_coordinate.py" />
       </list>
     </option>
@@ -147,6 +129,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,7 +152,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,7 +173,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.maze_coordinate">
     <configuration name="Final Year Project" type="PythonConfigurationType" factoryName="Python">
       <module name="Final-Year-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -214,6 +196,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="maze_coordinate" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Final-Year-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/maze_coordinate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Final Year Project" />
+      <item itemvalue="Python.maze_coordinate" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.maze_coordinate" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -230,8 +243,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3104435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -253,6 +267,29 @@
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3104435" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -268,71 +305,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/source.py">
+    <entry file="file://$PROJECT_DIR$/Code/source.py" />
+    <entry file="file://$PROJECT_DIR$/Code/left_ultrasonic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="113" column="26" lean-forward="true" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
+        <state relative-caret-position="75">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/front_ultrasonic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/right_ultrasonic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding>
-            <element signature="e#47#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/left_ultrasonic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state relative-caret-position="105">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/compass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="46" selection-end-column="20" />
+        <state relative-caret-position="191">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#353#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/front_ultrasonic.py">
+    <entry file="file://$PROJECT_DIR$/Code/maze_coordinate-free.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="592">
+          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
           <folding>
-            <element signature="e#47#70#0" expanded="true" />
+            <marker date="1556444845283" expanded="true" signature="2596:2598" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/RPi/GPIO/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/sensor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="236" column="5" lean-forward="true" selection-start-line="236" selection-start-column="5" selection-end-line="236" selection-end-column="5" />
+        <state relative-caret-position="75">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/maze_coordinate-free.py">
+    <entry file="file://$PROJECT_DIR$/Code/venv/lib/python2.7/site-packages/pip/_internal/commands/list.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="113" />
+        <state relative-caret-position="-3216">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/maze_coordinate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="297">
+          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
           <folding>
-            <marker date="1555162187616" expanded="true" signature="2996:3238" ph="..." />
-            <marker date="1555162187616" expanded="true" signature="3269:3630" ph="..." />
+            <marker date="1556448669834" expanded="true" signature="95:96" ph="..." />
+            <marker date="1556448669834" expanded="true" signature="1491:1496" ph="..." />
+            <marker date="1556448669834" expanded="true" signature="1520:1830" ph="..." />
+            <marker date="1556448669834" expanded="true" signature="4697:4939" ph="..." />
+            <marker date="1556448669834" expanded="true" signature="4970:5331" ph="..." />
+            <marker date="1556448669834" expanded="true" signature="6421:6430" ph="..." />
           </folding>
         </state>
       </provider>

@@ -1,13 +1,15 @@
 #coding:utf-8
 import sensor as rf
 
-current_path = 0
-cross = 0
+current_path = None
+cross = None
+start = None
+robot = None
 
 
 class Stack:
     """
-    stack
+    The Stack Class
     """
 
     def __init__(self):
@@ -48,14 +50,40 @@ class Position:
 
 class Robot:
     """
-    还需要添加机器人移动代码
+    The Robot Class
     """
 
-    def __init__(self, x, y):
-        self.position = Position(x, y)
+    def __init__(self, position):
+        self.position = position
+        self.direction_name = self.set_direction_name()
+        self.direction = self.set_direction()
 
     def is_not_used(self):
         pass
+
+    def set_direction_name(self):
+        self.is_not_used()
+
+        while True:
+            direction_name = input("set the initial direction:\n1. X+\n2. X-\n3. Y+\n4. Y-")
+            if direction_name == "X+" or direction_name == "X-" or direction_name == "Y+" or direction_name == "Y-":
+                break
+            else:
+                print "Invalid direction, enter again!"
+
+        return direction_name
+
+    def set_direction(self):
+        if self.direction_name == "X+":
+            return 0
+        elif self.direction_name == "X-":
+            return 2
+        elif self.direction_name == "Y+":
+            return 1
+        elif self.direction_name == "Y-":
+            return -1
+        else:
+            print "Invalid direction!"
 
     def detect_left(self):
         self.is_not_used()
@@ -81,41 +109,63 @@ class Robot:
     def move_forward(self):
         self.is_not_used()
         print("Move forward")
-        self.calculate_coordinate()
         rf.motor_forward()
+        self.calculate_coordinate()    # Robot move and calculate coordinate
 
     def turn_left(self):
         self.is_not_used()
         print("Turn left")
         rf.motor_turnLeft()
+        self.direction = self.direction + 1
+        self.calculate_direction_name()
 
     def turn_right(self):
         self.is_not_used()
         print("Turn Right")
         rf.motor_turnRight()
-
-    def retreat(self):
-        self.is_not_used()
-        print("Turn around")
-        rf.motor_turnRight()
-        rf.motor_turnRight()
-
-    def is_not_used(self):
-        pass
+        self.direction = self.direction + 1
+        self.calculate_direction_name()
 
     def calculate_coordinate(self):
         # 对当前方向进行检测，计算坐标的改变
-        direction = rf.judge_direction()
-        if direction == "x_plus":
+        if self.direction_name == "X+":
             self.position.x += 1
-        elif direction == "x_minus":
+        elif self.direction_name == "X-":
             self.position.x -= 1
-        elif direction == "y_plus":
+        elif self.direction_name == "Y+":
             self.position.y += 1
-        elif direction == "y_minus":
+        elif self.direction_name == "Y-":
             self.position.y -= 1
         else:
             print ("Wrong direction information!")
+
+    def calculate_direction_name(self):
+        self.test_direction_reset()
+
+        if self.direction == 0:
+            self.direction_name = "X+"
+        elif self.direction == -2 or 2:
+            self.direction_name = "X-"
+        elif self.direction == 1 or -3:
+            self.direction_name = "Y+"
+        elif self.direction == -1 or 3:
+            self.direction_name = "Y-"
+        else:
+            print "invalid direction"
+
+    def test_direction_reset(self):
+        if self.direction == 4:
+            self.direction = 0  # 旋转一圈重置
+        elif self.direction == -4:
+            self.direction = 0  # 旋转一圈重置
+
+
+def init():
+    global current_path, cross, start, robot
+    current_path = Stack()
+    cross = Stack()
+    start = Position(0, 0)
+    robot = Robot(Position(0, 0))
 
 
 def check_cross():
@@ -204,9 +254,9 @@ def test_end():
         return False
 
 
-def go_maze(start):
+def go_maze(position):
     # 将当前位置入栈
-    current_path.push(start)
+    current_path.push(position)
 
     # 从已记录路径返回当前位置
     current_position = current_path.peek()
@@ -230,20 +280,9 @@ def go_maze(start):
         go_maze(next_position)
 
 
-robot = Robot()
-current_path = Stack()
-cross = Stack()
-start = Position(0, 0)
+init()
 go_maze(start)
 
-# current_path.push(start)
-# pop_cross(current_path, start)
-# print(current_path.size(), current_path.is_empty())
-# print(current_path.peek().print_position())
-# print(current_path.pop().print_position())
-# print(current_path.peek().print_position())
-# print(current_path.pop().print_position())
-# print(current_path.size(), current_path.is_empty())
 
 
 
