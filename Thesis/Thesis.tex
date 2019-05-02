@@ -1,0 +1,45 @@
+\documentclass[b5paper,10pt,twoside,parskip=half,numbers=noenddot,bibliography=totocnumbered,listof = totoc]{scrbook}
+\input{formatAndDefs}
+\input{mycommands}
+
+
+\begin{document}
+\pagenumbering{roman}
+\input{TitlePage}
+\frontmatter
+\input{ShortAbstract}
+
+% \cleardoublepage
+% \input{AppendedPapers}
+
+% \cleardoublepage
+% \dominitoc
+% \tableofcontents
+% \cleardoublepage
+% \input{abstract}
+% \cleardoublepage
+% \input{Preface}
+% \cleardoublepage
+% \input{Dedication}
+
+\mainmatter
+
+\part{Description of Thesis}
+\input{chapter_intro}
+\input{chap_Concepts}
+\input{chap_PaperOverview}
+\input{chap_outlook}
+\input{chap_acknowledgements}
+
+\footnotesize
+\bibliography{refs}{} % Reference bib-library file
+\bibliographystyle{unsrt}
+\normalsize
+
+\appendix
+\include{Appendix1}
+
+\part{Appended Papers}
+\input{papers}
+
+\end{document}

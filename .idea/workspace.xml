@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10043ecc-11cb-46a6-aead-b42b3d34fda7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/FYP-Report.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dissertation/FYP-Report.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dissertation/reference.bib" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/reference.bib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.bbl" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.bbl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dissertation/report.blg" beforeDir="false" afterPath="$PROJECT_DIR$/Dissertation/report.blg" afterDir="false" />
@@ -27,23 +30,23 @@
     <session id="-59385781">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="20" />
+          <entry key="py" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="20" />
+          <entry key="Python" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -60,11 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/maze_coordinate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+            <state relative-caret-position="3930">
+              <caret line="262" selection-start-line="262" selection-end-line="262" />
               <folding>
                 <marker date="1556448669834" expanded="true" signature="95:96" ph="..." />
                 <marker date="1556448669834" expanded="true" signature="1491:1496" ph="..." />
@@ -72,6 +75,30 @@
                 <marker date="1556448669834" expanded="true" signature="4697:4939" ph="..." />
                 <marker date="1556448669834" expanded="true" signature="4970:5331" ph="..." />
                 <marker date="1556448669834" expanded="true" signature="6421:6430" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Code/sensor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+              <folding>
+                <element signature="e#47#67#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Code/maze_coordinate-free.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2010">
+              <caret line="134" selection-start-line="134" selection-end-line="134" />
+              <folding>
+                <marker date="1556444845283" expanded="true" signature="2596:2598" ph="..." />
               </folding>
             </state>
           </provider>
@@ -126,7 +153,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,6 +175,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -242,7 +269,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3104435" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3190272" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -328,19 +355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#353#365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/maze_coordinate-free.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
-          <folding>
-            <marker date="1556444845283" expanded="true" signature="2596:2598" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -351,27 +365,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/sensor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Code/venv/lib/python2.7/site-packages/pip/_internal/commands/list.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3216">
           <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/maze_coordinate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+        <state relative-caret-position="3930">
+          <caret line="262" selection-start-line="262" selection-end-line="262" />
           <folding>
             <marker date="1556448669834" expanded="true" signature="95:96" ph="..." />
             <marker date="1556448669834" expanded="true" signature="1491:1496" ph="..." />
@@ -379,6 +383,26 @@
             <marker date="1556448669834" expanded="true" signature="4697:4939" ph="..." />
             <marker date="1556448669834" expanded="true" signature="4970:5331" ph="..." />
             <marker date="1556448669834" expanded="true" signature="6421:6430" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/maze_coordinate-free.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2010">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+          <folding>
+            <marker date="1556444845283" expanded="true" signature="2596:2598" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/sensor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <element signature="e#47#67#0" expanded="true" />
           </folding>
         </state>
       </provider>

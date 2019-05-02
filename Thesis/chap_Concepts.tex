@@ -1,0 +1,219 @@
+\chapter{Concepts and Methods}
+\label{chap:Methodologies}
+\textit{This chapter introduces the theoretical, experimental and computational concepts used throughout the thesis}
+\vspace{2ex}\vfill
+\minitoc
+\newpage
+
+\section{Photophysics of Organic Dyes}
+ The theory of photophysics describes why dyes are fluorescent and what determines their color and their brightness. This section provides a short explanation of the most relevant terms.
+
+ \paragraph{Electronically excited states.} For the sake of simplicity we shall not go into details about the description of electronically excited states. For now it is sufficient to describe an electronic state as the distribution of electrons within the molecular orbitals of the molecule. Another important approximation (which is made in all modern molecular electronic structure calculations) is the Born-Oppenheimer (BO) approximation in which the nuclear and electronic part of the wavefunction is separated.\cite{Born1927} In the BO approximation the electrons are pictured as moving in a constant potential field from all the nuclei and the positions of the electrons are immediately adjusted when a small perturbation is applied to the nuclear coordinates. The BO approximation can successfully be applied to molecules because the electron movement is much faster compared to a nucleus carrying the same momentum due to the high ratio between the masses of the nuclei and electrons.
+
+ \paragraph{Electronic transitions} Since light, or electromagnetic radiation in general, may be characterized as an electromagnetic wave of oscillating magnetic and electric dipoles, it is very intuitive that light interacts with the negatively charged electrons of a molecule. The perturbation caused by the electromagnetic wave may lead to a coupling between the initial ground state and electronic states of higher energies. In order for a transition to occur from the ground state, S$_0$, to an excited state, S$_n$, the energy difference between the two states must be equal to the energy of the incoming photon:
+\begin{equation}
+ \Delta E = E_{\mathrm{S}_n} - E_\mathrm{S_0} = h\nu = h\frac{c_0}{\lambda}
+\end{equation}
+ where $h$ is Planck's constant, $c_0$ is the speed of light and $\lambda$ is the wavelength of the electromagnetic wave. The energy, $\Delta E$, of a given transition is theoretically a $\delta$-function at 0 K for molecules in the gas phase, however, spectral broadening is always observed for molecules in solution due to solvent-chromophore interactions, often combined with excitations into more than one vibrational state.
+
+ \paragraph{The transition dipole moment.} The transition dipole moment, $\vec{\mu}_{n0}$ , is a vector depicting the electric dipole moment associated with the transition between two states. The direction of $\vec{\mu}_{n0}$ gives the polarization of the transition, which determines how the system will interact with a polarized electromagnetic wave, while the square of the magnitude gives the strength of the interaction.
+
+ \paragraph{The oscillator strength.} Another measure of the probability of a transition is the oscillator strength, $f_{n0}$, which can be obtained experimentally directly from the integral of the absorption band:
+\begin{equation}
+ f_{n0} = \frac{4\pi m_e}{3\hbar e^2}\tilde{\nu}_{n0}|\mu_{n0}|^2  = \frac{4.3\cdot10^{-9}}{n}\int \varepsilon(\tilde{\nu})d\tilde{\nu}
+ \label{eq:OscStrength}
+\end{equation}
+ where $m_e$ is the electron mass, $\hbar$ is the reduced Planck constant, $\tilde{\nu}$ is the frequency in cm$^{-1}$ (wavenumbers), $n$ is the refractive index and $\varepsilon(\tilde{\nu})$ is the molar absorptivity describing the frequency dependence of the absorption spectrum. The magnitude of the oscillator strength is roughly speaking $f_{n0}<$0.05 for weakly allowed transitions, such as $(\mathrm{n},\pi^*)$, and $f_{n0}>$0.05 for strongly allowed transitions, such as $(\pi,\pi^*)$. The rate of fluorescence and the magnitude of the oscillator strength of the lowest energy electronic transition are directly proportional.
+
+ \paragraph{Radiative vs. non-radiative decay.} After excitation the molecule normally decays to the lowest vibrational level of S$_1$ where a number of decay processes can occur. If $f_{n0}$ is high, the molecule may decay to S$_0$ via fluorescence. The fluorescence process, however, competes with non-radiative decay processes from S$_1$ such as internal conversion (IC), intersystem crossing (ISC), or a bimolecular quenching process such as FRET. Each process is associated with a rate constant, $k_i$. The process with the largest value of $k_i$ dominates the decay. The competition between the individual decay processes from S$_1$ is described quantitatively by the quantum yield, $\Phi_r$, of process $r$. The quantum yield is defined as
+\begin{equation}
+ \Phi_r = \frac{k_r}{\sum k_i} = k_r \cdot \tau\, ,
+\end{equation}
+ where $\tau$ is the excited state lifetime and the sum is over all decay processes from S$_1$.
+
+ \paragraph{Excited state lifetime.} The lifetime of a dye is the average time the molecule spends in the excited state before emitting a photon and is given by:
+\begin{equation}
+ \tau = \frac{1}{\sum k_i}
+ \label{eq:lifetime}
+\end{equation}
+ Excited molecules typically decay by first order kinetics resulting in an exponential intensity decay of the fluorescence signal following excitation:
+\begin{equation}
+ I(t) = \sum_j \alpha_j \cdot e^{-\frac{t}{\tau_j}}
+ \label{eqn:MultiExponentialHenfald}
+\end{equation}
+ where $\alpha_j$ is the pre-exponential factor and represents the fraction of fluorophores with lifetime $\tau_j$ (\emph{i.e.} $\sum\alpha_j = 1$).
+
+ \paragraph{Temperature-dependent excited state decay.} The non-radiative rate constants may be separated into a temperature dependent and a temperature independent term. If the temperature dependent rate constant is approximated as an Arrhenius expression, then $\Phi_f$ becomes
+\begin{equation}
+ \Phi_f = \frac{k_f}{k_f + k_\mathrm{ISC} + k_\mathrm{IC}} = \frac{k_f}{k_f + k_0 + B\cdot\exp(-\frac{E_a}{RT})}
+ \label{eq:FluorescenceQuantumYield}
+\end{equation}
+ where $k_0$ is the temperature independent non-radiative decay rate constant, $B$ is the frequency factor, $E_a$ is the activation energy of the temperature dependent decay process, $R$ is the gas constant and $T$ is the temperature.
+
+ \paragraph{Potential Energy Surfaces.} The total energy of a molecule is a function of its nuclear and electronic coordinates. This dependency can be represented by a multidimensional surface with the atomic coordinates as variables, which is called the potential energy surface. The individual electronic states of a molecule are each represented by a potential energy surface defined within the BO approximation described above.
+
+\section{FRET - Förster Resonance Energy Transfer}
+\label{sec:FRET}
+ \paragraph{FRET theory.} The rate of dipole-dipole resonance energy transfer between a donor fluorophore and an acceptor chromophore separated by a fixed distance, $r$, was shown by Förster to be\cite{Clegg1996}
+\begin{equation}
+ k_\textrm{T} = \frac{1}{\tau_\mathrm{D}} \cdot
+                \left(\frac{R_0}{r}\right)^6
+ \label{eqn:kT}
+\end{equation}
+ where $\tau_\mathrm{D}$ is the lifetime of D in absence of A, $r$ is the distance separating D and A, and $R_0$ is the critical distance \--- the distance at which the efficiency of energy transfer is 50\%. If the wavelength is in nm then the critical distance is in Ångström given by
+\begin{equation}
+ R_0 = 0.211 \left[\frac{\kappa^2\Phi_\mathrm{D}J(\lambda)}{n^4}\right]^{\frac{1}{6}}
+ \label{eqn:R0_2}
+\end{equation}
+ where $\kappa$ is an orientation factor between the donor and acceptor, $n$ is the refractive index, $\Phi_\mathrm{D}$ is the fluorescence quantum yield of the donor in absence of the acceptor and $J(\lambda)$ is the overlap integral between the normalized emission spectrum of D and the absorption spectrum of A in units of \footnotesize{M}\normalsize$^{-1}$cm$^{-1}$nm$^4$.
+
+ The orientation factor is given by
+\begin{equation}
+ \kappa = \vec{\textbf{e}}_1\cdot\vec{\textbf{e}}_2 - 3(\vec{\textbf{e}}_1\cdot\vec{\textbf{e}}_{12})(\vec{\textbf{e}}_{12}\cdot\vec{\textbf{e}}_2)
+ \label{eq:Kappa}
+\end{equation}
+ Here, $\vec{\textbf{e}}_1$ and $\vec{\textbf{e}}_2$ are the unit vectors of the donor and acceptor transition dipoles and $\vec{\textbf{e}}_{12}$ the unit vector between their centres. The value of $\kappa^2$ can range from 0 to 4 and it is thus highly important to have an accurate estimate of $\kappa^2$ when calculating a distance based on a FRET experiment. The most used $\kappa^2$ is 2/3 corresponding to freely rotating transition moments, however, this value is often misused due to lack of knowledge of the orientation of donor and acceptor chromophores. Detailed discussions of the serious problems associated with the value of $\kappa^2$ have been provided by Dale and Eisinger \cite{Dale1974,Dale1979}.
+
+ \paragraph{Measuring FRET.} The degree of FRET is typically expressed as the quantum yield of the process, called the FRET efficiency:
+\begin{equation}
+ E \equiv \frac{k_\mathrm{T}}{k_\mathrm{T} + \sum k_{i}}
+  = \frac{R_0^6}{R_0^6 + r^6}
+ \label{eqn:Eff 1}
+\end{equation}
+ where the sum is over all \emph{intra}-molecular decay processes from S$_1$. The second step comes from inserting $\frac{1}{\tau_\mathrm{D}}$ from equation (\ref{eqn:kT}) into the quantum yield equation.
+ In ensemble measurements the FRET efficiency can be determined in a number of ways.\cite{Clegg1992} The most common are: 1) Using a reference sample of donor in absence of acceptor. Here the FRET efficiency is determined either from the ratio of the donor lifetime or fluorescence quantum yield in the presence (DA) and absence (D) of acceptor:
+\begin{equation}
+ E = 1 - \frac{\tau_{\mathrm{DA}}}{\tau_\mathrm{D}}
+ \label{eqn:1-Eff A}
+\end{equation}
+ or
+\begin{equation}
+ E = 1 - \frac{\Phi_{\mathrm{DA}}}{\Phi_\mathrm{D}}
+ \label{eqn:1-Eff B}
+\end{equation}
+ In the simple setup where the concentration of D is the same in the DA and D samples $\Phi$ may be replaced by the (integrated) donor intensity. 2) If the acceptor is emissive, an internal reference is obtained by exciting at a wavelength where only the acceptor absorbs and then determine $E$ from the increase in acceptor emission in the presence of FRET. In this case, one emission spectrum is measured at a donor excitation wavelength (1) and a second, reference-spectrum, at an acceptor-only excitation wavelength (2). $E$ may then be determined using the following expression for $I_1$:
+\[
+ I_1(\lambda) = I_\mathrm{D}(\lambda) + I_\mathrm{A,direct}(\lambda) + I_\mathrm{A,FRET}(\lambda)
+\]
+\[
+ = C\times I_\mathrm{D,ref}(\lambda) + A_\mathrm{A,1}\frac{I_2(\lambda)}{A_\mathrm{A,2}} + E\times A_\mathrm{D,1}\frac{I_2(\lambda)}{A_\mathrm{A,2}}
+\]
+\begin{equation}
+ = C\times I_\mathrm{D,ref}(\lambda) + \left( \frac{\epsilon_\mathrm{A,1}}{\epsilon_\mathrm{A,2}} + \frac{\epsilon_\mathrm{D,1}}{\epsilon_\mathrm{A,2}}E\right)I_2(\lambda)
+ \label{eq:FRETmeas2}
+\end{equation}
+ where $I_1$ is the emission spectrum measured at excitation wavelength 1, $I_\mathrm{D}$ is the D intensity spectrum from excitation at wavelength 1, $I_\mathrm{A,direct}$ is the A emission spectrum resulting from direct excitation at wavelength 1, $I_\mathrm{A,FRET}$ is the A emission spectrum resulting from FRET following excitation of the donor at wavelength 1, $C$ is a constant (fitting parameter), $I_\mathrm{D,ref}$ is the D monomeric spectrum, $A_\mathrm{A,1}$ is the A absorbance at excitation wavelength 1, $I_2$ is the emission spectrum measured at excitation wavelength 2, $A_\mathrm{A,2}$ is the A absorbance at excitation wavelength 2, $E$ is the FRET efficiency, $A_\mathrm{D,1}$ is the absorbance of D at excitation wavelength 1, and $\epsilon_x$ are the molar absorptivities of D and A at the respective wavelengths. The second step assumes that D and A are present in a 1:1 ratio.
+
+\section{Computational Chemistry}
+
+ \paragraph{Geometry Optimization.}  In a geometry optimization the atomic coordinates, $R$, of a molecule are optimized to a minimum on the potential energy surface (PES) \cite{FrankJensenCC}, \emph{i.e.}:
+\begin{equation}
+\frac{dE}{dR} = 0
+\end{equation}
+ The calculation of the energy as a function of atomic coordinates is what distinguishes the different methods from each other. Since the vibrational frequencies of the molecule are proportional to the second derivative of the potential energy with respect to coordinate, calculating the IR spectrum of an optimized molecular geometry provides a means to determine if the geometry is in fact a minimum on the PES. For geometries located away from minimum, $\frac{\partial^2E}{\partial R^2}$ is negative and at least one of the calculated vibrational frequency is an imaginary number. In a transition state (TS) optimization the geometry is optimized to the nearest saddle point on the PES. A TS calculation thus results in a single imaginary vibrational frequency, corresponding to the maximum on the intrinsic reaction coordinate (IRC) that connects two local minima on the PES \cite{FrankJensenCC}.
+
+ \paragraph{Solvation shell.} Solvation effects may be modelled using either explicit solvent molecules or an implicit solvent model such as the CPCM method used in this thesis \cite{FrankJensenCC,Barone1998,Klamt1993}. The CPCM method treats the interaction between solute and solvent by a polarizable dielectric continuum surrounding the cavity shell formed by the solute. The solvation effect is modelled by means of apparent polarization charges distributed on the cavity surface, which are determined by imposing that the total electrostatic potential cancels out on the surface. The induced charges on the cavity surface, in turn, affect the electric charges of the solute. The CPCM model is especially successful in representing polar liquids compared to gas phase conditions.
+
+\subsection{Density Functional Theory.}
+ Density functional theory (DFT) is a quantum mechanical method that includes electron correlation (electron-electron interactions) in the calculation of the ground state electronic structure of molecules and solids \cite[chapter 6]{FrankJensenCC} (for a review aimed at researchers from other fields see \cite{Capelle2006}). DFT is conceptually different compared to wave function based methods as it replaces the electronic wave function with the total electron density, $\rho(\vec{\textbf{r}})$, as the fundamental quantity from which all other observables can be extracted. Since $\rho(\vec{\textbf{r}})$ itself is a function of only 3 variables (the three spatial coordinates) DFT calculations are in principle considerably faster compared to the wave function based electron correlation methods that depend on the coordinates of all $N$ electrons of the system. In addition, DFT calculations often provide very accurate results and it is currently the most reliable, and hence the most preferred, method to calculate the ground state electronic structure of large many-body systems ($>$100 electrons).
+
+ \paragraph{The Kohn-Sham scheme.} DFT is usually, and in this thesis, performed using the Kohn-Sham (KS) approach. In the KS scheme the electron density is calculated using single-particle wave functions called KS orbitals, being directly analogues to molecular orbitals, and each electron is considered moving in an average field of all the other electrons. The energy of the system is split into four contributions:
+\begin{equation}
+ E[\rho] = E_\mathrm{Ne}[\rho] + T_\mathrm{s} + J[\rho] + E_\mathrm{xc}[\rho]
+ \label{eqn:E_DFT}
+\end{equation}
+ where $E_\mathrm{Ne}$ is the electron-nuclear interaction energy, $T_\mathrm{s}$ is the kinetic energy of an independent-particle reference system, $J$ is the Coulombic electron-electron repulsion and $E_\mathrm{xc}[\rho]$ is called the exchange-correlation energy which contains the correlation contribution to the total energy \cite{Kohn1965}.
+
+ \paragraph{Exchange-correlation functionals.} The $E_\mathrm{xc}[\rho]$ is the only part of the energy (equation \ref{eqn:E_DFT}) that is still unknown in DFT theory. Approximate $E_\mathrm{xc}[\rho]$ functionals (a functional is a function of a function) are even today frequently being developed, however, the most popular and reliable models are still the hybrid functionals such as B3LYP developed in the early 1990's \cite{Becke1993,Lee1988,Stephens1994}. Hybrid functionals are developed by fitting simulations to experimental data or accurate wave function based methods, which is why DFT to some extend may be classified as a semi-empirical method.
+
+ \paragraph{Basis set.} A basis set is a collection of functions for various atoms that is used to create the molecular orbitals \cite{FrankJensenCC}. In order to calculate the energy of a molecule each molecular orbital, or Kohn-Sham orbital, is written as a linear combination of basis functions:
+\begin{equation}
+ \chi = \sum_m^M c_m\varphi_m
+\end{equation}
+ Each basis function, in turn, is usually written as a linear combination of Gaussian-type functions (primitive Gaussian-type orbitals). Basis set classifications, such as 6-31G(d,p), are used to denote the number of basis functions in a given basis set and the number of primitive Gaussian-type orbitals representing core and valence electrons. In general, the larger the basis set becomes the more exact the calculated orbitals (and thus the wavefunction) becomes.
+
+ \paragraph{Prediction of Electronic Spectra.} In this work, all calculations of electronic excitations were performed using time-dependent density functional theory (TDDFT) on the DFT optimized geometries and assuming the Franck-Condon principle (vertical excitations). TDDFT is the extension of DFT to time-dependent phenomena \cite{Marques2004,Burke2005}. In the specific case of calculating the electronic absorption spectrum, the system (molecule + light) can be approximated within linear response theory due to the weak intensity of the external electromagnetic field \cite{Marques2004}, which basically describes how an equilibrium system changes in response to an applied potential. Similarly to ground state DFT calculations, TDDFT is in practice implemented using a time-dependent KS scheme. In general, the popular hybrid functional B3LYP has been shown to be fairly reliable in predicting excitation energies of local valence-excited states \cite{Grimme2004,Silva2008}.
+
+\section{Optical Spectroscopy}
+  %\autocite{Fock2011}
+\subsection{Steady-State Spectroscopy}
+
+ \paragraph{UV-Vis absorption.} An absorption spectrum is a plot of the UV-Vis wavelength-dependent absorbance of a sample and is recorded using a UV-Vis absorption spectrophotometer, typically in the wavelength range 200-800 nm. In this wavelength range, it is the relative radiative transition probability between different electronic states that is being monitored.
+
+ \paragraph{Emission spectroscopy.} An emission spectrum is a plot of the relative wavelength-dependent intensity emitted from an excited sample. Emission spectra are recorded using a fluorescence spectrophotometer, usually in the 300-800 nm range (samples emitting in the visible range are highly beautiful, so go for that!). The intensity of the excitation beam and the measured emission signal is controlled by passing the light through slits with adjustable bandwidths. The intensity of the light source, as well as the sensitivity of the photodector, is highly wavelength-dependent and the lamp profile additionally changes with time. The final spectrum is therefore calculated by correcting the measured intensity spectrum with a wavelength-dependent sensitivity factor.\cite{Lak}
+
+ \subparagraph{Quantum yield determination.} The fluorescence quantum yield, $\Phi_\mathrm{f}$, is the fraction of photons absorbed that results in emission of fluorescence. $\Phi_\mathrm{f}$ is determined relative to a reference compound of known quantum yield. If the same excitation wavelength and slit bandwidths are applied for the two samples, then $\Phi_\mathrm{f}$ is calculated as:
+\begin{equation}
+  \Phi_\mathrm{f} = \Phi_\mathrm{ref} \cdot
+ \frac{n_\mathrm{solvent}^2}{n_\mathrm{ref.solv.}^2}
+ \frac{I}{A}
+ \frac{A_\mathrm{ref}}{I_\mathrm{ref}}
+ \label{eqn:UdregningKvanteudbytte}
+\end{equation}
+ where $I$ is the integrated fluorescence. The absorbance is kept below 0.05 in order to ensure linear response and avoid inner filter effects.\cite{Lak}
+
+ \paragraph{Solvatochromism.} Solvatochromism describes the solvent-dependency of a chromophore's absorption spectrum and a fluorophore's emission spectrum. The solvatchromic effect is the result of an electrostatic interaction between the ground and excited state dipole moments of the dye and the permanent and temporary dipole moments of the surrounding solvent molecules.
+
+\subsection{Polarized Spectroscopy}
+ \paragraph{Circular dichroism.} In CD the difference in absorption of left- (L) and right-handed (R) circular polarized light is measured using a CD spectrometer.\cite{Rodger1997} The CD is then defined as
+\begin{equation}
+ \mathrm{CD}(\lambda) = A_\mathrm{L}(\lambda) - A_\mathrm{R}(\lambda) = (\varepsilon_\mathrm{L}(\lambda)-\varepsilon_\mathrm{R}(\lambda))cl
+\end{equation}
+ where $\Delta\varepsilon=\varepsilon_\mathrm{L}-\varepsilon_\mathrm{R}$ is the molar circular dichroism. A CD signal is only observed in the absorption band of chiral chromophores or chromophores perturbed by a chiral environment.
+
+ \paragraph{Fluorescence anisotropy.} Fluorescence anisotropy is a measure of the degree of polarized emission emanating from a sample excited using linearly polarized light. In this setup, fluorophores having their absorption transition dipole moment aligned with incident electromagnetic wave will be preferentially excited. If the fluorophore rotates in between time of absorption and emission of a photon, the emission from a population of fluorophores becomes depolarized to an extent depending on the ratio between the rotational speed and the excited state lifetime of the fluorophore. Dyes in slowly rotating environments, such as a large biomolecule, will possess higher fluorescence anisotropy compared to fluorophores tumbling free in solution.
+
+ If the molecules are completely immobilized, \emph{e.g.} in a hydrocarbon glass at low temperatures, the anisotropy only depends on the relative angle, $\beta$, between the absorbing and emitting transition moments according to
+\begin{equation}
+ r_{\mathrm{A},0} = \frac{1}{5}\left(3\cos^2\beta - 1\right)
+ \label{eq:Anisotropi2}
+\end{equation}
+ which is called the fundamental anisotropy.
+
+\subsection{Time-Resolved Emission Spectroscopy}
+
+ \paragraph{Time-correlated single photon counting.} In this work time-resolved intensity decays were recorded using time-correlated single photon counting (TCSPC). In TCSPC the sample is repeatedly excited using short light pulses and the subsequent emission of photons is detected at a photodetector positioned perpendicularly to the excitation beam. The time between each excitation pulse and the first detected photon is measured and stored in a statistical histogram corresponding to the measured fluorescence decay profile of the sample.\cite{Lak}
+
+ \paragraph{Time-resolved fluorescence anisotropy.} Time-resolved fluorescence anisotropy is the fluorescence anisotropy measured as a function of time following pulsed excitation.\cite{Lak} The time-resolved fluorescence anisotropy is thus a direct measure of the rotational decay of the fluorophore. In order to acquire the time-resolved fluorescence anisotropy, the sample is excited using vertically polarized light pulses and the intensity decay of the sample is measured through a polarizer oriented vertically, $I_\mathrm{VV}(t)$, and horizontally, $I_\mathrm{VH}(t)$, to the sample. The anisotropy decay, $r(t)$, is then calculated as
+\begin{equation}
+ r(t)=\frac{I_\mathrm{polarized}(t)}{I_\mathrm{total}(t)}=\frac{I_\mathrm{VV}(t)-GI_\mathrm{VH}(t)}{I_\mathrm{VV}(t)+2GI_\mathrm{VH}(t)}
+ \label{eq:ani}
+\end{equation}
+ were $G$ is the instrument sensitivity ratio towards vertically and horizontally polarized light. The $G$ factor is not related to the properties of the sample, but is purely an experimental correction for the polarization bias of the detection system. $G$ is measured by exciting the sample using horizontally polarized light and subsequently measuring the horizontally and vertically polarized components of the emission intensity ($I_\mathrm{HH}$ and $I_\mathrm{HV}$), each for the same period of time. Since there is no difference between the number of photons coming towards the HH and HV channels from the sample, $G$ is calculated as the ratio between the measured total intensities (counts) in each channel:
+\begin{equation}
+ G = \frac{\int I_\mathrm{HV}(t)dt}{\int I_\mathrm{HH}(t)dt}
+ \label{eq:G}
+\end{equation}
+
+ \paragraph{Analysis of time-resolved decays.} In practice, the excitation pulse is not a $\delta$-function and the instrumentation additionally has a certain electronic response time. This is quantified by the instrument response function, IRF($t$), which is the response profile of the instrument to a purely scattering solution. If IRF($t$) is considered to be a series of $\delta$-excitation pulses with varying amplitude, the measured intensity at time $t$, $N(t)$, is the sum of responses to each $\delta$-excitation pulse up until $t$. Thus
+\begin{equation}
+ N(t) = \int_0^t \mathrm{IRF}(t_\delta')I(t-t_\delta') dt'
+ \label{eqn:konvolutionsintegral}
+\end{equation}
+ where $I(t-t_\delta')$ denotes the fluorescence intensity from the sample at time $t$, originating as a response to a $\delta$-excitation pulse at time $t_\delta$ and with amplitude $L(t_\delta)$. Equation (\ref{eqn:konvolutionsintegral}) is called the convolution integral and the task is to determine the function, $I(t)$, which yields the best overall fit between $N(t)$ and $L(t)$. The fitting procedure is very often performed using least squares analysis in which the "goodness-of-fit" parameter $\chi^2$ is minimized by iteratively optimizing the model parameters (see section \ref{sec:QDataAnalysis}).\cite{Lak}
+
+\section{Quantitative Data Analysis}
+ This short section is limited to the analysis of data from fluorescence experiments.
+\label{sec:QDataAnalysis}
+
+ \paragraph{$\chi^2$ analysis and $\chi^2$ surfaces.} In quantitative data analysis, a theoretical model is fitted to a set of experimental data. $\chi^2$ denotes the sum of squared differences between the modelled and measured data, weighted according to the standard deviation of each data point and (for the reduced chi-square, $\chi_\mathrm{R}^2$) the total number of data points:
+\[
+ \chi_\mathrm{R}^2 = \sum_{k=1}^n\left[\frac{\mathrm{actual\, deviation}}{\mathrm{expected\, deviation}}\right]^2 \times\frac{1}{n}= \left[\sum_{k=1}^n\frac{\left(N(t_k)-N_c(t_k)\right)^2}{N(t_k)}\right]\times\frac{1}{n}
+\]
+ Here $N(t_k)$ is the number of measured counts at time $t_k$, $N_c(t_k)$ is the calculated number of counts at time $t_k$, and $n$ is the number of datapoints \cite{Lak}. A good fit is characterized by a value of $\chi^2$ close to 1 and the residual between the measured and calculated decay curve should be randomly distributed around 0. This procedure is called a least-squares analysis.
+
+ \paragraph{Global decay analysis.} In a global decay analysis multiple decays are fitted simultaneously with one or more fitting parameters being constrained globally (i.e. the parameter is set to be the same for all decays). In this case the global reduced chi-square is the sum of the individual chi-squares weighted according to the total number of data points of all decays.
+
+ \paragraph{Optimization algorithms.} For large datasets and complex models, optimizing a set of parameters to experimental data can easily take hours and days and often results in the algorithm being stuck in a local $\chi^2$ minimum far from the correct, global, minimum. It may also be the case that there are multiple desirable minima on the (multidimensional) $\chi^2$-surface. Optimization algorithms is thus a research field in continuous development and there is no such thing as a single, universally applicable optimization algorithm.
+
+ If it is possible to evaluate the $\chi^2$-gradient the fastest optimization algorithm is usually steepest-descent. For many purposes in this work, the simplex search method of Lagarias \emph{et al.} was used.\cite{Lagarias1998}. This algorithm is a direct search method that does not use gradients but searches around the current point looking for a new point where $\chi^2$ is lower than the value at the current point.
+
+\section{Making User-Interfaced Software.}
+ Software operated through a graphical user-interface (GUI) is an extremely convenient way to share applications and knowledge among researchers as it greatly reliefs the burden of reading and learning all the code behind the program. For the simulation and analysis of large amounts of data MATLAB is a particularly powerful programming environment as it combines the advantage of storing data in multidimensional matrices with the ease of making user-interfaces using the Java programming language.\cite{MATLAB}
+
+ \paragraph{GUIDE.} Making a user-interface in MATLAB is accomplished either by 1) hand (code only) or 2) using a MATLAB figure-file created by the GUIDE (Graphical User Interface Development Environment). While the first option is more flexible the second option is by far easier. GUIDE is run by typing \url{>> guide} in the MATLAB command window. The GUIDE is used to set the appearance of the user-interface such as inserting and arranging objects (buttons, text-boxes, etc.), setting the GUI size, adding menu icons, etc.. The properties of the user-interface, such as the action caused by pressing a button, is programmed in the .m-file associated with the constructed FIG-file.
+
+ \paragraph{Creating stand-alone software.} A software written in MATLAB can be deployed into a stand-alone application using a MATLAB compiler tool. The deployment tool is run by typing \url{>> deploytool} in the MATLAB command window. The successful deployment process produces an executable program (.exe) that can be run outside of MATLAB provided that a MATLAB Compiler Runtime (MCR) environment has been installed on the target computer (which is free from MathWorks's website).
+
+\section{Experimental Details.}
+ The experimental details of the work carried out in this thesis is provided in the appended papers.
