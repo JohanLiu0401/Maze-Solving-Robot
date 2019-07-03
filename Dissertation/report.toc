@@ -1,0 +1,51 @@
+\contentsline {chapter}{Acknowledgement}{iii}
+\contentsline {chapter}{Abstract}{iv}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Background}{3}
+\contentsline {section}{\numberline {2.1}Tracked Mobile Robot}{3}
+\contentsline {section}{\numberline {2.2}Secure Shell Protocol}{4}
+\contentsline {section}{\numberline {2.3}Raspberry Pi 3 B+}{5}
+\contentsline {section}{\numberline {2.4}Sensor}{7}
+\contentsline {subsection}{\numberline {2.4.1}HC-SR04 Ultrasonic ranging module}{7}
+\contentsline {subsection}{\numberline {2.4.2}E18-D80NK Infrared Distance Ranging Sensor}{8}
+\contentsline {section}{\numberline {2.5}Depth-First-Search Algorithm}{10}
+\contentsline {section}{\numberline {2.6}General Purpose Input/Output}{12}
+\contentsline {chapter}{\numberline {3}Design}{16}
+\contentsline {section}{\numberline {3.1}Design Methodology}{16}
+\contentsline {section}{\numberline {3.2}Data Structure}{17}
+\contentsline {subsection}{\numberline {3.2.1}Stack}{17}
+\contentsline {subsection}{\numberline {3.2.2}Tree Structure}{17}
+\contentsline {section}{\numberline {3.3}Coordinate System}{19}
+\contentsline {section}{\numberline {3.4}Maze Solving Algorithm}{21}
+\contentsline {chapter}{\numberline {4}Implementation}{27}
+\contentsline {section}{\numberline {4.1}Obstacle Detection}{27}
+\contentsline {subsection}{\numberline {4.1.1}Hardware Setup}{28}
+\contentsline {subsection}{\numberline {4.1.2}Ranging Principle}{28}
+\contentsline {subsection}{\numberline {4.1.3}Code Implementation}{28}
+\contentsline {section}{\numberline {4.2}Ground Color Detection}{29}
+\contentsline {subsection}{\numberline {4.2.1}Hardware Setup}{30}
+\contentsline {subsection}{\numberline {4.2.2}Detection Principle}{30}
+\contentsline {subsection}{\numberline {4.2.3}Code Implementation}{30}
+\contentsline {section}{\numberline {4.3}Motor Movement Implementation}{31}
+\contentsline {section}{\numberline {4.4}Maze Solving Implementation}{33}
+\contentsline {subsection}{\numberline {4.4.1}Stack Class}{33}
+\contentsline {subsection}{\numberline {4.4.2}Position Class}{34}
+\contentsline {subsection}{\numberline {4.4.3}Robot Class}{34}
+\contentsline {subsubsection}{Instance Attributes}{34}
+\contentsline {subsubsection}{Instance Functions}{34}
+\contentsline {subsection}{\numberline {4.4.4}MSA Implementation}{35}
+\contentsline {subsection}{\numberline {4.4.5}Algorithm Function}{36}
+\contentsline {chapter}{\numberline {5}Evaluation}{37}
+\contentsline {section}{\numberline {5.1}Test Environment}{37}
+\contentsline {section}{\numberline {5.2}Test Results}{38}
+\contentsline {section}{\numberline {5.3}User Feedback}{38}
+\contentsline {chapter}{\numberline {6}Learning Points}{40}
+\contentsline {chapter}{\numberline {7}Professional Issues}{41}
+\contentsline {chapter}{\numberline {8}Conclusion}{42}
+\contentsline {chapter}{Bibliography}{45}
+\contentsline {chapter}{\numberline {9}Appendix}{46}
+\contentsline {section}{\numberline {9.1}Sensor.py}{46}
+\contentsline {section}{\numberline {9.2}MazeCoordinate.py}{50}
+\contentsline {section}{\numberline {9.3}Robot.py}{53}
+\contentsline {section}{\numberline {9.4}Stack.py}{56}
+\contentsline {section}{\numberline {9.5}Position.py}{56}

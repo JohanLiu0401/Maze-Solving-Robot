@@ -1,0 +1,1761 @@
+% 前所未有简单地，开始你的 LaTeX 之旅
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% [页面选项]
+%
+% 字号选项:    11pt是字号，比较适合电子印刷品和纸质印刷品
+% 字体选项:    不填写 - 默认为 Modern (别忘了连逗号一起删了)
+%			  times - Times New Roman
+%			  sans - Sans Serif 字体（黑体）
+% oneside:    代表单面，一般单侧用于电子印刷品
+% 		      可以改成 twoside，一般用于双面纸质印刷
+% openright:  双面打印的情况下，纸质印刷品要求新的一章从奇数页开始
+% hardcopy:   打印机打印选项，带有此选项将去除logo颜色以及代码颜色，更适合黑白印刷
+%			  使用彩色或者电子版请去除此选项
+%			  也可以改为 editing ，颜色讲和 sublime3 的 Mariana 颜色主题一致，减小写作时的文本对比度
+%		          让你以最舒适的方式书写
+% heading:    页面带有页眉
+\documentclass[11pt,times,oneside,openright,hardcopy]{eeereport}
+% eeereport
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{algorithm2e}
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+\usepackage{algorithmicx}
+% \usepackage[utf8x]{inputenc}
+% \usepackage{xeCJK}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{blue!20!black!50!green},
+    keywordstyle=\color{blue!70},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle, escapeinside=``}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% [封面选项]
+%
+% title:    文章主标题，不可以省略
+% subtitle: 副标题，可以省略，但不可以删除
+% covercontent: 封面信息，可以在其内部添加或者删除 \converline 来添加或者删除一行
+%    coverline{项目}{项目内容}，可以自由添加各种内容
+%
+\title{Maze Solving Game-Based Learning Application Based on a Raspberry Pi-Controlled Robot}
+\subtitle{}
+\covercontent{
+	% \coverline{Title}{Maze Solving Game for Robot Based on Raspberry Pi}
+	\coverline{Author}{Zhiyong Liu}
+	% \coverline{Partner}{Your Partner}
+	\coverline{Module}{CSE305}
+	\coverline{Supervisor}{Dr. Jieming Ma}
+	\coverline{Date}{$13^{th}$~/~April~/~2019}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 页面设定
+% 如果在前面设定了需要页面，请去掉下面三个的注释，然后分别进行定义，如果不定义，
+% LaTeX 会自动使用章节名称来进行页面定义
+%\lhead{} 
+%\chead{} 
+%\rhead{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+% set line spacing to 1.5B
+\lstset{language=Pascal}
+\baselineskip = 17pt
+\pagenumbering{Alph}
+\begin{titlepage}
+\input{xjtlu_cover}
+\newpage
+\thispagestyle{empty}
+\end{titlepage}
+
+\frontmatter
+
+\tableofcontents
+% \addcontentsline{toc}{chapter}{Contents}
+\chapter{Acknowledgement}
+Thanks to Dr. Jieming Ma for his guidance and support of this whole project. He provided all the equipments required for this project, which released the financial pressure. 
+In each important step, he patiently provides timely information, which make me able to achieve the milestone in the development of this project. 
+Working under his guidance equipped me with the necessary skills to make effective contributions to the research team, 
+and laid the foundation for me to enter the next stage in my career. I would also like to thank Dr. Haining Liang for his professional feedback, which let me know how to improve in future academic research. 
+In addition, I would like to thank Xi 'an Jiaotong-Liverpool University, China, which helps me to develop the key skills needed in my career path.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 摘要部分 Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Abstract}
+As computer and mobile technologies advance, a amount of games for educational purposes have been used among learners of different levels, which is called game-based learning(GBL).
+It has become the best solution for soft skills learning when traditional learning is homiletic, expensive and difficult to implement.
+In this paper, a game-based learning application is developed for those people who wish to learning programming knowledge. 
+The application allows user control a tracked mobile robot to get out of maze with their programming skills. 
+The robot is built based on Raspberry Pi 3+ and configured with the Debian operating system.
+Running this application, tracked mobile robot can explore the maze and find a route out of the maze. In this application, Depth-First-Search algorithm is utilized, which is the core idea of algorithm to exit the maze.
+Furthermore, This application is modularized, which also supports users to modify the application for secondary development.
+
+
+\textbf{Key Words:} game-based learning, maze solving, Depth-First-Search algorithm, tracked mobile robot.
+
+\mainmatter
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 正文部分 Main Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}\label{cpt:spec}
+Now more and more people are supposed to learn knowledge about programming. However, learning programming can sometimes become so boring that causes learners to give up halfway.
+As computer and mobile technologies advance, a large amount of games for educational purposes have been used among learners of different levels \cite{Proulx:2018fr}. 
+This form of learning is called game-based learning (GBL). It has become the best solution for soft skills learning when traditional learning tends to be homiletic, expensive and difficult to implement.
+Game-based learning aims to balance subjects with gameplay and players' ability to retain and apply subjects to the real world \cite{Ifenthaler:2012tn}. 
+
+Games have been applied in education for a long time. In the middle ages, noblemen learned strategies of war by using ancient chess game. During the Civil War, volunteers from Rhode Island played \emph{American Kriegsspiel}, which had originally been created in 1812 for training Prussian officers-of-war \cite{Felicia:2014wt}.
+Until now, a wide range of game-based learning applications are used, such as exploring ancient history with video games, teaching empathy with video games \cite{Prensky:2007wt}. Furthermore, one well-known example is the app \emph{Playgrounds} developed by Apple \cite{Tveit:2016ul}. 
+This app provides abundant games for children to learn Swift interactive and fun. It drives children to solve the puzzles to master the basics using Swift. Compared with tradition way that facing with a programming textbook to study, children prefer to cost much time on playing and learning in the meantime through this way.
+
+Maze solving problem has been researched for a long period in computer science. Computer hobbyists always enjoy finding new algorithms to solve the maze problem. The best-known rule for solving maze is the Wall Follower \cite{Ao:2008uy}, which also known as either the right-hand rule or left-hand rule.
+It keeps one hand in contact with one wall of the maze, so that the solver doesn't get lost, and the solver can reach to another exit if it exists. Other algorithms such as Recursive algorithm \cite{BullenIV:2009vv}, Pledge algorithm \cite{Klein:2011hi}, and Trémaux's algorithm \cite{Anonymous:2007ch}, 
+were invented specially to deal with more special mazes, and each of them has their own strengths and weaknesses.
+
+A maze can also be viewed as a tree or graph, therefore, some algorithms used in graph theory also have the ability to solve the maze solving problem \cite{Tiwari:2012ts}. One of them is Depth-First Search algorithm (DFS), 
+which is used to traverse the tree or graph data structure. The algorithm starts at the root node and explores each branch as far as possible before backtracking \cite{Braendeland:2015wf}.
+
+In this project, a game-based learning application is developed for those people who wish to learning programming knowledge. It allows learners to utilize programming knowledge to control a tracked mobile robot to get out of maze. Furthermore, this application is also simple enough for learners to conduct secondary development 
+and learners can utilize their own programming skills to design algorithms on this application for maze solving. The major component of the application is a tracked mobile robot, which uses a raspberry pi as the control core. It consists of one electronic compass module, one infrared sensors, and three ultrasonic sensors. 
+The robot is also pre-configured with a maze solving program. It is developed in python language and an algorithm based on DFS algorithm designed in this project is used, which can enable the robot to get out of real maze successfully.
+
+This dissertation is divided into several parts. Chapter 2 gives the related background about the software and hardware, as well as the technology used in this application. Chapter 3 indicates the design of this project. Chapter 4 shows the implementation of design introduced in Chapter 3.
+Chapter 5 gives the experiments of this maze solving game-based application and analyzes the results. Chapter 6 and Chapter 7 mention learning points and professional issues of this project respectively.
+
+
+\chapter{Background}\label{cpt:spec}
+
+\section{Tracked Mobile Robot}
+The tracked mobile robot is 300 millimeters long, 230 millimeters wide, 280 millimeters high. It has two crawler wheels and configured with two infrared sensors and three ultrasonic sensors in this project.
+The infrared sensors are used to detect the maze exit where the color of the ground is different from that of other places.
+The ultrasonic sensors are used to detect the obstacle.
+
+The body of the robot is made of steel plates with some holes on them. These holes support the other elements of robot stick to the body. 
+\figpdf{Tracked Robot}{tracked_robot}{12cm}
+Furthermore, two electric units are attached to the body, which allows robot to move, such as move forward and turn.
+The robot uses one Raspberry Pi 3 Model B Plus Rev 1.3 as its processor. Raspberry Pi is powered by a 2200mAh, 12v, 8A lithium battery pack, its board output voltage is 5v 
+and sensors are connected and powered with the dupont threads connected to robot.
+The raspberry pi on the robot supports remote connection application to control \cite{Upton:2016wt}. 
+Through the connection, researcher can upload the code to raspberry and run related code to make the robot perform actions accordingly.
+
+\section{Secure Shell Protocol}
+SSH is a  cryptographic network protocol based on application layer in the seven-layer computer networking OSI model \cite{Blank:2006tl}. It is a reliable protocol aimed to provide security for logining remotely and other network services at present.
+Many applications provide remote login and execution through command-line. Furthermore, any service in networking can be made secure with SSH \cite{Anbalagan:2015tw}.
+
+SSH uses a secure channel over an insecure network and adapts the the client-server architecture.
+The are two major versions in SSH protocol, referred to as SSH-1 and SSH-2 \cite{Barrett:2005wf}. Because SSH is a protocol built on application layer, the standard TCP (Transmission Control Protocol) port for SSH is 22.
+SSH is generally used in Unix-like operating systems, but it can also be used in other types of systems, such as Microsoft Windows \cite{Cowart:2003th}.
+
+In this project, researcher use terminal on the remote mac to control the Raspberry Pi in the same local area network. Fig. 2.2 shows the procedure for a remote connection to Raspberry Pi on the tracked robot.
+\figpdf{SSH}{ssh}{12cm}  
+The command ssh pi@192.168.1.1 is used to connect the remote host, referred to the Raspberry Pi in this project. the first parameter \emph{pi} referred to username used to login in,
+and the second parameter is the IP address of the remote host, referred to \emph{192.168.1.1} here.
+Then the command ls shows the files in the current directory. Fig. 2.2 denotes the remote connection is performed well and researcher successfully performs remote execution on Raspberry Pi.
+Then, depending on Linux system knowledge, researcher can use Linux commands to operate the Raspbian system on Raspberry Pi.
+
+\section{Raspberry Pi 3 B+}
+The Raspberry Pi is one kind of small single-board computers. They are developed by the Raspberry Pi Foundation in the United Kingdom, which aims to facilitate education of basic computer science in schools and in developing countries. 
+Its hardware has evolved over several versions, such as Model A, Model A+, Model B, Model B+ and Zero. The features of these versions differ in memory capacity and peripheral-device support.
+
+In this project, the version of Raspberry Pi used is Raspberry Pi 3 B+.
+It has 1GB LPDDR2 SDRAM, and supports 2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE \cite{Upton:2014wt}. The Raspberry Pi 3 B+ has 4 USB 2.0 ports are provided and it has a Micro SD port which aims to load the operating system and store data. 
+The Raspberry Pi in this project used an 8G micro SD card, it is formatted by the \emph{SD Card Formatter}, which is a program that provides instant access to all formats about memory cards \cite{HartDavis:2016uq}.
+\figpdf{The Interface of SD Formatter}{sd_formatter}{12cm}
+Then, Researcher download the Raspbian system image from the Raspberry pie website official website. The system image is burned into SD card by the tool \emph{BalenaEtcher}, which is an image burn tool on the mac platform.
+\figpdf{The Interface of BalenaEtcher}{balenaEtcher}{12cm}
+The interface of SD Card Formatter and BalenaEtcher are shown as Fig. 2.3 and Fig. 2.4.
+When the burned SD card is plugged into Raspberry Pi and the power is turn on, the raspberry pi starts to load the operating system and becomes available for researcher to use.
+
+\figpdf{The Pinout of  Raspberry Pi 3 B+}{pin}{12cm}
+The Raspberry Pi 3 B+ has extended 40-pin GPIO header for developers to use. The pinout is shown as Fig. 2.5. GPIO means universal input/output ports, which are pins that can be used to output high and low levels or to read
+in the state of a pin, referred to high or low. GPIO is a relatively concept. Users can interact with the hardware through these GPIO pts, control the hardware work (such as LED, buzzer,etc) and read the hardware status
+signal (such as interrupt signal).
+
+GPIO can be used in three modes:
+\begin{enumerate}
+    \item Input
+    \item Output
+    \item URAT Interface
+\end{enumerate}
+Input is the default mode, in which the Raspberry Pi get the input from the connected device via GPIO. 
+In the output mode, it delivers data to the connected device. Furthermore, GPIO can also be configured as an URAT interface,
+which allow user to define custom advertising packets \cite{Monk:2012vo}.
+
+
+\section{Sensor}
+\subsection{HC-SR04 Ultrasonic ranging module}
+\figpdf{HC-SR04}{ultrasonic}{8cm}
+HC-SR04 is an Ultrasonic ranging module, which provides the function of 2cm to 400 cm non-contact measurement.
+The ranging accuracy is able to reach to 3mm and its effectual angle can less than $15^{\circ}$. The modules include receiver, control circuit
+and ultrasonic transmitters. The basic principle of its work is:
+\begin{enumerate}
+    \item Using IO trigger for at least 10us high level signal 
+    \item The Module automatically sends eight 40 kHz and detect whether there is a pulse signal back.
+    \item IF the signal back, through high level, time of high output IO duration is the time from sending ultrasonic to returning.
+    \item \begin{center}Test distance = (high level time * velocity of sound (340M/S) / 2\end{center}
+\end{enumerate}
+
+The wire connecting direct is shown as following:
+\begin{itemize}
+    \item 5V Supply
+    \item Trigger Pulse Input
+    \item Echo Pulse Output
+    \item 0V Ground
+\end{itemize}
+
+The specification of HC-SR04 is shown in Table 2.1.
+\begin{table}[h]
+\label{tab:tab1}
+\centering
+\caption{The specification of HC-SR04 Ultrasonic ranging module}
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{ | m{6cm} | m{6cm} | } 
+\hline Working Voltage & DC 5V \\ 
+\hline Working Current & 15mA \\
+\hline Working Frequency & 40Hz \\
+\hline Max Range & 4m \\
+\hline Min Range & 2cm \\
+\hline Measuring Angle & 15 degree \\
+\hline Trigger Input Signal & 10$\mu$S TTL pulse \\
+\hline Echo Output Signal & Input TTL lever signal and the range in proportion \\
+\hline Dimension & 45 * 20 * 15mm \\
+\hline 
+\end{tabular} 
+\end{table}
+
+
+\subsection{E18-D80NK Infrared Distance Ranging Sensor}
+E18-D80NK is a infrared sensor with a long distance detection and has less interference by visible light. It adjusted to sense objects over a range of 3-80 cm.
+It is very cheap, and simple to use. It consists of an infrared transmitter and receiver pair in a module. The infrared transmitter emits infrared light, and
+the infrared receiver detects the infrared light reflected by the object \cite{Aubakir:2015wn}.
+\figpdf{E18-D80NK Infrared Distance Ranging Sensor}{infrared}{8cm}
+
+\figpdf{transmitter}{infrared-transmitter}{15cm}
+\figpdf{receiver}{infrared-receiver}{15cm}
+The principle of transmitter and receiver are shown in Fig. 2.8 and Fig. 2.9. 
+The specification of E18-D80NK Infrared Distance Ranging Sensor is shown in Table 2.2.
+
+\begin{table}[h]
+\label{tab:tab1}
+\centering
+\caption{The specification of E18-D80NK Infrared Distance Ranging Sensor}
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{ | m{6cm} | m{6cm} | } 
+\hline Sensing range & 3-80cm adjustable \\ 
+\hline Sensing object & Translucency, opaque \\
+\hline Working Voltage & DC5V \\
+\hline Working Current & 100mA \\
+\hline Output operation & Normally open(O) \\
+\hline Output & DC three-wire system(NPN) \\
+\hline Diameter & 18mm \\
+\hline Length & 45mm \\
+\hline Guard mode & Reverse polarity protection \\
+\hline Ambient temperature & -25-$70^{\circ}$C \\
+\hline 
+\end{tabular} 
+\end{table}
+
+In this project, the purpose of infrared sensor is to detect the destination of maze, whose ground color is black. The other area of maze is set to another color.
+The principle of detection is that the infrared sensor utilizes light reflection. Ordinary colors will reflect light black, but black is the strongest color to absorb light so that there is no set signal.
+With the infrared sensors, the robot detects the arrival of the endpoint of maze by detecting the presence or absence of reflected light.
+
+
+\section{Depth-First-Search Algorithm}
+Depth-first search (DFS) is algorithm designed to traverse or search graph or tree data structures.
+It was invented by \emph{John Edward Hopcroft} and \emph{Robert Endre Tarjan} and shared the Turing award in 1986 \cite{Jeuring:1995to}.
+Depth-first search is a canonical algorithm used in graph theory. For a graph, it can generate the correspondent topological sorting table.
+
+The main principle of algorithm is that the traverse starts at the root node in the tree or graph (selecting arbitrary node as the root node when algorithm is used in graph).
+Then the exploration moves far as possible along each branch. Only after one branch is explored, exploration backtracks and performs on another branch \cite{Gibbons:1985wz}.
+
+The pseudocode of Depth-First-Search Algorithm is shown as following.
+
+Input: A graph G and a vertex n of G.
+
+Output: All reachable vertices from n are marked as discovered.
+
+\begin{algorithm}
+    \caption{Depth-First-Search algorithm}
+    \begin{algorithmic}[1]
+    \Procedure{DFS}{$G,n$}
+       \State $S.push(n)$\Comment{Inserting s in stack}
+       \State label $n$ as visited
+       \While{$S$ is non-empty}
+            \State $v = S.top()$
+            \State $S.pop()$
+            \For{all neighbours $x$ of $v$ in graph $G$}
+                \If{$x$ is not visted}
+                \State $S.push(x)$
+                \State label $x$ as visited
+                \EndIf
+            \EndFor
+       \EndWhile
+    \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\figpdf{The process of DFS}{dfs-graph}{15cm}
+The first thing to choose a node to start and the adjacent nodes of this node are pushed into the stack S.
+Then a node is popped from stack S and the algorithm chooses a node to visit next. Besides, all its adjacent nodes are pushed into the stack S.
+This process is repeated until the stack S is empty. The nodes that are visited must be labeled, which can provide it from visiting the same
+node again.
+
+Fig. 2.12 shows how DFS works in a simple tree. DFS algorithm starts at the node 1. It visits the node 1 and marks it as visited. Then, node 2 and node 3 are adjacent to node 1.
+The algorithm finds neither node 2 and node 3 are marked. It selects node 2 to visit and mark. At the node 2, it finds two nodes adjacent to it are not marked. Therefore, it chooses node 4 to visit and mark.
+After visiting the node 4, there are no nodes adjacent to node 4 which can be visited. It backtracks to the last node, node 2. At the node 2, it finds that the node 5 is adjacent to node 2 but not marked. Therefore, this algorithm then visits node 5 and marks it.
+In the same way, there are no unmarked nodes adjacent to node 5, so it backtracks to node 2. Because node 2 also does not has unmarked adjacent nodes in the current time, the algorithm continue to backtrack to node 1.
+At the node 1, there is one unmarked adjacent node left, which is node 3. Therefore, node 3 is chosen to visit and mark.
+By this point, all nodes in this tree have been visited.
+
+
+
+
+
+\section{General Purpose Input/Output}
+GPIO stands for General Purpose Input/Output. It is a type of uncommitted digital signal pin on an integrated circuit or an electronic circuit board. 
+Its function is not specific and controlled by user at run time. They can be used to output high or low levels. Furthermore, user can use them to read the status of pin, referred to high or low level \cite{Sun:2016cw}.
+
+To control GPIO, the convenient method is to use some related library. For example, Debian operating system in Raspberry Pi has integrated the RPI.GPIO package.
+This package provides a class to control the GPIO on a Raspberry Pi. It allows developer use code to access GPIO, such as reading status, control output \cite{Gay:2018wa}.
+
+In python script on Raspberry Pi, the following statement can import the library RPI.GPIO.
+
+\begin{lstlisting}[language=Python]
+    import RPi.GPIO as GPIO
+\end{lstlisting}
+
+Once imported, the functions of GPIO module can be used. In RPI, two types of GPIO pin numbering scheme are supported, which are BOARD and BCM \cite{Kurniawan:tw}.
+\figpdf{Pi 1 Model B Revision 1.0}{GPIO1}{7cm}
+\figpdf{Pi 1 Model B Revision 2.0}{GPIO2}{7cm}
+The GPIO BOARD scheme specifies that the pins are referred by the number of the pin.
+these are numbers printed on the board which shown inside the red rectangle in Fig. 2.11 and Fig. 2.12.
+The GPIO BCM scheme specifies that the pins are referred by the "Broadcom SOC channel" number \cite{Shah:2015uh}, these are the numbers after "GPIO" outside of red rectangle in Fig. 2.12 and Fig. 2.13 \cite{Hoffstadt:2016im}.
+
+However, the BCM numbers are different between versions of Raspberry Pi. For example, Fig. 2.11 and Fig. 2.12 shows the pin number of Revision 1.0 and 2.0 of Raspberry Pi 1 Model B. The GPIO 0 pin in Revision 1.0 is corresponding to GPIO 2 pin in Revision 2.0. 
+These two pins are in same position on board but are numbered differently in BCM scheme varies to different versions.
+For different versions of the raspberry pie, the script files written may not be generic.
+Therefore, if more than one Raspberry Pi are used in a project, it may be safer to use the BOARD scheme.
+
+In python script, the numbering scheme can be indicated by the method 'GPIO.setmode()'.
+
+Set numbering scheme to BOARD scheme:
+\begin{lstlisting}[language=Python]
+    # Set numbering scheme to BOARD scheme
+    GPIO.setmode(GPIO.BOARD)
+\end{lstlisting}
+
+Set numbering scheme to BCM scheme:
+\begin{lstlisting}[language=Python]
+    # Set numbering scheme to BCM scheme
+    GPIO.setmode(GPIO.BCM)
+\end{lstlisting}
+
+Before using a pin, this pin needs to be set as input or output. The python code which config a pin is shown as follow (The channel refers to the number of pin):
+\begin{lstlisting}[language=Python]
+    # Configue the pin as input.
+    GPIO.setup(channel, GPIO.IN)
+
+    # Configue the pin as output.
+    GPIO.setup(channel, GPIO.OUT)
+
+    # Set the default value for the pin.
+    GPIO.setup(channel, GPIO.OUT, initial=GPIO.HIGH)
+\end{lstlisting}
+
+To light an LED, or to power a device, what to do is to give current and voltage to that device. 
+This step is extremely simple and just set the output state of the related pin connected to that device as following python code.
+The state can be set to 0, GPIO.LOW, False, 1, GPIO.HIGH or True.
+\begin{lstlisting}[language=Python]
+    # Set the output state of pin.
+    GPIO.output(channel, state)
+\end{lstlisting}
+We also often need to read the input state of the pin:
+\begin{lstlisting}[language=Python]
+    # Read the input state of pin.
+    GPIO.input(channel)
+\end{lstlisting}
+
+The following code is to use GPIO on Raspberry Pi to light up a LED.
+In this example, led is connected to the pin 11 on Raspberry Pi through dupont wire.
+\begin{lstlisting}[language=Python]
+    # import RPI.GPIO
+    import RPi.GPIO as GPIO  
+    import time
+
+    # Set the numbering scheme
+    RPi.GPIO.setmode(GPIO.BOARD)
+
+    # Set the pin number
+    channel = 11
+    
+    # Set pin 11 as output scheme
+    RPi.GPIO.setup(11, RPi.GPIO.OUT)    
+
+    while True
+        # Set the state of the pin to a high level and the LED lights up
+        GPIO.output(channel, 1)   
+        # Program sleep 1 second, let the LED light for 1 second
+        time.sleep(1)   
+        # Set the pin state to low and the LED will go off
+        GPIO.output(channel, 0) 
+        # Program sleep 1 second, let the LED off for 1 second 
+        time.sleep(1)  
+
+    # Release all the resources
+    GPIO.cleanup()  
+\end{lstlisting}
+The above example makes the led light for one second and being off for another second, which runs again and agin. 
+This led is connected to pin 11 on Raspberry Pi and its state is controlled by the output level of pin 11.
+
+
+\chapter{Design}
+\section{Design Methodology}
+This development of this project adopts incremental model. The product is designed, implemented and tested incrementally, until the project is completed. The product consists of multiple components, each of which is designed and built separately.
+The increments refer to a series of releases, and each increment will provides more functionalities to users \cite{Bell:2016vq}. After the first increment, a version which can be used by the users is delivered. Then, the plan for next increment is developed based on user feedback.
+This process will continues until the complete product is delivered \cite{Bergmann:2010hp}.
+\figpdf{Increment model}{fig5}{14cm}
+
+The general process of increment model is shown in Fig. 3.1.
+The Increment-1 about project delivered are movement function and sensor detection function. After the first increment delivered, robot can perform actions such as move forward, turn right, turn left and turn around.
+Furthermore, the ultrasonic sensors and infrared sensors configured on robot can be performed well. Robot can use ultrasonic sensors to detect available directions to move. It can also use infrared sensors to detect the color of ground, aimed to determine if robot reaches the end. 
+The Increment-2 about project delivered is maze solving algorithm implementation. After the second increment delivered, robot implements a maze solving algorithm and can explore the maze. 
+It performs actions according to situations in maze by the maze solving algorithm and get out of maze successfully.
+The Increment-3 about project delivered is coordinate system function. After the third increment delivered, a coordinate system is built. Robot calculates its position dynamically during the process of movement. The path of robot can be recorded and the path from start to end can be output
+after getting out of maze. 
+
+
+
+\section{Data Structure}
+\subsection{Stack}
+The maze solving algorithm developed in this project uses stack to store the current path of robot and record the coordinate positions of crosses. Stack is chosen because its property of First-In Last-Out (FILO) \cite{Roser:2015ez}. FILO refers that the first element put in the stack will be the last element to be popped. With this property, 
+it is convenient for the robot to return to the place which it has visited. For example, robot wants to return back to the position it visited last time. What need to do is to pop the top element in the path stack and the returned position is just the position visited last time.
+When the robot reaches the destination, the position list popped by the stack is exactly the path from end position to start position.
+\figpdf{Path stack}{path_stack}{8cm}
+
+\subsection{Tree Structure}
+\figpdf{Simple maze}{maze1}{8cm}
+\figpdf{Tree}{tree1}{8cm}
+The principle of tree structure is utilized in this project. The whole maze can be analogized to a tree. For example, the cross refers to the position in maze which has more than two directions to move. This can be analogized to the node which have multiple branches in tree structure. 
+In this situation, the start position is analogized to the root node in tree structure. The position which does not belongs to cross in maze can be analogize to the point of edge in tree. The Fig. 3.3 shows a simple maze and the Fig. 3.4 is the tree structure analogize to this maze.
+The cross c1, c2, c3 in maze are corresponding to node c1, c2, c3 in tree. The blind alley b1, b2, b3 in maze are corresponding to node b1, b2, b3 in tree.
+By this method, the process of robot exploring maze is transformed into the process of traverse tree structure, and the algorithms to traverse tree structure can be utilized in maze solving problem. 
+
+
+\section{Coordinate System}
+In this project, the maze explored by robot is a real environment, not a computer simulated environment.
+Therefore, a coordinate system is needed to be built up. This coordinate system can assign each position a coordinate.
+Meanwhile, the robot is also assigned a coordinate. When robot is exploring the maze, its coordinate is calculated dynamically.
+Therefore, every position which robot arrived are recorded in the form of coordinates. 
+After robot arriving at the end, a path from start to end can be output in the form of coordinates.
+
+\figpdf{Coordinate System}{coordinate}{10cm}
+In this project, Cartesian coordinates is selected \cite{GonzalezMartinez:2008fw}, and initial direction of robot is set to X positive axis.
+The start is set to (0,0). In Fig. 3.5, because the current direction is X+, if robot moves forward, its coordinate turn into (1,0).
+However, if robot turns left first, its current direction turns into Y+ from X+. At this time, robot then moves forward and its coordinate turn into (0,1) rather than (1,0).
+
+Furthermore, some additional problem needs to be considered. For example, A mechanism is required to calculate and record the change of direction.
+In the following part in this section, a direction calculation mechanism designed in this project is introduced.
+\figpdf{Direction Calculation Mechanism}{coordinate_calculate}{10cm}
+In the process of exploring maze, robot could be in four possible directions, which are X+, Y+, X-, Y-. 
+
+In this project, two variables are used:
+\begin{itemize}
+    \item \textbf{direction}: The range of $direction$ is [-4,4]. \newline $direction$ variable is used to calculate the current of direction of robot. When robot turns left, the value of $direction$ adds 1. On the contrary, when robot turns right, the value of $direction$ minus 1.
+    \item \textbf{direction\_name}: The value of $direction\_name$: X+, Y+, X-, Y- \newline $direction\_name$ is used to calculate the direction of robot by the value of $direction$. For example, if the current value of $direction$ is 1, the value of $direction_name$ is set to Y+, and the coordinate calculation of robot is performed correspondingly according to the value of $direction\_name$.
+
+\end{itemize}
+
+In this designed direction calculation mechanism, each direction corresponds to a numerical value, which refers to $direction$.
+\begin{itemize}
+    \item 0 $\rightarrow$ X+
+    \item -2, 2 $\rightarrow$ X-
+    \item 1, -3 $\rightarrow$ Y+
+    \item -1, 3 $\rightarrow$ Y-
+    \item -4, 4 resets to 0: \newline When $direction$ equals to -4 or 4, it means robot has rotated 360 degrees accumulatively. Therefore, the direction reset to 0 (initial direction of robot).
+\end{itemize}
+
+The whole procedures of calculating direction is summarized as:
+\figpdf{Direction Calculation Mechanism}{calculate_process}{5cm}
+
+We will use example in Fig. 3.6 to show the operation process of this mechanism.
+In Fig. 3.6, the current coordinate of robot is (0,0). Its $direction$ is 0 and $direction\_name$ is X+.
+
+At this time, robot turns left $\rightarrow$ $direction + 1$, which is equal to 1. Because $direction = 1$, then $direction\_name = Y+$,
+When robot moves forward in the direction of Y+. Due to $direction\_name = Y+$, this mechanism detects the value of $direction\_name$ and adds 1 to the value of Y.
+Therefore, the coordinate of robot turns into (0,1) from (0,0).
+
+Through this coordinate calculate mechanism, the coordinate of robot is calculated and updated dynamically and accurately.
+
+
+
+\section{Maze Solving Algorithm}
+The designed maze solving algorithm (MSA) in this project use the recursive model \cite{Khoussainov:1995vx}. In each recursive step, it will detect if current position is end.
+If current position is end, this algorithm executes completely. If current position is not end, robot will perform actions according to the type of current position.
+If it is a cross, this position is recorded in cross stack and marked as a cross. Then, robot will choose one available direction to move. 
+
+If current position is not a cross, there is only one possible available direction in the left, front, right. 
+Robot chooses the sole direction to move. If all these three directions are not available to move, robot chooses the opposite direction to move and turn around.
+
+If current position is a cross, it means there are at least two directions available to move in the left, front, right. 
+Robot only chooses one of these available directions to move. The priority principle of direction selection is left, front and right.
+
+After choosing the moving direction, the new position is taken as the argument and call the MSA again. 
+In this process, MSA will guide robot to explore as deep as it can until the current path of exploration is not available. MSA will explore another path from last cross. 
+The whole process is repeated until the robot reaches the end. 
+
+The pseudocode of Maze Solving Algorithm (MSA) is shown below:
+
+\begin{algorithm}
+    \caption{Maze Solving Algorithm}
+    \begin{algorithmic}[1]
+    \Procedure{MSA}{$position$}
+       \State $current\_path.push(position)$\Comment{Inserting current postion into $current\_path$}
+            \If{$position$ is end}
+                \State return $current\_path$
+            \Else
+                \If{$position$ is a cross}
+                    \If{$postion$ in $cross\_stack$}
+                        \State pop $current\_path$ to the last occurrence of $position$
+                    \Else
+                        \State push $postion$ in $cross\_stack$
+                    \EndIf
+                \State $new\_position = available\_position$\Comment{new position search order: left, front, right, or turn around}
+                \State move to $new_position$
+                \EndIf  
+            \EndIf
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+The Fig. 3.8 shows the flow chart of MSA, which denotes the process of Maze Solving Algorithm.
+There is one most important part in this algorithm. This algorithm uses a stack to store crosses while robot is traversing the maze.
+The cross refers to the position which has more than one direction available to move. When robot moves to a new position,
+the robot configured with this algorithm will first test whether this position is a cross. In these three directions: left hand, front and right hand,
+if there is one more direction for robot to move, this position is regarded as a cross. Then this position is checked whether it exists in the stack cross.
+If this position does not exist in the stack cross, this position is regarded as a new cross and pushed into the cross stack, which recorded that the robot has reached this position once.
+
+\figpdf{Flow chart of MSA}{fig3}{16cm}
+
+However, if this position exists in the stack cross, it means that robot has reached this position once in the previous time. 
+Then, the stack current\_path will be popped to the last occurrence of this position. It is because the path from the last time robot got to this position to this time is redundant,
+which is not regarded as one part of the final path from start to end.
+
+\figpdf{Use MSA in a simple maze}{fig6}{12cm}
+\newpage
+In the Fig. 3.9, it shows an example that how MSA used in a maze.
+The MSA can obtain the path from start to end. The red circle with the number denotes the cross encountered when robot is traversing the maze.
+Due to reaching the same position for multiple times, the path denoted by purple line has been popped from the stack current\_path. Therefore, the purple part is not regard as the part of the final path.
+The blue path denotes the final path from start to end generated by MSA.
+
+The following steps are the process of robot exploring the maze in Fig. 3.6 using MSA.
+
+\lists{number}{
+    \item Starts
+    \item Keep moving
+    \item Arrives at the \textbf{cross 1}
+    \item Detect current position: cross $\rightarrow$ visit \textbf{first time}, push into cross stack $\rightarrow$ two directions available: \textbf{font, right}
+    \item According to priority principle: left $>$ front $>$ right $\rightarrow$ selects moving direction: \textbf{front}
+    \item Keep moving
+    \item Arrives at the \textbf{cross 2}
+    \item Detect current position: cross $\rightarrow$ visit \textbf{first time}, push into cross stack $\rightarrow$ two directions available: \textbf{left, front}
+    \item According to priority principle: left $>$ front $>$ right $\rightarrow$ selects moving direction: \textbf{left}
+    \item Keep moving
+    \item No available way, turn around
+    \item Keep moving
+    \item Arrives at the \textbf{cross 2}
+    \item Detect current position: cross $\rightarrow$ visited \textbf{before}, pop path stack to last occurrence $\rightarrow$ two directions available: \textbf{left, right}
+    \item According to priority principle: left $>$ front $>$ right $\rightarrow$ selects moving direction: \textbf{left}
+    \item Keep moving
+    \item No available way, turn around
+    \item Keep moving
+    \item Arrives at the \textbf{cross 2}
+    \item Detect current position: cross $\rightarrow$ visited \textbf{before}, pop path stack to last occurrence $\rightarrow$ two directions available: \textbf{front, right}
+    \item According to priority principle: left $>$ front $>$ right $\rightarrow$ selects moving direction: \textbf{front}
+    \item Keep moving
+    \item Arrives at the \textbf{cross 1}
+    \item Detect current position: cross $\rightarrow$ visited \textbf{before}, pop path stack to last occurrence $\rightarrow$ two directions available: \textbf{front, left}
+    \item According to priority principle: left $>$ front $>$ right $\rightarrow$ selects moving direction: \textbf{left}
+    \item Keep moving
+    \item Arrives at the \textbf{cross 3}
+    \item Detect current position: cross $\rightarrow$ visit \textbf{first time}, push into cross stack $\rightarrow$ two directions available: \textbf{front, right}
+    \item According to priority principle: left $>$ front $>$ right $\rightarrow$ selects moving direction: \textbf{front}
+    \item Keep moving
+    \item Arrives at the \textbf{cross 4}
+    \item Detect current position: cross $\rightarrow$ visit \textbf{first time}, push into cross stack $\rightarrow$ two directions available: \textbf{front, right}
+    \item According to priority principle: left $>$ front $>$ right $\rightarrow$ selects moving direction: \textbf{front}
+    \item Keep moving
+    \item Arrives at the \textbf{cross 5}
+    \item Detect current position: cross $\rightarrow$ visit \textbf{first time}, push into cross stack $\rightarrow$ two directions available: \textbf{front, right}
+    \item According to priority principle: left $>$ front $>$ right $\rightarrow$ selects moving direction: \textbf{front}
+    \item Keep moving
+    \item Arrives at the end
+    \item Detects current position: \textbf{end}
+    \item Terminate
+}
+
+
+\chapter{Implementation}
+To implement the expected goals of this project, a Raspberry Pi 3 B+ is used in the development.
+The Raspbian is configured with python environment in advance, which allows python script to operate. Additionally, ultrasonic sensors (HC-SR04) were used to implement the wall detection.
+Infrared sensors (E18-D80NK) were used to implement the ground color detection. The controlling program was written in python and runs in Raspbian.
+
+All sensor functions are implemented in the \textit{Sensor.py}. In \textit{Sensor.py}, we first import some module required and set the GPIO pin numbering to BCM.
+\begin{lstlisting}
+	# coding:utf-8
+	from socket import *
+	from time import ctime
+	import binascii
+	import RPi.GPIO as GPIO
+	import time
+	import threading
+	
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setwarnings(False)
+\end{lstlisting}
+The implementation of corresponding functions of sensors are introduced in the following sections.
+
+\section{Obstacle Detection}
+As traversing the maze, robot needs to have the ability to detect the existence of wall. In this project, three HC-SR04 Ultrasonic ranging modules were used.
+The installation illustration is shown in Fig. 4.1. These three ultrasonic sensors were installed in the different sides of robot.
+In Fig. 4.1, the black solid arrow denotes the moving direction of robot. One ultrasonic sensor is installed on the front side. Another one is installed on the left side and the last one is installed on the right side.
+The positions of these three ultrasonic sensors are marked by red rectangle in real graph in Fig. 4.1.
+\figpdf{Ultrasonic Sensors Installation}{ultrasonic_install}{14cm}
+\subsection{Hardware Setup}
+The HC-SR04 ultrasonic sensor has four pins, which are GND (ground), ECHO, TRIG, VCC. The "GND" pin was connected to "GND" pin on the Raspberry Pi.
+The "VCC" pin was connected to "5V" pin on the Raspberry Pi. However, the TRIG and ECHO of these ultrasonic sensors were connected to different pins on the Raspberry Pi:
+\begin{itemize}
+    \item Left Ultrasonic Sensor: ECHO $\rightarrow$ pin 7, TRIG $\rightarrow$ pin 5
+    \item Front Ultrasonic Sensor: ECHO $\rightarrow$ pin 4, TRIG $\rightarrow$ pin 17
+    \item Right Ultrasonic Sensor: ECHO $\rightarrow$ pin 23, TRIG $\rightarrow$ pin 22
+\end{itemize}
+\subsection{Ranging Principle}
+In this project, we let ultrasonic transmitter sends an ultrasonic wave in a certain direction. 
+The timing starts as this ultrasonic wave was transmitted. The ultrasonic wave returns back as it encountered an obstacle.
+The ultrasonic receiver immediately stop timing when it receives the reflection.
+The velocity of ultrasonic propagation in the air is v, and according to the time difference $\Delta t$ between transmitting and receiving.
+we can calculate the distance S from the launch point to the obstacle using the following formula.
+
+\begin{center}
+    $ S = v \times \Delta t / 2$    
+\end{center}
+
+\subsection{Code Implementation}
+The wall detection function implementation was programmed with the following Python code.
+The following code is the distance detection function of front side ultrasonic sensor. 
+\begin{lstlisting}[language=Python]
+"""
+Front ultrasonic module code
+"""
+
+FRONT_ECHO = 4  # Echo
+FRONT_TRIG = 17  # Trig
+
+GPIO.setup(FRONT_TRIG, GPIO.OUT, initial=GPIO.LOW)  # Ultrasonic module transmitter setting
+GPIO.setup(FRONT_ECHO, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Ultrasonic module receiver setting
+
+def get_front_distance():
+    time.sleep(0.05)
+    GPIO.output(FRONT_TRIG, GPIO.HIGH)
+    time.sleep(0.000015)
+    GPIO.output(FRONT_TRIG, GPIO.LOW)
+    while not GPIO.input(FRONT_ECHO):
+        pass
+    t1 = time.time()
+    while GPIO.input(FRONT_ECHO):
+        pass
+    t2 = time.time()
+    time.sleep(0.1)
+    return (t2 - t1) * 340 / 2 * 100
+
+def detect_front():
+    dis_send = int(get_front_distance())
+    if dis_send < 20:
+        print('Distance from the front: %d cm' % dis_send)
+        return False
+    else:
+        print("Front: no obstacle detected")
+        return True
+\end{lstlisting}
+The $get\_front\_distance()$ function is used to calculate the distance 
+between front-side ultrasonic sensor and obstacle.
+It is called  by the $detect\_front()$ function. In the body of $detect\_front()$ function, an obstacle judgement is implemented.
+If the distance returned by $detect\_front()$ is less than 20 cm, it is recognized that there is obstacle in the front.
+Otherwise, it is recognized that there is no obstacle detected in the front.
+
+
+\section{Ground Color Detection}
+In this project, we only set the ground color of end in maze as black. Therefore, as robot arrives at the end and detects that the color of ground is black,
+it is able to know that the end has been arrived and terminate the program.
+Two E18-D80NK infrared sensors were used to implement the ground color detection. The infrared sensors installation illustration is shown in Fig. 4.2.
+Both two infrared sensors are installed on the font of robot.
+The positions of these two infrared sensors are marked by red rectangle in real graph in Fig. 4.2.
+\figpdf{Infrared Sensors Installation}{infrared_install}{14cm}
+\subsection{Hardware Setup}
+The E18-D80NK infrared sensor has three pins, which are GND (ground), "+5V" and "DIGITAL OUTPUT". The "GND" pin was connected to "GND" pin on the Raspberry Pi.
+The "+5V" pin was connected to "5V" pin on the Raspberry Pi. Then, "DIGITAL OUTPUT" is connected to functional pins. The left infrared sensor is connected to pin 27
+and the right one is connected to pin 18.
+
+\subsection{Detection Principle}
+The principle of infrared sensors is to use light reflection. Infrared sensor launches the infrared ray to the ground and then receives the reflected light.
+Because normal colors can reflect the light back, and black is the color that absorbs the most lights. Therefore, when the ground color of current position is black,
+the infrared ray is absorbed, and the receiver of sensor cannot detect the reflected signal. Through this mechanism, the black color is detected.
+
+\subsection{Code Implementation}
+Similarly, in order to make use of Input / Output pin on the Raspberry Pi. RPI.GPIO is imported into the code.
+Furthermore, another modules such as time, binascii \cite{Lundh:2001vk}, threading were also used.
+
+The following code is the black detection function of these two infrared sensors. 
+\begin{lstlisting}[language=Python]
+"""
+Infrared module code
+"""
+
+"""
+Infrared sensor pin number
+"""
+IR_R = 18  # right infrared sensor
+IR_L = 27  # left infrared sensor
+
+# Infrared initializes as input and pulls up
+GPIO.setup(IR_R, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(IR_L, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+def detect_end():
+    if (GPIO.input(IR_L) == True)&(GPIO.input(IR_R) == True):     # detect black on both sides.
+        return True
+    else:
+        return False    
+\end{lstlisting}
+IR\_L refers to the pin 27 on the Raspberry Pi and IR\_R refers to the pin 18 on the Raspberry Pi.
+If the input of IR\_L and IR\_R are high, refered to $True$, it denotes that these infrareds detected the black color.
+
+\section{Motor Movement Implementation}
+The function of motor movement is implemented in the sensor.py. The corresponding pin numbers connected on Raspberry Pi are 13, 20, 19, 16, 21, 26.
+The following code is the movement implementation of robot.
+\begin{lstlisting}[language=Python]
+
+"""
+Motor code
+"""
+
+# Definition of motor drive interface
+ENA = 13
+ENB = 20
+IN1 = 19
+IN2 = 16
+IN3 = 21
+IN4 = 26
+
+# Initialize motor to LOW
+GPIO.setup(ENA, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(IN1, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(IN2, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(ENB, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(IN3, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(IN4, GPIO.OUT, initial=GPIO.LOW)
+
+"""
+Motor function definition
+"""
+
+def motor_forward():
+    # print 'motor forward'
+    GPIO.output(ENA, True)
+    GPIO.output(ENB, True)
+    GPIO.output(IN1, True)
+    GPIO.output(IN2, False)
+    GPIO.output(IN3, True)
+    GPIO.output(IN4, False)
+
+def motor_backward():
+    # print 'motor_backward'
+    GPIO.output(ENA, True)
+    GPIO.output(ENB, True)
+    GPIO.output(IN1, False)
+    GPIO.output(IN2, True)
+    GPIO.output(IN3, False)
+    GPIO.output(IN4, True)
+
+def motor_turn_left():
+    # print 'motor_turn_left'
+    GPIO.output(ENA, True)
+    GPIO.output(ENB, True)
+    GPIO.output(IN1, True)
+    GPIO.output(IN2, False)
+    GPIO.output(IN3, False)
+    GPIO.output(IN4, True)
+
+def motor_turn_right():
+    # print 'motor_turn_right'
+    GPIO.output(ENA, True)
+    GPIO.output(ENB, True)
+    GPIO.output(IN1, False)
+    GPIO.output(IN2, True)
+    GPIO.output(IN3, True)
+    GPIO.output(IN4, False)
+
+def motor_stop():
+    # print 'motor_stop'
+    GPIO.output(ENA, False)
+    GPIO.output(ENB, False)
+    GPIO.output(IN1, False)
+    GPIO.output(IN2, False)
+    GPIO.output(IN3, False)
+    GPIO.output(IN4, False)
+    
+\end{lstlisting}
+Four related functions were defined. 
+The function $motor\_forward$ make both motors to rotate forward at the same speed, which make robot move forward.
+In the same way, the function $motor\_backward$ make both motors to rotate backward at the same speed, which make robot move backward.
+
+Because the direction of motors is fixed, which towards front. Therefore, to implement Steering function, I utilized the turning mode of tank to make the car realize the turning function.
+Taking advantage of the speed difference between the two wheels, when the speed of one wheel is lower than that of the other wheel, the robot will deflector to the side with the lower speed. 
+Therefore, we control the rotation speed of two wheels to make robot turn by controlling the output voltage of two pins, ENA and ENB.
+
+In this project, we fixed the equal rotation speed on both sides of the robot, and only change the rotation direction of the motors on both sides. 
+When turning left or right, we only need to set the rotation direction of the wheels on the left or right side to turn backward, so that the robot can turn in place.
+By this method, the function $motor\_turn\_left$ implements the turn left operation and the function $motor\_turn\_right$ implements the turn right operation.
+
+\section{Maze Solving Implementation}
+The core codes involved in maze solving algorithm are implemented in \textit{maze\_coordinate.py} file. 
+In this file, four global variables are defined, and their purpose are listed following:
+\begin{itemize}
+    \item[-] \textbf{current\_path}: The stack to store the current path of robot.
+    \item[-] \textbf{cross}: The stack to store the coordinate of crosses robot visited.
+    \item[-] \textbf{start}: The coordinate of start.
+    \item[-] \textbf{robot}: The robot object.
+\end{itemize}
+
+Furthermore, three classes were implemented, which are Stack class, 
+Position class, Robot class. The detailed implementation is shown in the following part. 
+
+The core part is the Maze Solving Algorithm implementation, which is implemented as the $go\_maze$ function in \textit{maze\_coordinate.py}.
+
+\subsection{Stack Class}
+There is no stack data structure in Python language. Therefore, in this project, the stack is realized by self-programming.
+Its support operations are listed below:
+\begin{itemize}
+    \item[-] \textbf{push($item$)}: \newline push $item$ into the stack.
+    \item[-] \textbf{pop()}: \newline Retrieve and remove the top item of stack.
+    \item[-] \textbf{peek()}: \newline Retrieve, but does not remove, the top item of stack.
+    \item[-] \textbf{is\_empty()}: \newline Return whether the stack is empty.
+    \item[-] \textbf{size()}: \newline Return the number of items.
+    \item[-] \textbf{show()}: \newline Show the information of all items.
+    \item[-] \textbf{check\_in($item$)}: \newline Check if $item$ exists in the stack.
+\end{itemize}
+The detailed implementation is shown in \textit{Stack.py} in appendix.
+
+\subsection{Position Class}
+The position class is used to simulate the coordinate in maze. 
+It two instance attributes:
+\begin{itemize}
+    \item[-] \textbf{x}: x-axis coordinate
+    \item[-] \textbf{y}: y-axis coordinate
+\end{itemize}
+The instance functions are listed:
+\begin{itemize}
+    \item[-] \textbf{is\_equal($position$)}: check if $position$ to self.position.
+    \item[-] \textbf{print\_position()}: print the information of coordinate.
+\end{itemize}
+The detailed implementation is shown in \textit{Position.py} in appendix.
+\subsection{Robot Class}
+The robot class simulate the action of robots in maze.
+In the start of this program, one robot instance is created. 
+The robot instance has related operations such as turning, moving, detecting obstacle and detecting end.
+The instance of this class has three attributes. The instance attributes and functions are listed below.
+\subsubsection{Instance Attributes}
+\begin{itemize}
+    \item[-] \textbf{position}: the coordinate of robot
+    \item[-] \textbf{direction\_name}: the direction\_name of robot
+    \item[-] \textbf{direction}: the direction of robot
+\end{itemize}
+\subsubsection{Instance Functions}
+\begin{itemize}
+    \item[-] \textbf{set\_direction\_name()}: \newline receives the input and set the initial value of $direction\_name$.
+    \item[-] \textbf{set\_direction()}: \newline according to the input, set the value of $direction$ variable.
+    \item[-] \textbf{detect\_left()}: \newline detect the left side of robot.
+    \item[-] \textbf{detect\_front()}: \newline detect the front side of robot.
+    \item[-] \textbf{detect\_right()}: \newline detect the right side of robot.
+    \item[-] \textbf{move\_forward()}: \newline move forward.
+    \item[-] \textbf{turn\_right()}: \newline turn right.
+    \item[-] \textbf{turn\_left()}: \newline turn left.
+\end{itemize}
+The detailed implementation is shown in \textit{Robot.py} in appendix.
+
+\subsection{MSA Implementation}
+The Maze Solving Algorithm (MSA) is the core part of this project. It implements the algorithm introduced in 3.4.
+The implementation of this algorithm is programmed in \textit{MazeCoordinate.py}.
+\begin{lstlisting}[language=Python]
+
+def go_maze(position):
+"""
+Maze solving algorithm main body
+:param position: current position
+:return:
+"""
+s
+print "current position: (", position.x, ",", position.y, ")"
+
+"""
+Pushes the current location into the current_path stack
+"""
+current_path.push(position)
+
+"""
+Returns the current location from the recorded path in current_path stack
+"""
+current_position = current_path.peek()
+
+if test_end():      # Check if the current location is the end using infrared sensors
+    print("Reach the end")
+    return
+else:
+    if check_cross():   # Check whether current position is a cross using ultrasonic sensors
+        """
+        If it is a cross, check if this cross has ever been reached
+        """
+        if repeat_check(current_position):
+            """
+            If the cross has been reached once, pop the stack to the place 
+            where the cross last appeared in cross stack
+            """
+            pop_cross(current_path, current_position)
+        else:
+
+            """
+            If the cross has not been reached, this cross is recorded into the cross stack
+            """
+            cross.push(current_position)
+
+    perform_action(current_position)
+    next_position = Position(robot.position.x, robot.position.y)
+    go_maze(next_position)
+\end{lstlisting}
+
+\subsection{Algorithm Function}
+This part implements the functions called in MSA main body, which are aimed to implement some special operations.
+The functions below are both global function defined in \textit{MazeCoordinate.py} file and can be called globally in \textit{MazeCoordinate.py}.
+\begin{itemize}
+    \item[-] \textbf{init()}: \newline Init the whole program, such as $current\_path$, $cross$, $start$, $robot$
+    \item[-] \textbf{check\_cross()}: \newline Check if the current location is a cross with ultrasonic sensors.
+    \item[-] \textbf{pop\_cross(stack, position)}: \newline Pop the stack to the place where the last cross occurred.
+    \item[-] \textbf{repeat\_check(position)}: \newline Check if the cross has been arrived before.
+    \item[-] \textbf{perform\_action(position)} \newline Robot performs actions after moving to new position, it will call the \newline $perform\_cross\_action()$ or $perform\_not\_cross\_action()$.
+    \item[-] \textbf{perform\_cross\_action()}: \newline Robot performs related actions when the current position is a cross. 
+    \item[-] \textbf{perform\_not\_cross\_action()}: \newline Robot performs related actions when the current position is not a cross. 
+    \item[-] \textbf{test\_end()}: \newline Detect if the current position is the end.
+    \item[-] \textbf{output()}: \newline Output the information, such as the path from start to end.
+\end{itemize}
+The detailed implementations of above functions are in \textit{MazeCoordinate.py} shown in appendix.
+
+
+\chapter{Evaluation}
+\section{Test Environment}
+To validate if the robot can succeed in solving maze problem, A lot of experiments are carried out on an actual maze in indoor environment.
+The structure of actual maze is shown in Fig. 5.1.
+The red line marks the beginning and the black ground area marks the end.
+\figpdf{Test Maze}{actual_maze}{12cm}
+The tracked mobile robot starts at the red line and traverse the maze by the program developed in this project.
+The timing starts at the starting of robot and terminates when robot arrived at the end.
+The correctness of output refers to whether the output path in the experiment is equal to the output path in the theory.
+For the actual maze in Fig. 5.1, the theoretical output path oughts to be the sequence shown below. (The (0,0) denotes the start and (5,3) denotes the end.)
+
+( 0  ,  0 ), ( 1  ,  0 ), ( 1  ,  1 ), ( 2  ,  1 ), ( 2  ,  0 ), ( 3  ,  0 ), ( 4  ,  0 ), ( 5  ,  0 ), ( 5  ,  1 ),
+( 4  ,  1 ), ( 3  ,  1 ), ( 3  ,  2 ), ( 3  ,  3 ), ( 4  ,  3 ), ( 4  ,  2 ), ( 5  ,  2 ), ( 5  ,  3 )  
+
+\section{Test Results}
+In this test, the initial direction of robot is set to four kind of values, which are X+, X-, Y+, Y-.
+For each direction setting situation, the experiments are performed 10 times.
+In each experiment, the time cost of going out of maze and output correctness are recorded. 
+
+The results of these experiments are shown in Table 5.1.
+\begin{table}[h]
+    \label{tab:tab1}
+    \centering
+    \caption{The results of experiments}
+    \renewcommand{\arraystretch}{2}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{ | m{4cm} | m{2cm} | m{3cm} | m{3cm} |} 
+    \hline Direction\_Name Setting & Test Times & Average Time Cost & Output Correctness Rate \\
+    \hline X+ & 10 & 1:05.89 & 0.9 \\ 
+    \hline X- & 10 & 1:04.63 & 1 \\ 
+    \hline Y+ & 10 & 1:05.26 & 1 \\
+    \hline Y- & 10 & 1:06.53 & 0.9 \\ 
+    \hline Total & 40 & 1:05.58 & 0.95 \\ 
+    \hline  
+    \end{tabular} 
+    \end{table}
+
+The experiments are carried out 40 times in total.
+In each experiment, the robot successfully got out of the maze, which proves the effectiveness of the algorithm and program.
+The average time cost of these experiments is 1:05.58. The output Correctness rate is 0.85 but not 1 in total.
+The total output correctness rate denotes that the output paths returned of 2 in 40 experiments, are not same with the theoretical output path listed in 5.1.
+
+The reason for this correctness is the limitation of actual the maze environment. The maze was too tight for the size of the tracked mobile robot.
+Therefore, in these two experiments whose output path were not correct, the robot got stuck at certain corners and tried many times before it succeeded.
+Because it tried to turn multiple times in one same corner, the program running in robot thought that it has turned multiple corners. 
+Therefore, the directions of robot changed multiple times rather than only once time, which caused the error occurred in the calculation of coordinates.
+This kind of error occurred occasionally in the experiments.
+\section{User Feedback}
+The maze solving robot in this project is a game-based learning application. Its additional objective is supporting the secondary development,
+which allows the users to learn through this maze solving game.
+
+Therefore, the questionnaire shown in Table 5.2 were distributed to 20 users, and the feedbacks were collected.
+The satisfaction degree is divided into five levels with increasing order from dissatisfied to satisfied: 1, 2, 3, 4, 5.
+The feedbacks of these 20 users are shown in Table 5.3. (The numbers in cell are number of people who selected this option)
+\begin{table}[h]
+    \label{tab:tab1}
+    \centering
+    \caption{Questionnaire}
+    \renewcommand{\arraystretch}{2}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{ | m{8cm} | m{0.5cm} | m{0.5cm} | m{0.5cm} | m{0.5cm} | m{0.5cm} |} 
+    \hline Question & 1 & 2 & 3 & 4 & 5\\
+    \hline Code Style \& Clarity &  &  &  &  & \\
+    \hline Game Play Degree  &  &  &  &  & \\
+    \hline Willing to Play   &  &  &  &  & \\
+    \hline Helpful for Learning Programming &  &  &  &  & \\
+    \hline  
+    \end{tabular} 
+    \end{table}
+
+\begin{table}[h]
+    \label{tab:tab1}
+    \centering
+    \caption{Feedback}
+    \renewcommand{\arraystretch}{2}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{ | m{8cm} | m{0.5cm} | m{0.5cm} | m{0.5cm} | m{0.5cm} | m{0.5cm} |} 
+    \hline Question & 1 & 2 & 3 & 4 & 5\\
+    \hline Code Style \& Clarity & 0 & 0 & 0 & 4 & 16 \\
+    \hline Game Play Degree  & 0 & 0 & 5 & 7 & 8 \\
+    \hline Willing to Play   & 0 & 0 & 3 & 8 & 9 \\
+    \hline Helpful for Learning Programming & 0 & 0 & 0 & 3 & 17 \\
+    \hline 
+    \end{tabular} 
+    \end{table}
+
+The feedbacks show that the application developed in this project follows the good standard, which means that it is simple for users to conduct the secondary development.
+Additionally, almost all of the respondents think this maze solving game-based learning application is quite useful for learning programming.
+However, the other two aspects are not very impeccable, which are the degree of game play and willingness to play. 
+Perhaps the reason is that the maze solving game is not quite novel, and not as appealing as digital computer games in game market.
+
+
+
+\chapter{Learning Points}
+Working on this project has given me a better understanding of how to conduct research and design new approaches to solving problems in the field of computer science and technology.
+In this part, the useful things that I have learned from this project are introduced.
+
+The robot of the project needs to interact with the environment and act accordingly. In order to use ultrasonic sensors and infrared sensors, I obtained some professional knowledge in electronic engineering.
+I am now able to use python code to control and read output of the electronic modules. 
+Furthermore, as the program running environment is Raspbian, which is a UNIX-like platform. I learned some useful knowledge about Linux instructions. I am able to program through terminal in the UNIX-like platform.
+The programming language used in this project is python. In order to make this project smoothly, I enhanced my python programming skills as well as be proficient in object-oriented programming skills such as classes and methods.
+Additionally, a coordinate system in this project is required, I learned the knowledge about cartesian coordinate system, and designed a dynamic coordinate system in real combining with my own mathematical knowledge.
+To solve the maze problem, an algorithm for the actual maze needs to be designed. This made me work on more advanced data structures and more efficient algorithms.
+
+As the time is constrained, I need to manage my project properly so that it can be completed before the deadline. I learned the project manage skills in software development.
+I used increment model in software development.  The project was divided into multiple components. Each component is designed and built separately. The whole project is designed, implemented and tested incrementally.
+With this learned skill, I can implement every component on time during the development of this project.
+
+
+\chapter{Professional Issues}
+I confirm that this project obey the Code of Practice and Code of Conduct issued by British Computer Society,
+and I believe that the whole project is designed to serve the public interest. 
+I guarantee that the whole project is completed by myself. Furthermore, this project is believed to have the ability to benefit other people.
+In the process of carrying out this project, I have followed the "Key IT practices" stated in the code of practices.
+
+
+
+\chapter{Conclusion}
+This project produces a maze solving game-based learning application based on Raspberry Pi-controlled robot.
+Equipped with ultrasonic sensors and infrared sensors, the robot was programmed with python language and achieves the ability to go out of real maze.
+The DFS algorithm is used as the basic principle to traverse the maze. Furthermore, combining the MSA (Maze Solving Algorithm) and dynamic coordinate system designed in this project,
+the robot has the ability to obtain a path solution from start to end in real maze and the path solution is returned in the form of a sequence of coordinates.
+Besides, the project is developed in good code style, and also does well in encapsulation and modularity. Therefore, this project is quite convenient for students to carry out the secondary development for teaching purposes.
+In future, some work can be done to improve the accuracy of robot, and additional functionalities for other kinds of games can be implemented in the robot.
+
+% 参考文献列表，请打开 reference.bib 文件添加 bibtex 格式的参考文献
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\chapter{Appendix}
+\section{Sensor.py}
+\begin{lstlisting}[language=Python]
+# coding:utf-8
+from socket import *
+from time import ctime
+import binascii
+import RPi.GPIO as GPIO
+import time
+import threading
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
+
+"""
+Motor code
+"""
+
+# Definition of motor drive interface
+ENA = 13
+ENB = 20
+IN1 = 19
+IN2 = 16
+IN3 = 21
+IN4 = 26
+
+# Initialize motor to LOW
+GPIO.setup(ENA, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(IN1, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(IN2, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(ENB, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(IN3, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(IN4, GPIO.OUT, initial=GPIO.LOW)
+
+
+"""
+Motor function definition
+"""
+
+
+def motor_forward():
+    # print 'motor forward'
+    GPIO.output(ENA, True)
+    GPIO.output(ENB, True)
+    GPIO.output(IN1, True)
+    GPIO.output(IN2, False)
+    GPIO.output(IN3, True)
+    GPIO.output(IN4, False)
+
+
+def motor_backward():
+    # print 'motor_backward'
+    GPIO.output(ENA, True)
+    GPIO.output(ENB, True)
+    GPIO.output(IN1, False)
+    GPIO.output(IN2, True)
+    GPIO.output(IN3, False)
+    GPIO.output(IN4, True)
+
+
+def motor_turn_left():
+    # print 'motor_turn_left'
+    GPIO.output(ENA, True)
+    GPIO.output(ENB, True)
+    GPIO.output(IN1, True)
+    GPIO.output(IN2, False)
+    GPIO.output(IN3, False)
+    GPIO.output(IN4, True)
+
+
+def motor_turn_right():
+    # print 'motor_turn_right'
+    GPIO.output(ENA, True)
+    GPIO.output(ENB, True)
+    GPIO.output(IN1, False)
+    GPIO.output(IN2, True)
+    GPIO.output(IN3, True)
+    GPIO.output(IN4, False)
+
+
+def motor_stop():
+    # print 'motor_stop'
+    GPIO.output(ENA, False)
+    GPIO.output(ENB, False)
+    GPIO.output(IN1, False)
+    GPIO.output(IN2, False)
+    GPIO.output(IN3, False)
+    GPIO.output(IN4, False)
+
+
+"""
+Front ultrasonic module code
+"""
+
+FRONT_ECHO = 4  # Echo
+FRONT_TRIG = 17  # Trig
+
+
+GPIO.setup(FRONT_TRIG, GPIO.OUT, initial=GPIO.LOW)  # Ultrasonic module transmitter setting
+GPIO.setup(FRONT_ECHO, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Ultrasonic module receiver setting
+
+
+def get_front_distance():
+    time.sleep(0.05)
+    GPIO.output(FRONT_TRIG, GPIO.HIGH)
+    time.sleep(0.000015)
+    GPIO.output(FRONT_TRIG, GPIO.LOW)
+    while not GPIO.input(FRONT_ECHO):
+        pass
+    t1 = time.time()
+    while GPIO.input(FRONT_ECHO):
+        pass
+    t2 = time.time()
+    time.sleep(0.1)
+    return (t2 - t1) * 340 / 2 * 100
+
+
+def detect_front():
+    dis_send = int(get_front_distance())
+    if dis_send < 20:
+        print('Distance from the front: %d cm' % dis_send)
+        return False
+    else:
+        print("Front: no obstacle detected")
+        return True
+
+
+"""
+Left ultrasonic module code
+"""
+LEFT_ECHO = 7  # Echo
+LEFT_TRIG = 5  # Trig
+#
+
+GPIO.setup(LEFT_TRIG, GPIO.OUT, initial=GPIO.LOW)  # Ultrasonic module transmitter setting
+GPIO.setup(LEFT_ECHO, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Ultrasonic module receiver setting
+
+
+def get_left_distance():
+    time.sleep(0.05)
+    GPIO.output(LEFT_TRIG, GPIO.HIGH)
+    time.sleep(0.000015)
+    GPIO.output(LEFT_TRIG, GPIO.LOW)
+    while not GPIO.input(LEFT_ECHO):
+        pass
+    t1 = time.time()
+    while GPIO.input(LEFT_ECHO):
+        pass
+    t2 = time.time()
+    time.sleep(0.1)
+    return (t2 - t1) * 340 / 2 * 100
+
+
+def detect_left():
+    dis_send = int(get_left_distance())
+    if dis_send < 20:
+        print('Distance from the left: %d cm' % dis_send)
+        return False
+    else:
+        print("Left: no obstacle detected")
+        return True
+
+
+"""
+Right ultrasonic module code
+"""
+
+RIGHT_ECHO = 23  # Echo
+RIGHT_TRIG = 22  # Trig
+
+GPIO.setup(RIGHT_TRIG, GPIO.OUT, initial=GPIO.LOW)  # Ultrasonic module transmitter setting
+GPIO.setup(RIGHT_ECHO, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Ultrasonic module receiver setting
+
+
+def get_right_distance():
+    time.sleep(0.05)
+    GPIO.output(RIGHT_TRIG, GPIO.HIGH)
+    time.sleep(0.000015)
+    GPIO.output(RIGHT_TRIG, GPIO.LOW)
+    while not GPIO.input(RIGHT_ECHO):
+        pass
+    t1 = time.time()
+    while GPIO.input(RIGHT_ECHO):
+        pass
+    t2 = time.time()
+    time.sleep(0.1)
+    return (t2 - t1) * 340 / 2 * 100
+
+
+def detect_right():
+    dis_send = int(get_right_distance())
+    if dis_send < 20:
+        print('Distance from the right: %d cm' % dis_send)
+        return False
+    else:
+        print("Left: no obstacle detected")
+        return True
+
+
+"""
+Infrared module code
+"""
+
+"""
+Infrared sensor pin number
+"""
+IR_R = 18  # right infrared sensor
+IR_L = 27  # left infrared sensor
+
+
+# Infrared initializes as input and pulls up
+GPIO.setup(IR_R, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(IR_L, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+
+def detect_end():
+    if (GPIO.input(IR_L) == True)&(GPIO.input(IR_R) == True):     # detect black on both sides.
+        return True
+    else:
+        return False
+
+
+
+
+
+\end{lstlisting}
+\section{MazeCoordinate.py}
+\begin{lstlisting}[language=Python]
+	# coding:utf-8
+import Sensor as rf
+import Stack as sk
+import Position as ps
+import Robot as rb
+
+current_path = None
+cross = None
+start = None
+robot = None
+
+
+def init():
+    """
+    Initialize the program
+    :return:
+    """
+    global current_path, cross, start, robot
+    current_path = sk.Stack()
+    cross = sk.Stack()
+    start = ps.Position(0, 0)
+    robot = rb.Robot(ps.Position(0, 0))
+
+
+def check_cross():
+    """
+    Check if the current location is a cross with ultrasonic sensors
+    :return:
+    """
+    counter = 0
+
+    if rf.detect_left():
+        counter += 1
+    if rf.detect_front():
+        counter += 1
+    if rf.detect_right():
+        counter += 1
+
+    if counter > 1:
+        return True
+    else:
+        return False
+
+
+def pop_cross(stack, position):
+    """
+    Pop the stack to the place where the last cross occurred
+    :param stack: cross stack
+    :param position: cross position
+    :return:
+    """
+    while True:
+        last_cross = stack.peek()
+        if last_cross.is_equal(position):
+            break
+        stack.pop()
+
+
+def repeat_check(position):
+    """
+    Check if the cross has been arrived before
+    :param position: current position
+    :return:
+    """
+    global cross
+    arrived = False
+    if cross.check_in(position):
+        arrived = True
+
+    return arrived
+
+
+def perform_cross_action():
+    """
+    Perform the actions when current position is a cross
+    :return:
+    """
+
+    global robot
+
+    print "Perform the cross actions"
+
+    if rf.detect_left():
+        robot.turn_left()
+        robot.move_forward()
+    elif rf.detect_front():
+        robot.move_forward()
+    elif rf.detect_right():
+        robot.turn_right()
+        robot.move_forward()
+
+
+def perform_not_cross_action():
+    """
+    Perform the actions when current position is not a cross
+    :return:
+    """
+
+    global robot
+
+    print "Perform the un_cross actions"
+
+    if rf.detect_left():
+        robot.turn_left()
+        robot.move_forward()
+    elif rf.detect_front():
+        robot.move_forward()
+    elif rf.detect_right():
+        robot.turn_right()
+        robot.move_forward()
+    else:
+        robot.turn_right()
+        robot.turn_right()
+        robot.move_forward()
+
+
+def perform_action(position):
+    """
+    Perform the actions
+    :param position: current position
+    :return:
+    """
+
+    global cross
+
+    if cross.check_in(position):    # current position is a cross
+        perform_cross_action()
+    else:                           # current position is not a cross
+        perform_not_cross_action()
+
+
+def test_end():
+    """
+    Detect if the current position is destination
+    :return:
+    """
+
+    if rf.detect_end():
+        return True
+    else:
+        return False
+
+
+def output():
+    """
+    Output the information
+    :return:
+    """
+    global current_path
+    print "The path from start to end:\n"
+    current_path.show()
+
+
+def go_maze(position):
+    """
+    Maze solving algorithm main body
+    :param position: current position
+    :return:
+    """
+
+    print "\ncurrent position: (", position.x, ",", position.y, ")"
+
+    """
+    Pushes the current location into the current_path stack
+    """
+    current_path.push(position)
+
+    """
+    Returns the current location from the recorded path in current_path stack
+    """
+    current_position = current_path.peek()
+
+    if test_end():      # Check if the current location is the end using infrared sensors
+        print("Reach the end")
+        return
+    else:
+        if check_cross():   # Check whether current position is a cross using ultrasonic sensors
+            """
+            If it is a cross, check if this cross has ever been reached
+            """
+            if repeat_check(current_position):
+                """
+                If the cross has been reached once, pop the stack to the place 
+                where the cross last appeared in cross stack
+                """
+                pop_cross(current_path, current_position)
+            else:
+
+                """
+                If the cross has not been reached, this cross is recorded into the cross stack
+                """
+                cross.push(current_position)
+
+        perform_action(current_position)
+        next_position = ps.Position(robot.position.x, robot.position.y)
+        go_maze(next_position)
+
+
+# Program starts
+init()
+go_maze(start)
+output()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+
+\section{Robot.py}
+\begin{lstlisting}[language=Python]
+import Sensor as rf
+
+
+class Robot:
+    """
+    The Robot Class
+    """
+
+    def __init__(self, position):
+        self.position = position
+        self.direction_name = self.set_direction_name()
+        self.direction = self.set_direction()
+
+    def is_not_used(self):
+        pass
+
+    def set_direction_name(self):
+        self.is_not_used()
+
+        while True:
+            direction_name = raw_input("set the initial direction:\n1. X+\n2. X-\n3. Y+\n4. Y-\n")
+            if direction_name == "X+" or direction_name == "X-" or direction_name == "Y+" or direction_name == "Y-":
+                break
+            else:
+                print "Invalid direction, enter again!"
+
+        return direction_name
+
+
+# Coordinate System
+    def set_direction(self):
+        if self.direction_name == "X+":
+            return 0
+        elif self.direction_name == "X-":
+            return 2
+        elif self.direction_name == "Y+":
+            return 1
+        elif self.direction_name == "Y-":
+            return -1
+        else:
+            print "Invalid direction!"
+
+    def detect_left(self):
+        self.is_not_used()
+        if rf.detect_left():
+            return True
+        else:
+            return False
+
+    def detect_front(self):
+        self.is_not_used()
+        if rf.detect_front():
+            return True
+        else:
+            return False
+
+    def detect_right(self):
+        self.is_not_used()
+        if rf.detect_right():
+            return True
+        else:
+            return False
+
+    def move_forward(self):
+        self.is_not_used()
+        print("Move forward")
+        rf.motor_forward()
+        rf.time.sleep(1)
+        rf.motor_stop()
+        self.calculate_coordinate()    # Robot move and calculate coordinate
+
+    def turn_left(self):
+        self.is_not_used()
+        print("Turn left")
+
+        rf.motor_backward()
+        rf.time.sleep(0.1)
+        rf.motor_stop()
+
+        rf.motor_turn_left()
+        rf.time.sleep(0.5)
+        rf.motor_stop()
+        self.direction = self.direction + 1
+        self.calculate_direction_name()
+        print "Current direction:", self.direction_name, self.direction
+
+    def turn_right(self):
+        self.is_not_used()
+        print("Turn Right")
+
+        rf.motor_backward()
+        rf.time.sleep(0.1)
+        rf.motor_stop()
+
+        rf.motor_turn_right()
+        rf.time.sleep(0.5)
+        rf.motor_stop()
+        self.direction = self.direction - 1
+        self.calculate_direction_name()
+        print "Current direction:", self.direction_name, self.direction
+
+
+# Coordinate System
+    def calculate_coordinate(self):
+        if self.direction_name == "X+":
+            self.position.x += 1
+        elif self.direction_name == "X-":
+            self.position.x -= 1
+        elif self.direction_name == "Y+":
+            self.position.y += 1
+        elif self.direction_name == "Y-":
+            self.position.y -= 1
+        else:
+            print ("Wrong direction information!")
+
+# Coordinate System
+    def calculate_direction_name(self):
+        self.test_direction_reset()
+
+        if self.direction == 0:
+            self.direction_name = "X+"
+        elif self.direction == -2 or self.direction == 2:
+            self.direction_name = "X-"
+        elif self.direction == 1 or self.direction == -3:
+            self.direction_name = "Y+"
+        elif self.direction == -1 or self.direction == 3:
+            self.direction_name = "Y-"
+        else:
+            print "invalid direction"
+
+# Coordinate System
+    def test_direction_reset(self):
+        if self.direction == 4:
+            self.direction = 0  # Robot rotate  360 degrees counterclockwise
+        elif self.direction == -4:
+            self.direction = 0  # Robot rotate 360 degrees clockwise
+
+\end{lstlisting}
+
+\section{Stack.py}
+\begin{lstlisting}[language=Python]
+
+class Stack:
+"""
+The Stack Class
+"""
+
+def __init__(self):
+	self.items = []
+
+def is_empty(self):
+	return len(self.items) == 0
+
+def push(self, item):
+	self.items.append(item)
+
+def pop(self):
+	return self.items.pop()
+
+def peek(self):
+	if not self.is_empty():
+		return self.items[len(self.items) - 1]
+
+def show(self):
+	if not self.is_empty():
+		for i in self.items:
+			i.print_position()
+
+def size(self):
+	return len(self.items)
+
+def check_in(self, position):
+	if position in self.items:
+		return True
+	else:
+		return False
+
+\end{lstlisting}
+
+\section{Position.py}
+\begin{lstlisting}[language=Python]
+
+class Position:
+"""
+Coordinate
+"""
+
+def __init__(self, x, y):
+	self.x = x
+	self.y = y
+
+def is_equal(self, position):
+	return self.x == position.x and self.y == position.y
+
+def print_position(self):
+	print "(", self.x, " , ", self.y, ")"
+
+\end{lstlisting}
+\end{document}
+

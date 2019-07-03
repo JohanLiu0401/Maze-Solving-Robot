@@ -1,0 +1,798 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.3)  17 MAY 2019 15:10
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/report.tex
+(/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/report.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/eeereport.cls
+Document Class: eeereport 2017/11/25 EEE Report Template
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count89
+\Gm@cntv=\count90
+\c@Gm@tempcnt=\count91
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (398.33858pt) is ignored.
+
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count92
+\lst@gtempboxa=\box26
+\lst@token=\toks16
+\lst@length=\count93
+\lst@currlwidth=\dimen113
+\lst@column=\count94
+\lst@pos=\count95
+\lst@lostspace=\dimen114
+\lst@width=\dimen115
+\lst@newlines=\count96
+\lst@lineno=\count97
+\lst@maxwidth=\dimen116
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count98
+\lst@skipnumbers=\count99
+\lst@framebox=\box27
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/pstricks/pstricks.sty
+Package: pstricks 2018/01/06 v0.67 LaTeX wrapper for `PSTricks' (RN,HV)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, and LuaTeX
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+)
+\XKV@depth=\count100
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))) (/usr/local/texlive/2018/texmf-dist/tex/generic/pstricks/pstricks.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pstricks/pst-fp.tex `pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count101
+\pstFP@xia=\count102
+\pstFP@xib=\count103
+\pstFP@xfa=\count104
+\pstFP@xfb=\count105
+\pstFP@rega=\count106
+\pstFP@regb=\count107
+\pstFP@regs=\count108
+\pstFP@times=\count109
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen117
+\pgfutil@tempdimb=\dimen118
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks22
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgf@x=\dimen119
+\pgf@xa=\dimen120
+\pgf@xb=\dimen121
+\pgf@xc=\dimen122
+\pgf@y=\dimen123
+\pgf@ya=\dimen124
+\pgf@yb=\dimen125
+\pgf@yc=\dimen126
+\c@pgf@counta=\count110
+\c@pgf@countb=\count111
+\c@pgf@countc=\count112
+\c@pgf@countd=\count113
+\pgfutil@tempcnta=\count114
+\pgfutil@tempcntb=\count115
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen127
+\pgfmath@count=\count116
+\pgfmath@box=\box28
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count117
+))
+\pgffor@iter=\dimen128
+\pgffor@skip=\dimen129
+\pgffor@stack=\toks26
+\pgffor@toks=\toks27
+)
+\psLoopIndex=\count118
+
+`PSTricks' v2.82  <2018/01/06> (tvz,hv)
+\pst@dima=\dimen130
+\pst@dimb=\dimen131
+\pst@dimc=\dimen132
+\pst@dimd=\dimen133
+\pst@dimg=\dimen134
+\pst@dimh=\dimen135
+\pst@dimm=\dimen136
+\pst@dimn=\dimen137
+\pst@dimo=\dimen138
+\pst@dimp=\dimen139
+\pst@hbox=\box29
+\pst@ibox=\box30
+\pst@boxg=\box31
+\pst@cnta=\count119
+\pst@cntb=\count120
+\pst@cntc=\count121
+\pst@cntd=\count122
+\pst@cntg=\count123
+\pst@cnth=\count124
+\pst@cntm=\count125
+\pst@cntn=\count126
+\pst@cnto=\count127
+\pst@cntp=\count128
+\@zero=\count129
+\pst@toks=\toks28
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen140
+\psxunit=\dimen141
+\psyunit=\dimen142
+\pst@C@@rType=\count130
+\pslinewidth=\dimen143
+\psk@startLW=\dimen144
+\psk@endLW=\dimen145
+\pst@customdefs=\toks29
+\pslinearc=\dimen146
+\pst@symbolStep=\dimen147
+\pst@symbolWidth=\dimen148
+\pst@symbolLinewidth=\dimen149
+\everypsbox=\toks30
+\psframesep=\dimen150
+\pslabelsep=\dimen151
+\sh@wgridXunit=\dimen152
+\sh@wgridYunit=\dimen153
+\pst@shift=\dimen154
+)
+File: pstricks.tex 2018/01/06 v2.82 `PSTricks' (tvz,hv)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pstricks/pst-fp.tex)
+File: pst-fp.tex 2018/01/06 v2.82 `PST-fp' (hv)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footers
+\f@nch@headwidth=\skip43
+\f@nch@O@elh=\skip44
+\f@nch@O@erh=\skip45
+\f@nch@O@olh=\skip46
+\f@nch@O@orh=\skip47
+\f@nch@O@elf=\skip48
+\f@nch@O@erf=\skip49
+\f@nch@O@olf=\skip50
+\f@nch@O@orf=\skip51
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+))) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))) (/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/psfig.sty
+\@unused=\write3
+\ps@stream=\read1
+\p@intvaluex=\dimen155
+\p@intvaluey=\dimen156
+
+psfig/tex 1.10-dvips
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen157
+\epsfysize=\dimen158
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip52
+\subfigcapskip=\skip53
+\subfigcaptopadj=\dimen159
+\subfigbottomskip=\skip54
+\subfigcapmargin=\dimen160
+\subfiglabelskip=\skip55
+\c@subfigure=\count131
+\c@lofdepth=\count132
+\c@subtable=\count133
+\c@lotdepth=\count134
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip56
+\subfig@bottom=\skip57
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/psfrag/psfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count135
+\pfg@scount=\count136
+\pfg@temp=\write4
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks31
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count137
+\float@exts=\toks32
+\float@box=\box32
+\@float@everytoks=\toks33
+\@floatcapt=\box33
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count138
+\c@ALG@rem=\count139
+\c@ALG@nested=\count140
+\ALG@tlm=\skip58
+\ALG@thistlm=\skip59
+\c@ALG@Lnr=\count141
+\c@ALG@blocknr=\count142
+\c@ALG@storecount=\count143
+\c@ALG@tmpcounter=\count144
+\ALG@tmplength=\skip60
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+\@float@every@algorithm=\toks34
+\c@algorithm=\count145
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip61
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks35
+\ex@=\dimen161
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen162
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count146
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count147
+\leftroot@=\count148
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count149
+\DOTSCASE@=\count150
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box34
+\strutbox@=\box35
+\big@size=\dimen163
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count151
+\c@MaxMatrixCols=\count152
+\dotsspace@=\muskip11
+\c@parentequation=\count153
+\dspbrk@lvl=\count154
+\tag@help=\toks36
+\row@=\count155
+\column@=\count156
+\maxfields@=\count157
+\andhelp@=\toks37
+\eqnshift@=\dimen164
+\alignsep@=\dimen165
+\tagshift@=\dimen166
+\tagwidth@=\dimen167
+\totwidth@=\dimen168
+\lineht@=\dimen169
+\@envbody=\toks38
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks39
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip64
+\multirow@cntb=\count158
+\multirow@dima=\skip65
+\bigstrutjot=\dimen170
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+\col@sep=\dimen171
+\ar@mcellbox=\box36
+\extrarowheight=\dimen172
+\NC@list=\toks40
+\extratabsurround=\skip66
+\backup@length=\skip67
+\ar@cellbox=\box37
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write5
+\integerpart=\count159
+\decimalpart=\count160
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks41
+\inpenc@posthook=\toks42
+) (/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/report.aux
+
+LaTeX Warning: Label `cpt:spec' multiply defined.
+
+
+LaTeX Warning: Label `tab:tab1' multiply defined.
+
+
+LaTeX Warning: Label `tab:tab1' multiply defined.
+
+
+LaTeX Warning: Label `tab:tab1' multiply defined.
+
+
+LaTeX Warning: Label `tab:tab1' multiply defined.
+
+)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 89.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(70.56284pt, 668.63976pt, 105.84425pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=668.63976pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-33.58095pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=62.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count161
+\scratchdimen=\dimen173
+\scratchbox=\box38
+\nofMPsegments=\count162
+\nofMParguments=\count163
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count164
+\MPscratchDim=\dimen174
+\MPnumerator=\count165
+\makeMPintoPDFobject=\count166
+\everyMPtoPDFconversion=\toks44
+)
+\c@lstlisting=\count167
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/xjtlu_cover.tex
+<fig/xjtlu_logo_bw.pdf, id=1, 597.23125pt x 109.40875pt>
+File: fig/xjtlu_logo_bw.pdf Graphic file (type pdf)
+<use fig/xjtlu_logo_bw.pdf>
+Package pdftex.def Info: fig/xjtlu_logo_bw.pdf  used on input line 13.
+(pdftex.def)             Requested size: 284.52756pt x 52.12328pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+) [1
+Non-PDF special ignored!
+<special> header=pstricks.pro
+Non-PDF special ignored!
+<special> header=pst-algparser.pro
+Non-PDF special ignored!
+<special> header=pst-tools.pro
+Non-PDF special ignored!
+<special> header=pst-dots.pro
+Non-PDF special ignored!
+<special> header=psfrag.pro
+
+Non-PDF special ignored!
+<special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/xjtlu_logo_bw.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
+ (/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/report.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+ [1
+
+
+])
+\tf@toc=\write6
+\openout6 = `report.toc'.
+
+ [2] [3
+
+] [4
+
+]
+Chapter 1.
+[1
+
+
+] [2]
+Chapter 2.
+<fig/tracked_robot.pdf, id=42, 845.1575pt x 597.23125pt>
+File: fig/tracked_robot.pdf Graphic file (type pdf)
+<use fig/tracked_robot.pdf>
+Package pdftex.def Info: fig/tracked_robot.pdf  used on input line 164.
+(pdftex.def)             Requested size: 341.43306pt x 241.27586pt.
+[3
+
+ </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/tracked_robot.pdf, page is rotated 90 degrees>]
+<fig/ssh.pdf, id=58, 648.30885pt x 455.29454pt>
+File: fig/ssh.pdf Graphic file (type pdf)
+<use fig/ssh.pdf>
+Package pdftex.def Info: fig/ssh.pdf  used on input line 180.
+(pdftex.def)             Requested size: 341.43306pt x 239.79045pt.
+ [4 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/ssh.pdf, page is rotated 90 degrees>]
+<fig/sd_formatter.pdf, id=74, 564.81596pt x 411.59781pt>
+File: fig/sd_formatter.pdf Graphic file (type pdf)
+<use fig/sd_formatter.pdf>
+Package pdftex.def Info: fig/sd_formatter.pdf  used on input line 193.
+(pdftex.def)             Requested size: 341.43306pt x 248.80704pt.
+<fig/balenaEtcher.pdf, id=75, 845.1575pt x 597.23125pt>
+File: fig/balenaEtcher.pdf Graphic file (type pdf)
+<use fig/balenaEtcher.pdf>
+Package pdftex.def Info: fig/balenaEtcher.pdf  used on input line 195.
+(pdftex.def)             Requested size: 341.43306pt x 241.27586pt.
+<fig/pin.pdf, id=76, 845.1575pt x 597.23125pt>
+File: fig/pin.pdf Graphic file (type pdf)
+<use fig/pin.pdf>
+Package pdftex.def Info: fig/pin.pdf  used on input line 199.
+(pdftex.def)             Requested size: 341.43306pt x 241.27586pt.
+ [5 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/sd_formatter.pdf>] [6 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/balenaEtcher.pdf, page is rotated 90 degrees> </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/pin.pdf, page is rotated 90 degrees>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 216.
+<fig/ultrasonic.pdf, id=121, 520.00475pt x 398.85008pt>
+File: fig/ultrasonic.pdf Graphic file (type pdf)
+<use fig/ultrasonic.pdf>
+Package pdftex.def Info: fig/ultrasonic.pdf  used on input line 217.
+(pdftex.def)             Requested size: 227.62204pt x 174.58775pt.
+ [7 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/ultrasonic.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 230.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 230.
+<fig/infrared.pdf, id=137, 677.34232pt x 396.47443pt>
+File: fig/infrared.pdf Graphic file (type pdf)
+<use fig/infrared.pdf>
+Package pdftex.def Info: fig/infrared.pdf  used on input line 262.
+(pdftex.def)             Requested size: 227.62204pt x 133.23264pt.
+<fig/infrared-transmitter.pdf, id=138, 268.02634pt x 80.58176pt>
+File: fig/infrared-transmitter.pdf Graphic file (type pdf)
+<use fig/infrared-transmitter.pdf>
+Package pdftex.def Info: fig/infrared-transmitter.pdf  used on input line 264.
+(pdftex.def)             Requested size: 426.79134pt x 128.326pt.
+<fig/infrared-receiver.pdf, id=139, 332.30328pt x 92.24864pt>
+File: fig/infrared-receiver.pdf Graphic file (type pdf)
+<use fig/infrared-receiver.pdf>
+Package pdftex.def Info: fig/infrared-receiver.pdf  used on input line 265.
+(pdftex.def)             Requested size: 426.79134pt x 118.48605pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8] [9 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/infrared.pdf, page is rotated 90 degrees> </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/infrared-transmitter.pdf> </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/infrared-receiver.pdf>]
+<fig/dfs-graph.pdf, id=183, 845.1575pt x 597.23125pt>
+File: fig/dfs-graph.pdf Graphic file (type pdf)
+<use fig/dfs-graph.pdf>
+Package pdftex.def Info: fig/dfs-graph.pdf  used on input line 329.
+(pdftex.def)             Requested size: 426.79134pt x 301.59483pt.
+ [10] [11 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/dfs-graph.pdf, page is rotated 90 degrees>] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+<fig/GPIO1.pdf, id=202, 597.23125pt x 845.1575pt>
+File: fig/GPIO1.pdf Graphic file (type pdf)
+<use fig/GPIO1.pdf>
+Package pdftex.def Info: fig/GPIO1.pdf  used on input line 360.
+(pdftex.def)             Requested size: 199.16928pt x 281.84314pt.
+<fig/GPIO2.pdf, id=203, 597.23125pt x 845.1575pt>
+File: fig/GPIO2.pdf Graphic file (type pdf)
+<use fig/GPIO2.pdf>
+Package pdftex.def Info: fig/GPIO2.pdf  used on input line 361.
+(pdftex.def)             Requested size: 199.16928pt x 281.84314pt.
+ [12] [13 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/GPIO1.pdf, page is rotated 180 degrees> </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/GPIO2.pdf, page is rotated 180 degrees>] [14] [15]
+Chapter 3.
+<fig/fig5.pdf, id=242, 821.83421pt x 334.30064pt>
+File: fig/fig5.pdf Graphic file (type pdf)
+<use fig/fig5.pdf>
+Package pdftex.def Info: fig/fig5.pdf  used on input line 448.
+(pdftex.def)             Requested size: 398.33858pt x 162.03358pt.
+[16
+
+ </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/fig5.pdf, page is rotated 90 degrees>]
+<fig/path_stack.pdf, id=258, 288.541pt x 296.23674pt>
+File: fig/path_stack.pdf Graphic file (type pdf)
+<use fig/path_stack.pdf>
+Package pdftex.def Info: fig/path_stack.pdf  used on input line 465.
+(pdftex.def)             Requested size: 227.62204pt x 233.69899pt.
+<fig/maze1.pdf, id=259, 344.32642pt x 315.47261pt>
+File: fig/maze1.pdf Graphic file (type pdf)
+<use fig/maze1.pdf>
+Package pdftex.def Info: fig/maze1.pdf  used on input line 468.
+(pdftex.def)             Requested size: 227.62204pt x 208.55434pt.
+<fig/tree1.pdf, id=260, 330.8611pt x 416.4619pt>
+File: fig/tree1.pdf Graphic file (type pdf)
+<use fig/tree1.pdf>
+Package pdftex.def Info: fig/tree1.pdf  used on input line 469.
+(pdftex.def)             Requested size: 227.62204pt x 286.50749pt.
+ [17 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/path_stack.pdf>] [18 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/maze1.pdf> </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/tree1.pdf>]
+<fig/coordinate.pdf, id=310, 405.88136pt x 352.02013pt>
+File: fig/coordinate.pdf Graphic file (type pdf)
+<use fig/coordinate.pdf>
+Package pdftex.def Info: fig/coordinate.pdf  used on input line 483.
+(pdftex.def)             Requested size: 284.52756pt x 246.7723pt.
+<fig/coordinate_calculate.pdf, id=311, 533.80128pt x 573.2356pt>
+File: fig/coordinate_calculate.pdf Graphic file (type pdf)
+<use fig/coordinate_calculate.pdf>
+Package pdftex.def Info: fig/coordinate_calculate.pdf  used on input line 490.
+(pdftex.def)             Requested size: 284.52756pt x 305.55405pt.
+ [19 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/coordinate.pdf>] [20 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/coordinate_calculate.pdf, page is rotated 90 degrees>]
+<fig/calculate_process.pdf, id=348, 338.55785pt x 405.28012pt>
+File: fig/calculate_process.pdf Graphic file (type pdf)
+<use fig/calculate_process.pdf>
+Package pdftex.def Info: fig/calculate_process.pdf  used on input line 510.
+(pdftex.def)             Requested size: 142.26378pt x 170.30305pt.
+ [21 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/calculate_process.pdf>]
+<fig/fig3.pdf, id=366, 817.27635pt x 500.12447pt>
+File: fig/fig3.pdf Graphic file (type pdf)
+<use fig/fig3.pdf>
+Package pdftex.def Info: fig/fig3.pdf  used on input line 568.
+(pdftex.def)             Requested size: 455.24408pt x 278.58733pt.
+
+Overfull \hbox (28.45273pt too wide) in paragraph at lines 568--568
+ [][] 
+ []
+
+<fig/fig6.pdf, id=367, 551.42915pt x 555.4311pt>
+File: fig/fig6.pdf Graphic file (type pdf)
+<use fig/fig6.pdf>
+Package pdftex.def Info: fig/fig6.pdf  used on input line 574.
+(pdftex.def)             Requested size: 341.43306pt x 343.92302pt.
+[22] [23 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/fig3.pdf, page is rotated 90 degrees>] [24 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/fig6.pdf>] [25] [26]
+Chapter 4.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 636.
+<fig/ultrasonic_install.pdf, id=421, 616.85173pt x 327.8377pt>
+File: fig/ultrasonic_install.pdf Graphic file (type pdf)
+<use fig/ultrasonic_install.pdf>
+Package pdftex.def Info: fig/ultrasonic_install.pdf  used on input line 653.
+(pdftex.def)             Requested size: 398.33858pt x 211.70631pt.
+[27
+
+] [28 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/ultrasonic_install.pdf, page is rotated 90 degrees>]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 703.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 703.
+<fig/infrared_install.pdf, id=442, 643.25911pt x 331.67894pt>
+File: fig/infrared_install.pdf Graphic file (type pdf)
+<use fig/infrared_install.pdf>
+Package pdftex.def Info: fig/infrared_install.pdf  used on input line 723.
+(pdftex.def)             Requested size: 398.33858pt x 205.39081pt.
+ [29] [30 </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/infrared_install.pdf, page is rotated 90 degrees>] [31] [32] [33] [34] [35] [36]
+Chapter 5.
+<fig/actual_maze.pdf, id=481, 807.15805pt x 469.68124pt>
+File: fig/actual_maze.pdf Graphic file (type pdf)
+<use fig/actual_maze.pdf>
+Package pdftex.def Info: fig/actual_maze.pdf  used on input line 988.
+(pdftex.def)             Requested size: 341.43306pt x 198.68379pt.
+[37
+
+ </Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/fig/actual_maze.pdf, page is rotated 90 degrees>] [38] [39]
+Chapter 6.
+[40
+
+]
+Chapter 7.
+[41
+
+]
+Chapter 8.
+(/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/report.bbl [42
+
+] [43
+
+] [44]) [45]
+Chapter 9.
+[46
+
+] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] (/Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/report.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 13874 strings out of 492649
+ 225328 string characters out of 6129622
+ 602288 words of memory out of 5000000
+ 17468 multiletter control sequences out of 15000+600000
+ 34009 words of font info for 80 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 49i,13n,74p,502b,1778s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/zhiyongliu/Documents/Github/Final-Year-Project/Dissertation/report.pdf (61 pages, 19803344 bytes).
+PDF statistics:
+ 596 PDF objects out of 1000 (max. 8388607)
+ 424 compressed objects within 5 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+
